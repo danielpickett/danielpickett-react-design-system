@@ -1,1 +1,1 @@
-My component library
+My design system

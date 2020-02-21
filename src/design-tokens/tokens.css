@@ -105,4 +105,6 @@
   --font-size-750: 4.75rem;
   --font-size-800: 5.25rem;
   --font-size-850: 5.75rem;
+
+  --transition: 1500ms;
 }
