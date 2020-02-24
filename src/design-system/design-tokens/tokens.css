@@ -1,4 +1,7 @@
 :root {
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+
   --color-primary-050: #E6E6FF;
   --color-primary-100: #C4C6FF;
   --color-primary-200: #A2A5FC;

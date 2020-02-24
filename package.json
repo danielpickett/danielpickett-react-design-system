@@ -21,8 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build:types": "tsc --declaration true --noEmit false --emitDeclarationOnly true",
-    "build:react": "babel src/component-library -d dist --extensions \".ts,.tsx\" --copy-files",
-    "build": "rm -rf dist && yarn build:types && yarn build:react && cp src/design-tokens/tokens.css dist",
+    "build:react": "babel src/design-system -d dist --extensions \".ts,.tsx\" --copy-files",
+    "build": "rm -rf dist && yarn build:types && yarn build:react",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
