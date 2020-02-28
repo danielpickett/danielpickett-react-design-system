@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import { Button } from './design-system/component-library';
+import { NumberInput } from './design-system/component-library';
 
 function App() {
   return (
     <div className="App">
-      <Button>This Sample Button</Button>
+      <NumberInput>This Sample NumberInput</NumberInput>
     </div>
   );
 }

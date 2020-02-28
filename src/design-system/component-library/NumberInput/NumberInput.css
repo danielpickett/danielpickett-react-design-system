@@ -1,0 +1,13 @@
+.Button {
+  padding: var(--spacing-300) var(--spacing-600);
+  border-radius: var(--spacing-300);
+  transition: var(--transition);
+  color: white;
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.Button:hover {
+  background-color: var(--color-primary-400);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+}

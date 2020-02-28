@@ -25,7 +25,8 @@
     "build": "rm -rf dist && yarn build:types && yarn build:react",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "make:component": "./make-new-component.sh ThisTest && code \"src/design-system/component-library/index.ts\""
   },
   "eslintConfig": {
     "extends": "react-app"
