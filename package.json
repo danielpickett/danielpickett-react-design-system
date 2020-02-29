@@ -1,6 +1,6 @@
 {
   "name": "danielpickett-react-design-system",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "module": "dist/component-library/index.js",
   "private": false,
   "license": "MIT",
