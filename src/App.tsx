@@ -5,7 +5,7 @@ import { NumberInput } from './design-system/component-library';
 function App() {
   return (
     <div className="App">
-      <NumberInput>This Sample NumberInput</NumberInput>
+      <NumberInput />
     </div>
   );
 }
