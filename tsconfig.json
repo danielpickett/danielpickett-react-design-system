@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src",
     "target": "es5",
-    "outDir": "./dist/component-library",
+    "outDir": "./dist",
     "lib": [
       "dom",
       "dom.iterable",
@@ -22,7 +22,7 @@
     "jsx": "react"
   },
   "include": [
-    "src/design-system/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules"
