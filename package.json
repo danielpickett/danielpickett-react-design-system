@@ -22,11 +22,11 @@
     "start": "react-scripts start",
     "build:types": "tsc --declaration true --noEmit false --emitDeclarationOnly true",
     "build:react": "babel src -d dist --extensions \".ts,.tsx\" --copy-files",
-    "build": "rm -rf dist && yarn build:types && yarn build:react && cp ./src/design-system/index.d.ts ./dist",
+    "build": "rm -rf dist && yarn build:types && yarn build:react && ./build-cleanup.sh",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "make:component": " code \"src/design-system/component-library/index.ts\" && ./make-new-component.sh",
+    "make:component": " code \"src/components/index.ts\" && ./make-new-component.sh",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
