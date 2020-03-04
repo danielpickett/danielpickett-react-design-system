@@ -12,6 +12,11 @@
   background: var(--color-primary-100); /* Gecko Browsers */
 }
 
+::placeholder {
+  color: currentColor;
+  opacity: .3;
+}
+
 * {
   box-sizing: border-box;
 }

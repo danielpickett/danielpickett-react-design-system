@@ -3,13 +3,10 @@
   background-color: var(--color-neutral-300);
   padding: var(--pixels-2);
   width: 6rem;
-  border-radius: var(--border-radius);
-  /* border: var(--pixels-1) solid transparent; */
-  
+  border-radius: var(--border-radius)
 }
 
 .NumberInput:hover {
-  /* border: var(--pixels-1) solid var(--color-primary); */
   box-shadow: var(--box-shadow-200);
 }
 
@@ -25,7 +22,6 @@
 
 .NumberInput__input {
   font-size: var(--font-size-150);
-  /* font-weight: 700; */
   padding: var(--spacing-200);
   width: 1rem;
   flex-grow: 1;
