@@ -1,0 +1,10 @@
+@import './tokens/tokens.css';
+@import './fonts/font-faces.css';
+
+:root {
+  font-family: Inter, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}

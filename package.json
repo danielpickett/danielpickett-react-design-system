@@ -1,10 +1,10 @@
 {
   "name": "danielpickett-react-design-system",
   "version": "0.1.6",
-  "module": "dist/component-library/index.js",
+  "module": "dist/index.js",
   "private": false,
   "license": "MIT",
-  "types": "dist/component-library/index.d.ts",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build:types": "tsc --declaration true --noEmit false --emitDeclarationOnly true",
-    "build:react": "babel src -d dist --extensions \".ts,.tsx\" --copy-files",
+    "build:react": "babel src -d dist --extensions \".ts,.tsx\" --ignore \"src/**/*.stories.js\" --copy-files  --no-copy-ignored",
     "build": "rm -rf dist && yarn build:types && yarn build:react && ./build-cleanup.sh",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",

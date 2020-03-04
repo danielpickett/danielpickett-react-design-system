@@ -1,8 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './tokens/tokens.css'
-import { NumberInput } from './'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles.css'
+import { App } from './App'
 
-ReactDOM.render(<NumberInput />, document.getElementById('root'));
-
-export * from './components'
+ReactDOM.render(<App />, document.getElementById('root'))
