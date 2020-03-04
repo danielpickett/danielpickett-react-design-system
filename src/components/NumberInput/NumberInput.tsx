@@ -18,8 +18,8 @@ export const NumberInput: React.FunctionComponent<{
           value={value}
         />
         <div className="NumberInput__arrows">
-          <div className="NumberInput__up-arrow"></div>
-          <div className="NumberInput__down-arrow"></div>
+          <button className="NumberInput__up-arrow"></button>
+          <button className="NumberInput__down-arrow"></button>
         </div>
       </div>
     </div>

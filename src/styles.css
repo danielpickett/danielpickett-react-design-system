@@ -5,6 +5,13 @@
   font-family: Inter, sans-serif;
 }
 
+::selection {
+  background: var(--color-primary-100); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--color-primary-100); /* Gecko Browsers */
+}
+
 * {
   box-sizing: border-box;
 }

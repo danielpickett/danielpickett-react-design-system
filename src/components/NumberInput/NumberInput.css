@@ -36,6 +36,7 @@
 
 .NumberInput__up-arrow,
 .NumberInput__down-arrow {
+  all: unset;
   flex: 1 1;
   padding: 0 var(--spacing-200);
   display: flex;
