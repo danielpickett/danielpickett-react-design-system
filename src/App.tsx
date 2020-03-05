@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NumberInput } from 'components'
+import { NumberInput, LabelValuePair } from 'components'
 
 export const App = () => {
   const [minNum, setMinNum] = useState(5)
@@ -16,17 +16,26 @@ export const App = () => {
   }
 
   return (
-    <div>
-      <span>Donate between</span>{' '}
-      <NumberInput
-        onChange={handleUpdateMinNum}
-        value={minNum}
-        // max={7}
-        // min={2}
-      />{' '}
-      <span>and</span>{' '}
-      <NumberInput onChange={handleUpdateMaxNum} value={maxNum} />{' '}
-      <span>ostriches</span>{' '}
-    </div>
+    <>
+      <div>
+        <span>Donate between</span>{' '}
+        <NumberInput
+          onChange={handleUpdateMinNum}
+          value={minNum}
+          // max={7}
+          // min={2}
+        />{' '}
+        <span>and</span>{' '}
+        <NumberInput onChange={handleUpdateMaxNum} value={maxNum} />{' '}
+        <span>ostriches</span>{' '}
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>
+        <LabelValuePair label="Budget" value={Number(10000).toLocaleString()} prefix="$" />
+      </div>
+    </>
   )
 }
