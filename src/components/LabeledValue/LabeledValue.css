@@ -1,21 +1,21 @@
-.LabelValuePair {
+.LabeledValue {
   display: block;
 }
 
-.LabelValuePair__label {
+.LabeledValue__label {
   font-size: var(--font-size-50);
   color: var(--color-neutral-400);
 }
 
-.LabelValuePair__value {
+.LabeledValue__value {
   font-size: var(--font-size-300);
   color: var(--color-neutral-700);
 }
 
-.LabelValuePair__prefix {
+.LabeledValue__prefix {
   opacity: .5;
 }
 
-.LabelValuePair__suffix {
+.LabeledValue__suffix {
   opacity: .5;
 }

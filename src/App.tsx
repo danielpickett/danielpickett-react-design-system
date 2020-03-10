@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NumberInput, LabelValuePair } from 'components'
+import { NumberInput, LabeledValue } from 'components'
 
 export const App = () => {
   const [minNum, setMinNum] = useState(5)
@@ -34,7 +34,7 @@ export const App = () => {
       <br />
       <br />
       <div>
-        <LabelValuePair label="Budget" value={Number(10000).toLocaleString()} prefix="$" />
+        <LabeledValue label="Budget" value={Number(10000).toLocaleString()} prefix="$" />
       </div>
     </>
   )
