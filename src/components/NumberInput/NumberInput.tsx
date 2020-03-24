@@ -25,7 +25,6 @@ export const NumberInput: React.FunctionComponent<{
   }
 
   const handleIncrement = (increment: number) => {
-    console.log('increment', increment)
     onChange(value + increment)
   }
 
