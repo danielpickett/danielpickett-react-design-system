@@ -1,0 +1,22 @@
+@import './tokens/tokens.css';
+@import './fonts/font-faces.css';
+
+:root {
+  font-family: Inter, sans-serif;
+}
+
+::selection {
+  background: var(--color-primary-100); /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: var(--color-primary-100); /* Gecko Browsers */
+}
+
+::placeholder {
+  color: currentColor;
+  opacity: .3;
+}
+
+* {
+  box-sizing: border-box;
+}

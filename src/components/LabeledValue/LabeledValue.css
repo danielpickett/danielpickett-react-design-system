@@ -1,0 +1,21 @@
+.LabeledValue {
+  display: block;
+}
+
+.LabeledValue__label {
+  font-size: var(--font-size-50);
+  color: var(--color-neutral-400);
+}
+
+.LabeledValue__value {
+  font-size: var(--font-size-300);
+  color: var(--color-neutral-700);
+}
+
+.LabeledValue__prefix {
+  opacity: .5;
+}
+
+.LabeledValue__suffix {
+  opacity: .5;
+}

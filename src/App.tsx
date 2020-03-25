@@ -1,13 +1,41 @@
-import React from 'react';
-import './App.css';
-import { Button } from './design-system/component-library';
+import React, { useState } from 'react'
+import { NumberInput, LabeledValue } from 'components'
 
-function App() {
+export const App = () => {
+  const [minNum, setMinNum] = useState(5)
+  const [maxNum, setMaxNum] = useState(10)
+
+  const handleUpdateMinNum = (val: number) => {
+    setMinNum(val)
+    console.log(val)
+  }
+
+  const handleUpdateMaxNum = (val: number) => {
+    setMaxNum(val)
+    console.log(val)
+  }
+
   return (
-    <div className="App">
-      <Button>This Sample Button</Button>
-    </div>
-  );
+    <>
+      <div>
+        <span>Donate between</span>{' '}
+        <NumberInput
+          onChange={handleUpdateMinNum}
+          value={minNum}
+          // max={7}
+          // min={2}
+        />{' '}
+        <span>and</span>{' '}
+        <NumberInput onChange={handleUpdateMaxNum} value={maxNum} />{' '}
+        <span>ostriches</span>{' '}
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div>
+        <LabeledValue label="Budget" value={Number(10000).toLocaleString()} prefix="$" />
+      </div>
+    </>
+  )
 }
-
-export default App;

@@ -1,4 +1,10 @@
 :root {
+  --pixels-1: 0.0625rem;
+  --pixels-2: 0.125rem;
+  --pixels-3: 0.1875rem;
+  --pixels-5: 0.3125rem;
+  --pixels-8: 0.5rem;
+
   --color-white: #FFFFFF;
   --color-black: #000000;
 
@@ -83,6 +89,14 @@
   --spacing-800: 2.5rem;
   --spacing-900: 3rem;
 
+  --border-radius-100: var(--spacing-100);
+  --border-radius-200: var(--spacing-200);
+  --border-radius-300: var(--spacing-300);
+  --border-radius-400: var(--spacing-400);
+  --border-radius-500: var(--spacing-500);
+  --border-radius: var(--border-radius-300);
+  --border-radius-round: 100rem;
+
   --layout-100:	1rem;
   --layout-200:	1.5rem;
   --layout-300:	2rem;
@@ -91,7 +105,7 @@
   --layout-600:	6rem;
   --layout-700:	10rem;
 
-  --font-size-50: 0.75rem;
+  --font-size-50:  0.75rem;
   --font-size-100: 0.875rem;
   --font-size-150: 1rem;
   --font-size-200: 1.125rem;
@@ -109,5 +123,31 @@
   --font-size-800: 5.25rem;
   --font-size-850: 5.75rem;
 
-  --transition: 1500ms;
+  --box-shadow-100-dark:   0 1px  3px  rgba(0,0,0,0.12),      0 1px  2px  rgba(0,0,0,0.24);
+  --box-shadow-100-focus:  0 1px  3px  rgba(93,85,250,.12),   0 1px  2px  rgba(93,85,250,0.24), 0 0 0 1px rgba(93,85,250,.6);
+  --box-shadow-100:        0 0  3px  rgba(0,0,0,0.02),        0 1px  3px  rgba(0,0,0,0.04),      0 1px  2px  rgba(0,0,0,0.08);
+
+  --box-shadow-200-dark:   0 3px  6px  rgba(0,0,0,0.16),      0 3px  6px  rgba(0,0,0,0.23);
+  --box-shadow-200-focus:  0 3px  6px  rgba(93,85,250,0.16),  0 3px  6px  rgba(93,85,250,0.23), 0 0 0 1px rgba(93,85,250,.6);
+  --box-shadow-200:        0 0  6px  rgba(0,0,0,0.02665),      0 3px  6px  rgba(0,0,0,0.0533),    0 3px  6px  rgba(0,0,0,0.0766);
+
+  --box-shadow-300-dark:   0 10px 20px rgba(0,0,0,0.19),      0 6px  6px  rgba(0,0,0,0.23);
+  --box-shadow-300-focus:  0 10px 20px rgba(93,85,250,0.19),  0 6px  6px  rgba(93,85,250,0.23), 0 0 0 1px rgba(93,85,250,.6);
+  --box-shadow-300:        0 0 20px rgba(0,0,0,0.03165),       0 10px 20px rgba(0,0,0,0.0633),    0 6px  6px  rgba(0,0,0,0.0766);
+
+  --box-shadow-400-dark:   0 14px 28px rgba(0,0,0,0.25),      0 10px 10px rgba(0,0,0,0.22);
+  --box-shadow-400-focus:  0 14px 28px rgba(93,85,250,0.25),  0 10px 10px rgba(93,85,250,0.22), 0 0 0 1px rgba(93,85,250,.6);
+  --box-shadow-400:        0 0 28px rgba(0,0,0,0.04165),       0 14px 28px rgba(0,0,0,0.0833),    0 10px 10px rgba(0,0,0,0.0733);
+
+  --box-shadow-500-dark:   0 19px 38px rgba(0,0,0,0.30),      0 15px 12px rgba(0,0,0,0.22);
+  --box-shadow-500-focus:  0 19px 38px rgba(93,85,250,0.30),  0 15px 12px rgba(93,85,250,0.22), 0 0 0 1px rgba(93,85,250,.6);
+  --box-shadow-500:        0 0 38px rgba(0,0,0,0.05),         0 19px 38px rgba(0,0,0,0.10),      0 15px 12px rgba(0,0,0,0.0733);
+
+  --transition-100:          3000ms cubic-bezier(.25,.8,.25,1);
+  --transition-100-all:  all 1500ms cubic-bezier(.25,.8,.25,1);
+  --transition-200:          3000ms cubic-bezier(.25,.8,.25,1);
+  --transition-200-all:  all 1500ms cubic-bezier(.25,.8,.25,1);
+
 }
+
+

@@ -1,6 +1,6 @@
 {
   "name": "danielpickett-react-design-system",
-  "version": "0.1.3",
+  "version": "0.1.11",
   "module": "dist/index.js",
   "private": false,
   "license": "MIT",
@@ -21,11 +21,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build:types": "tsc --declaration true --noEmit false --emitDeclarationOnly true",
-    "build:react": "babel src/design-system -d dist --extensions \".ts,.tsx\" --copy-files",
-    "build": "rm -rf dist && yarn build:types && yarn build:react",
+    "build:react": "babel src -d dist --extensions \".ts,.tsx\" --ignore \"src/**/*.stories.js\" --copy-files  --no-copy-ignored",
+    "build": "rm -rf dist && yarn build:types && yarn build:react && ./build-cleanup.sh",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "make:component": " code \"src/components/index.ts\" && ./make-new-component.sh",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -46,6 +49,11 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
-    "@babel/preset-typescript": "^7.8.3"
+    "@babel/preset-typescript": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.14"
   }
 }

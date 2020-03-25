@@ -1,0 +1,71 @@
+.NumberInput {
+  display: inline-block;
+  background-color: var(--color-neutral-300);
+  padding: var(--pixels-2);
+  width: 6rem;
+  border-radius: var(--border-radius)
+}
+
+.NumberInput:hover {
+  box-shadow: var(--box-shadow-200);
+}
+
+.NumberInput:focus-within {
+  box-shadow: var(--box-shadow-300-focus);
+}
+
+.NumberInput__container {
+  display: flex;
+  border-radius: calc(var(--border-radius) - var(--pixels-2));
+  overflow: hidden;
+}
+
+.NumberInput__input {
+  font-size: var(--font-size-150);
+  padding: var(--spacing-200);
+  width: 1rem;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  background-color: var(--color-white);
+  font-family: 'Roboto Mono', monospace;
+}
+
+.NumberInput__arrows {
+  display: flex;
+  flex-direction: column;
+  padding-left: var(--pixels-2);
+}
+
+.NumberInput__up-arrow,
+.NumberInput__down-arrow {
+  all: unset;
+  flex: 1 1;
+  padding: 0 var(--spacing-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.NumberInput__up-arrow:hover,
+.NumberInput__down-arrow:hover {
+  background-color: var(--color-primary);
+}
+
+.NumberInput__up-arrow::before,
+.NumberInput__down-arrow::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.NumberInput__up-arrow::before {
+  border-bottom: 5px solid var(--color-white);
+}
+
+.NumberInput__down-arrow::before {
+  border-top: 5px solid var(--color-white);
+}
