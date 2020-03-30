@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, ChangeEvent } from 'react'
+import React, { ReactElement, ChangeEvent } from 'react'
 import './RadioButtonGroup.css'
 import { RadioButton } from 'components'
 
@@ -33,10 +33,10 @@ export const RadioButtonGroup = ({
 
       if (radioButton.props.hasOwnProperty('checked')) {
         console.error(
-          `Instead of using the checked property on the RadioButton, set the defaultSelected property or valueSelected property on the RadioButtonGroup.`,
+          `When using RadioButton components as children of a RadioButtonGroup
+          component, do not use the 'checked' prop of any RadioButton components.`,
         )
       }
-      
 
       return (
         <RadioButton
@@ -47,12 +47,9 @@ export const RadioButtonGroup = ({
         />
       )
     })
+
     return radioButtons
   }
 
-  return (
-    <div className="RadioButtonGroup">
-      {getRadioButtons()}
-    </div>
-  )
+  return <div className="RadioButtonGroup">{getRadioButtons()}</div>
 }

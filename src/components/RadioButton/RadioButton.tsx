@@ -29,7 +29,7 @@ export const RadioButton: FC<RadioButtonType> = ({
 
   return (
     <div className="RadioButton">
-      <label>
+      <label className="RadioButton__wrapper-label">
 
         <div className="RadioButton__input-wrapper">
           <input

@@ -1,4 +1,10 @@
 .RadioButton {
-  display: block;
+  display: inline-block;
+  border: 1px solid red;
 }
+.RadioButton__wrapper-label {
+  display: flex;
+  
+}
+
 
