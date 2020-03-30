@@ -33,6 +33,7 @@ export const RadioButton: FC<RadioButtonType> = ({
 
         <div className="RadioButton__input-wrapper">
           <input
+            className="RadioButton__input"
             type="radio"
             onChange={handleChange}
             checked={checked}

@@ -6,26 +6,16 @@ export const App = () => {
 
   return (
     <div className="App">
-
       Current color: {color}
       <RadioButtonGroup
         name="color"
         defaultSelected="green"
         valueSelected={color}
-        onChange={(value)=> setColor(value as string)}
+        onChange={value => setColor(value as string)}
       >
-        <RadioButton
-          value="red"
-          label="red"
-        />
-        <RadioButton
-          value="green"
-          label="green"
-        />
-        <RadioButton
-          value="blue"
-          label="blue"
-        />
+        <RadioButton value="red" label="red" />
+        <RadioButton value="green" label="green" />
+        <RadioButton value="blue" label="blue" />
       </RadioButtonGroup>
     </div>
   )
