@@ -1,41 +1,40 @@
 import React, { useState } from 'react'
-import { NumberInput, LabeledValue } from 'components'
+import { RadioButton, RadioButtonGroup } from 'components'
 
 export const App = () => {
-  const [minNum, setMinNum] = useState(5)
-  const [maxNum, setMaxNum] = useState(10)
+  const [color, setColor] = useState<string | null>(null)
 
-  const handleUpdateMinNum = (val: number) => {
-    setMinNum(val)
-    console.log(val)
-  }
+  // const handleChangeX = (e: ChangeEvent<HTMLInputElement>) => {
+  //   setColor(e.target.value)
+  // }
 
-  const handleUpdateMaxNum = (val: number) => {
-    setMaxNum(val)
-    console.log(val)
+  const handleColorChange = (value: string | number | null) => {
+    setColor(value as string)
   }
 
   return (
-    <>
-      <div>
-        <span>Donate between</span>{' '}
-        <NumberInput
-          onChange={handleUpdateMinNum}
-          value={minNum}
-          // max={7}
-          // min={2}
-        />{' '}
-        <span>and</span>{' '}
-        <NumberInput onChange={handleUpdateMaxNum} value={maxNum} />{' '}
-        <span>ostriches</span>{' '}
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
-      <div>
-        <LabeledValue label="Budget" value={Number(10000).toLocaleString()} prefix="$" />
-      </div>
-    </>
+    <div className="App">
+
+      Current color: {color}
+      <RadioButtonGroup
+        name="color"
+        defaultSelected="green"
+        valueSelected={color}
+        onChange={handleColorChange}
+      >
+        <RadioButton
+          value="red"
+          label="red"
+        />
+        <RadioButton
+          value="green"
+          label="green"
+        />
+        <RadioButton
+          value="blue"
+          label="blue"
+        />
+      </RadioButtonGroup>
+    </div>
   )
 }
