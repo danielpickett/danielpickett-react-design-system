@@ -1,11 +1,13 @@
 import React, { ReactElement, ChangeEvent } from 'react'
-import './RadioButtonGroup.css'
+import './RadioButtonGroup.scss'
 import { RadioButton } from 'components'
 
 export const RadioButtonGroup = ({
   children,
   name,
   onChange,
+  defaultSelected,
+  valueSelected
 }: {
   children: ReactElement[]
   name: string
@@ -17,6 +19,8 @@ export const RadioButtonGroup = ({
     event: ChangeEvent<HTMLInputElement>,
   ) => void
 }) => {
+  const selected = valueSelected || defaultSelected
+
   const handleChange = (
     newSelection: string | number,
     name: string,
@@ -44,6 +48,7 @@ export const RadioButtonGroup = ({
           name={name}
           value={value}
           onChange={handleChange}
+          checked={value === selected}
         />
       )
     })

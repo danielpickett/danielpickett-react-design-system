@@ -1,0 +1,25 @@
+@import 'vars.scss';
+
+.RadioButton {
+  display: inline-block;
+  &__wrapper-label {
+    display: flex;
+    align-items: center;
+  }
+  &__input-wrapper {
+    width: 1rem;
+    height: 1rem;
+    border: $pixels-2 solid $color-primary;
+    margin-right: .5rem;
+    border-radius: 100rem;
+  }
+  &__input {
+    display: none;
+  }
+}
+
+.RadioButton--is-checked .RadioButton{
+  &__input-wrapper {
+    border: .4rem solid $color-primary;
+  }
+}
