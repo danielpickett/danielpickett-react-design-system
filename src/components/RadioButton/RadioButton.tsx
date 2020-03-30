@@ -22,15 +22,16 @@ export const RadioButton: FC<RadioButtonType> = ({
   checked,
   name,
 }) => {
+  const prefix = 'RadioButton'
+  const wrapperClasses = classNames(prefix, {
+    [`${prefix}--checked`]: checked,
+  })
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange && value && name) {
       onChange(value, name, event)
     }
   }
-  const prefix = 'RadioButton'
-  const wrapperClasses = classNames(prefix, {
-    [`${prefix}--is-checked`]: checked,
-  })
 
   return (
     <div className={wrapperClasses}>

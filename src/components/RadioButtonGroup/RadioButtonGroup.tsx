@@ -1,13 +1,15 @@
 import React, { ReactElement, ChangeEvent } from 'react'
 import './RadioButtonGroup.scss'
 import { RadioButton } from 'components'
+import classNames from 'classnames'
 
 export const RadioButtonGroup = ({
   children,
   name,
   onChange,
   defaultSelected,
-  valueSelected
+  valueSelected,
+  layout = 'vertical'
 }: {
   children: ReactElement[]
   name: string
@@ -18,7 +20,13 @@ export const RadioButtonGroup = ({
     name: string,
     event: ChangeEvent<HTMLInputElement>,
   ) => void
+  layout?: 'horizontal' | 'vertical'
 }) => {
+  const prefix = 'RadioButtonGroup'
+  const wrapperClasses = classNames(prefix, {
+    [`${prefix}--horizontal`]: layout !== 'vertical',
+  })
+
   const selected = valueSelected || defaultSelected
 
   const handleChange = (
@@ -56,5 +64,5 @@ export const RadioButtonGroup = ({
     return radioButtons
   }
 
-  return <div className="RadioButtonGroup">{getRadioButtons()}</div>
+  return <div className={wrapperClasses}>{getRadioButtons()}</div>
 }

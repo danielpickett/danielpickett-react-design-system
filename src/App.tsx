@@ -12,6 +12,7 @@ export const App = () => {
         defaultSelected="green"
         valueSelected={color}
         onChange={value => setColor(value as string)}
+        layout='horizontal'
       >
         <RadioButton value="red" label="red" />
         <RadioButton value="green" label="green" />

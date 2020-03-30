@@ -1,16 +1,26 @@
 @import 'vars.scss';
 
 .RadioButton {
-  display: inline-block;
+  display: block;
+  margin-right: .5rem;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+  
   &__wrapper-label {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    padding: 0.25rem;
+    padding-left: .5rem;
+    padding-right: 1rem;
+    border-radius: $border-radius-300;
+    // background-color: $color-neutral-200;
   }
   &__input-wrapper {
     width: 1rem;
     height: 1rem;
     border: $pixels-2 solid $color-primary;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     border-radius: 100rem;
   }
   &__input {
@@ -18,8 +28,14 @@
   }
 }
 
-.RadioButton--is-checked .RadioButton{
+.RadioButton:hover .RadioButton {
+  &__wrapper-label {
+    background-color: $color-primary-050;
+  }
+}
+
+.RadioButton--checked .RadioButton {
   &__input-wrapper {
-    border: .4rem solid $color-primary;
+    border: 0.4rem solid $color-primary;
   }
 }
