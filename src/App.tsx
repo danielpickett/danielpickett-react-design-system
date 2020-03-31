@@ -1,40 +1,43 @@
-import React, { useState } from 'react'
-import { RadioButton, RadioButtonGroup } from 'components'
+import React, { useState, useEffect } from 'react'
+import { RadioButton, RadioButtonGroup, Checkbox } from 'components'
 
 export const App = () => {
   const [color, setColor] = useState<string | null>(null)
+  const [isEnchanted, setIsEnchanted] = useState(false)
+  const [isCursed, setIsCursed] = useState(false)
 
-  // const handleChangeX = (e: ChangeEvent<HTMLInputElement>) => {
-  //   setColor(e.target.value)
-  // }
-
-  const handleColorChange = (value: string | number | null) => {
-    setColor(value as string)
-  }
+  useEffect(()=> {
+    console.log(isEnchanted)
+  })
 
   return (
     <div className="App">
-
       Current color: {color}
       <RadioButtonGroup
         name="color"
         defaultSelected="green"
         valueSelected={color}
-        onChange={handleColorChange}
+        onChange={value => setColor(value as string)}
+        layout="horizontal"
       >
-        <RadioButton
-          value="red"
-          label="red"
-        />
-        <RadioButton
-          value="green"
-          label="green"
-        />
-        <RadioButton
-          value="blue"
-          label="blue"
-        />
+        <RadioButton value="red" label="red" />
+        <RadioButton value="green" label="green" />
+        <RadioButton value="blue" label="blue" />
       </RadioButtonGroup>
+      <br />
+      <br />
+      <br />
+      Enchanted: {isEnchanted ? 'true': 'false'}
+      <Checkbox
+        checked={isEnchanted}
+        onChange={(checked) => setIsEnchanted(checked)}
+        label="Make enchanted"
+      />
+      <Checkbox
+        checked={isCursed}
+        onChange={(checked) => setIsCursed(checked)}
+        label="Make cursed"
+      />
     </div>
   )
 }
