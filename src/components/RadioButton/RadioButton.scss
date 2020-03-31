@@ -31,9 +31,15 @@
 }
 
 .RadioButton:hover .RadioButton {
-  
   &__wrapper-label {
     background-color: $color-primary-050;
+  }
+}
+
+.RadioButton:active .RadioButton {
+  &__wrapper-label {
+    // background-color: $color-primary-050;
+    border: $pixels-1 solid $color-primary;
   }
 }
 
