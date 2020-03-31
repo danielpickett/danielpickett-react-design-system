@@ -22,9 +22,8 @@ export const RadioButton: FC<RadioButtonType> = ({
   checked,
   name,
 }) => {
-  const prefix = 'RadioButton'
-  const wrapperClasses = classNames(prefix, {
-    [`${prefix}--checked`]: checked,
+  const modifierClasses = classNames(' ', {
+    'RadioButton--checked': checked,
   })
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -34,11 +33,11 @@ export const RadioButton: FC<RadioButtonType> = ({
   }
 
   return (
-    <div className={wrapperClasses}>
-      <label className={`${prefix}__wrapper-label`}>
-        <div className={`${prefix}__input-wrapper`}>
+    <div className={'RadioButton' + modifierClasses}>
+      <label className="RadioButton__wrapper-label">
+        <div className="RadioButton__input-wrapper">
           <input
-            className={`${prefix}__input`}
+            className="RadioButton__input"
             type="radio"
             onChange={handleChange}
             checked={checked}
@@ -47,7 +46,7 @@ export const RadioButton: FC<RadioButtonType> = ({
           />
         </div>
 
-        {label && <span className={`${prefix}__label`}>{label}</span>}
+        {label && <span className="RadioButton__label">{label}</span>}
       </label>
     </div>
   )

@@ -46,7 +46,8 @@ export const RadioButtonGroup = ({
       if (radioButton.props.hasOwnProperty('checked')) {
         console.error(
           `When using RadioButton components as children of a RadioButtonGroup
-          component, do not use the 'checked' prop of any RadioButton components.`,
+          component, do not use the 'checked' prop of any RadioButton components.
+          It will be managed by the RadioButtonGroup`,
         )
       }
 

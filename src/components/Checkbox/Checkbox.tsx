@@ -1,16 +1,36 @@
-import React, { ReactNode } from 'react'
-import './Checkbox.css'
+import React, { ReactNode, ChangeEvent } from 'react'
+import './Checkbox.scss'
+import classNames from 'classnames'
 
 export const Checkbox: React.FunctionComponent<{
   checked: boolean
-  onChange: () => void
+  onChange: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void
   label?: string | ReactNode
-  inputId?: string
-}> = ({ label, inputId, ...rest }) => {
+  id?: string
+}> = ({ checked, onChange, label, id }) => {
+  const modifierClasses = classNames(' ', {
+    'Checkbox--checked': checked,
+  })
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(event.currentTarget.checked, event)
+    }
+  }
+
   return (
-    <div className="Checkbox">
-      <label>
-        <input type="checkbox" id={inputId} {...rest} />
+    <div className={'Checkbox' + modifierClasses}>
+      <label className={`Checkbox__wrapper-label`}>
+        <div className={`Checkbox__input-wrapper`}>
+          <input
+            className={`Checkbox__input`}
+            type="checkbox"
+            onChange={handleChange}
+            {...id}
+            {...checked}
+          />
+          <div className="Checkbox__checkmark"></div>
+        </div>
         {label && <span className="Checkbox__label">{label}</span>}
       </label>
     </div>

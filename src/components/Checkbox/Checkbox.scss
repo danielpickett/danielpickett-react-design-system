@@ -1,6 +1,6 @@
 @import '_vars';
 
-.RadioButton {
+.Checkbox {
   display: block;
   margin-right: 0.5rem;
   margin-top: 0.25rem;
@@ -9,6 +9,7 @@
   &__wrapper-label {
     display: flex;
     align-items: center;
+    width: max-content;
     cursor: pointer;
     padding: 0.25rem;
     padding-left: 0.5rem;
@@ -22,23 +23,39 @@
     height: 1rem;
     border: $pixels-2 solid $color-primary;
     margin-right: 0.5rem;
-    border-radius: 100rem;
+    border-radius: $border-radius-200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__input {
     display: none;
   }
+
+  &__checkmark {
+    height: 45%;
+    width: 75%;
+    border: $pixels-2 solid $color-white;
+    border-top: none;
+    border-right: none;
+    transform: translateY(-20%) rotate(-45deg);
+    display: none;
+  }
 }
 
-.RadioButton:hover .RadioButton {
-  
+.Checkbox:hover .Checkbox {
   &__wrapper-label {
     background-color: $color-primary-050;
   }
 }
 
-.RadioButton--checked .RadioButton {
+.Checkbox--checked .Checkbox {
   &__input-wrapper {
-    border: 0.4rem solid $color-primary;
+    // border: 0.4rem solid $color-primary;
+    background-color: $color-primary;
+  }
+  &__checkmark {
+    display: block;
   }
 }
