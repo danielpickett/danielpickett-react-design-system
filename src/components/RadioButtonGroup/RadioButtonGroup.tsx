@@ -1,11 +1,15 @@
 import React, { ReactElement, ChangeEvent } from 'react'
-import './RadioButtonGroup.css'
+import './RadioButtonGroup.scss'
 import { RadioButton } from 'components'
+import classNames from 'classnames'
 
 export const RadioButtonGroup = ({
   children,
   name,
   onChange,
+  defaultSelected,
+  valueSelected,
+  layout = 'vertical'
 }: {
   children: ReactElement[]
   name: string
@@ -16,7 +20,15 @@ export const RadioButtonGroup = ({
     name: string,
     event: ChangeEvent<HTMLInputElement>,
   ) => void
+  layout?: 'horizontal' | 'vertical'
 }) => {
+  const prefix = 'RadioButtonGroup'
+  const wrapperClasses = classNames(prefix, {
+    [`${prefix}--horizontal`]: layout !== 'vertical',
+  })
+
+  const selected = valueSelected || defaultSelected
+
   const handleChange = (
     newSelection: string | number,
     name: string,
@@ -34,7 +46,8 @@ export const RadioButtonGroup = ({
       if (radioButton.props.hasOwnProperty('checked')) {
         console.error(
           `When using RadioButton components as children of a RadioButtonGroup
-          component, do not use the 'checked' prop of any RadioButton components.`,
+          component, do not use the 'checked' prop of any RadioButton components.
+          It will be managed by the RadioButtonGroup`,
         )
       }
 
@@ -44,6 +57,7 @@ export const RadioButtonGroup = ({
           name={name}
           value={value}
           onChange={handleChange}
+          checked={value === selected}
         />
       )
     })
@@ -51,5 +65,5 @@ export const RadioButtonGroup = ({
     return radioButtons
   }
 
-  return <div className="RadioButtonGroup">{getRadioButtons()}</div>
+  return <div className={wrapperClasses}>{getRadioButtons()}</div>
 }

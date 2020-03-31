@@ -1,5 +1,6 @@
 import React, { FC, ReactNode, ChangeEvent } from 'react'
-import './RadioButton.css'
+import './RadioButton.scss'
+import classNames from 'classnames'
 
 export type RadioButtonType = {
   checked?: boolean
@@ -21,6 +22,10 @@ export const RadioButton: FC<RadioButtonType> = ({
   checked,
   name,
 }) => {
+  const modifierClasses = classNames(' ', {
+    'RadioButton--checked': checked,
+  })
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange && value && name) {
       onChange(value, name, event)
@@ -28,9 +33,8 @@ export const RadioButton: FC<RadioButtonType> = ({
   }
 
   return (
-    <div className="RadioButton">
+    <div className={'RadioButton' + modifierClasses}>
       <label className="RadioButton__wrapper-label">
-
         <div className="RadioButton__input-wrapper">
           <input
             className="RadioButton__input"
@@ -40,10 +44,9 @@ export const RadioButton: FC<RadioButtonType> = ({
             value={value}
             name={name}
           />
-          <div className="RadioButton__faux-input"></div>
         </div>
 
-        {label && <span className="Checkbox__label">{label}</span>}
+        {label && <span className="RadioButton__label">{label}</span>}
       </label>
     </div>
   )
