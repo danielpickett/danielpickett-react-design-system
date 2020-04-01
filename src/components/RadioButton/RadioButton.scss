@@ -1,4 +1,4 @@
-@import '_vars';
+@import '_vars';  
 
 .RadioButton {
   display: block;
@@ -13,6 +13,7 @@
     padding: 0.25rem;
     padding-left: 0.5rem;
     padding-right: 1rem;
+    border: $pixels-1 solid transparent;
     border-radius: $border-radius-300;
   }
 
@@ -25,7 +26,9 @@
   }
 
   &__input {
-    display: none;
+    opacity: 0;
+    height: 0;
+    width: 0;
   }
 }
 
@@ -35,10 +38,9 @@
   }
 }
 
-.RadioButton:active .RadioButton {
+.RadioButton:focus-within .RadioButton {
   &__wrapper-label {
-    // background-color: $color-primary-050;
-    border: $pixels-1 solid $color-primary;
+  box-shadow: 0 0 $pixels-3 $pixels-1 $color-primary;
   }
 }
 
