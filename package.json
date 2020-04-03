@@ -1,6 +1,6 @@
 {
   "name": "danielpickett-react-design-system",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "module": "dist/index.js",
   "private": false,
   "license": "MIT",
@@ -16,10 +16,12 @@
     "@types/react-dom": "^16.9.0",
     "classnames": "^2.2.6",
     "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -58,6 +60,8 @@
     "@storybook/addon-links": "^5.3.14",
     "@storybook/addons": "^5.3.14",
     "@storybook/preset-create-react-app": "^1.5.2",
-    "@storybook/react": "^5.3.14"
+    "@storybook/react": "^5.3.14",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   }
 }
