@@ -1,0 +1,7 @@
+@import 'src/_vars.scss';
+
+.HorizontalRule {
+  background-color: $color-primary;
+  height: $pixels-2;
+  margin: 1rem 0;
+}
