@@ -1,5 +1,5 @@
 import React from 'react'
-import './LabeledValue.css'
+import './LabeledValue.scss'
 
 export const LabeledValue: React.FunctionComponent<{
   label: string

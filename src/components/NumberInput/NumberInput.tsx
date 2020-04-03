@@ -1,5 +1,5 @@
 import React, { FormEvent, useState } from 'react'
-import './NumberInput.css'
+import './NumberInput.scss'
 
 export const NumberInput: React.FunctionComponent<{
   onChange: (arg: number) => void

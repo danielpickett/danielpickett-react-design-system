@@ -1,5 +1,5 @@
 import React from 'react'
-import './_NewComponentTemplate.css'
+import './_NewComponentTemplate.scss'
 
 export const _NewComponentTemplate: React.FunctionComponent<{}> = ({ children }) => {
   return (

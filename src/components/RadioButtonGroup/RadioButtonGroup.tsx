@@ -1,6 +1,6 @@
 import React, { ReactElement, ChangeEvent } from 'react'
 import './RadioButtonGroup.scss'
-import { RadioButton } from 'components'
+import { RadioButton } from '../../components'
 import classNames from 'classnames'
 
 export const RadioButtonGroup = ({

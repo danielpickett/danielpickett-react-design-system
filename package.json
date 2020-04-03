@@ -24,8 +24,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build:types": "tsc --declaration true --noEmit false --emitDeclarationOnly true",
-    "build:react": "babel src -d dist --extensions \".ts,.tsx\" --ignore \"src/**/*.stories.js\" --copy-files  --no-copy-ignored",
-    "build": "rm -rf dist && yarn build:types && yarn build:react && ./build-cleanup.sh",
+    "build:react": "babel src -d dist --extensions \".ts,.tsx\" --copy-files",
+    "build:sass": "yarn node-sass src -o dist",
+    "build": "rm -rf dist && yarn build:types && yarn build:react && yarn build:sass && ./build-cleanup.sh",
     "build:react-app": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
