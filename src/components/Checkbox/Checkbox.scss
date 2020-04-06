@@ -15,7 +15,10 @@
     padding-left: 0.5rem;
     padding-right: 1rem;
     border-radius: $border-radius-300;
-    // background-color: $color-neutral-200;
+    
+    &:hover {
+      background-color: $color-primary-050;
+    }
   }
 
   &__input-wrapper {
@@ -44,11 +47,11 @@
   }
 }
 
-.Checkbox:hover .Checkbox {
-  &__wrapper-label {
-    background-color: $color-primary-050;
-  }
-}
+// .Checkbox:hover .Checkbox {
+//   &__wrapper-label:hover {
+//     background-color: $color-primary-050;
+//   }
+// }
 
 .Checkbox--checked .Checkbox {
   &__input-wrapper {

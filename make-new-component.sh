@@ -5,7 +5,7 @@ mkdir "$dirname"
 search="_NewComponentTemplate"
 cp -r ./src/components/_NewComponentTemplate/. "$dirname"
 
-mv "$dirname/_NewComponentTemplate.css" "$dirname/$name.scss"
+mv "$dirname/_NewComponentTemplate.scss" "$dirname/$name.scss"
 mv "$dirname/_NewComponentTemplate.tsx" "$dirname/$name.tsx"
 
 sed -i '' "s/${search}/${name}/g" "${dirname}/$name.scss"

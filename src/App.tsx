@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import {
   RadioButton,
   RadioButtonGroup,
@@ -10,12 +10,8 @@ import {
 export const App = () => {
   const [color, setColor] = useState<string | null>(null)
   const [number, setNumber] = useState<number>(0)
-  const [isEnchanted, setIsEnchanted] = useState(false)
+  const [isEnchanted, setIsEnchanted] = useState(true)
   const [isCursed, setIsCursed] = useState(false)
-
-  useEffect(() => {
-    console.log(isEnchanted)
-  })
 
   return (
     <div className="App">
@@ -43,7 +39,10 @@ export const App = () => {
       Cursed: {isCursed ? 'true' : 'false'}
       <Checkbox
         checked={isEnchanted}
-        onChange={checked => setIsEnchanted(checked)}
+        onChange={checked => {
+          console.log('App', checked)
+          setIsEnchanted(checked)
+        }}
         label="Make enchanted"
       />
       <Checkbox

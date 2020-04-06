@@ -14,6 +14,7 @@ export const Checkbox: React.FunctionComponent<{
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
+      console.log('checkbox', event.currentTarget.checked)
       onChange(event.currentTarget.checked, event)
     }
   }
@@ -26,8 +27,8 @@ export const Checkbox: React.FunctionComponent<{
             className={`Checkbox__input`}
             type="checkbox"
             onChange={handleChange}
-            {...id}
-            {...checked}
+            id={id}
+            checked={checked}
           />
           <div className="Checkbox__checkmark"></div>
         </div>
