@@ -1,47 +1,49 @@
+@import 'src/vars';
+
 .NumberInput {
   display: inline-block;
-  background-color: var(--color-neutral-300);
-  padding: var(--pixels-2);
+  background-color: $color-primary;
+  padding: $pixels-2;
   width: 6rem;
-  border-radius: var(--border-radius)
+  border-radius: $border-radius;
 }
 
 .NumberInput:hover {
-  box-shadow: var(--box-shadow-200);
+  box-shadow: $box-shadow-200;
 }
 
 .NumberInput:focus-within {
-  box-shadow: var(--box-shadow-300-focus);
+  box-shadow: $box-shadow-300-focus;
 }
 
 .NumberInput__container {
   display: flex;
-  border-radius: calc(var(--border-radius) - var(--pixels-2));
+  border-radius: calc(#{$border-radius} - #{$pixels-2});
   overflow: hidden;
 }
 
 .NumberInput__input {
-  font-size: var(--font-size-150);
-  padding: var(--spacing-200);
+  font-size: $font-size-150;
+  padding: $spacing-200;
   width: 1rem;
   flex-grow: 1;
   outline: none;
   border: none;
-  background-color: var(--color-white);
+  background-color: $color-white;
   font-family: 'Roboto Mono', monospace;
 }
 
 .NumberInput__arrows {
   display: flex;
   flex-direction: column;
-  padding-left: var(--pixels-2);
+  padding-left: $pixels-2;
 }
 
 .NumberInput__up-arrow,
 .NumberInput__down-arrow {
   all: unset;
   flex: 1 1;
-  padding: 0 var(--spacing-300);
+  padding: 0 $spacing-300;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +51,7 @@
 }
 .NumberInput__up-arrow:hover,
 .NumberInput__down-arrow:hover {
-  background-color: var(--color-primary);
+  background-color: $color-primary-300;
 }
 
 .NumberInput__up-arrow::before,
@@ -63,9 +65,9 @@
 }
 
 .NumberInput__up-arrow::before {
-  border-bottom: 5px solid var(--color-white);
+  border-bottom: 5px solid $color-white;
 }
 
 .NumberInput__down-arrow::before {
-  border-top: 5px solid var(--color-white);
+  border-top: 5px solid $color-white;
 }

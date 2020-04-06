@@ -1,7 +1,7 @@
 import React from 'react'
 import './_NewComponentTemplate.scss'
 
-export const _NewComponentTemplate: React.FunctionComponent<{}> = ({ children }) => {
+export const _NewComponentTemplate = () => {
   return (
     <div className="_NewComponentTemplate" >
       _NewComponentTemplate

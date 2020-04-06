@@ -5,6 +5,7 @@ import {
   Checkbox,
   Button,
   NumberInput,
+  TitleText,
 } from 'components'
 
 export const App = () => {
@@ -54,6 +55,10 @@ export const App = () => {
       <br />
       <br />
       <NumberInput value={number} onChange={v => setNumber(v)} />
+      <br />
+      <br />
+      <br />
+      <TitleText>This is a title</TitleText>
     </div>
   )
 }

@@ -14,7 +14,6 @@ export const Checkbox: React.FunctionComponent<{
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
-      console.log('checkbox', event.currentTarget.checked)
       onChange(event.currentTarget.checked, event)
     }
   }

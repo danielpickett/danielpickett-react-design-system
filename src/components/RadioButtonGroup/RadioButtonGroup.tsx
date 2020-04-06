@@ -13,7 +13,7 @@ export const RadioButtonGroup = ({
 }: {
   children: ReactElement[]
   name: string
-  defaultSelected: string | number
+  defaultSelected?: string | number
   valueSelected: string | number | null
   onChange: (
     newSelection: string | number,
