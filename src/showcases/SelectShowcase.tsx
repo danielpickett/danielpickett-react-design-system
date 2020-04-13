@@ -8,7 +8,7 @@ type MyOptionType = {
 
 export const SelectShowcase = () => {
   const options = [
-    { value: 'james', label: 'James', other: 'foo' },
+    { value: 'james', label: 'James'},
     { value: 'mary', label: 'Mary' },
     { value: 'michael', label: 'Michael' },
     { value: 'linda', label: 'Linda' },

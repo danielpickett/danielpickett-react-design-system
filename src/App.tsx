@@ -10,9 +10,7 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
 } from './showcases'
-import { ReactSelectExample } from 'showcases/ReactSelectExample'
-
-// import Select, { ValueType } from 'react-select'
+// import { ReactSelectExample } from 'showcases/ReactSelectExample'
 
 export const App = () => {
   return (
