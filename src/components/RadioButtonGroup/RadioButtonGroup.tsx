@@ -9,7 +9,7 @@ export const RadioButtonGroup = ({
   onChange,
   defaultSelected,
   valueSelected,
-  layout = 'vertical'
+  layout = 'vertical',
 }: {
   children: ReactElement[]
   name: string
@@ -22,9 +22,8 @@ export const RadioButtonGroup = ({
   ) => void
   layout?: 'horizontal' | 'vertical'
 }) => {
-  const prefix = 'RadioButtonGroup'
-  const wrapperClasses = classNames(prefix, {
-    [`${prefix}--horizontal`]: layout !== 'vertical',
+  const wrapperClasses = classNames(' ', {
+    'RadioButtonGroup--horizontal': layout !== 'vertical',
   })
 
   const selected = valueSelected || defaultSelected
@@ -40,7 +39,7 @@ export const RadioButtonGroup = ({
   }
 
   const getRadioButtons = () => {
-    const radioButtons = React.Children.map(children, radioButton => {
+    const radioButtons = React.Children.map(children, (radioButton) => {
       const { value, label } = radioButton?.props
 
       if (radioButton.props.hasOwnProperty('checked')) {
@@ -65,5 +64,9 @@ export const RadioButtonGroup = ({
     return radioButtons
   }
 
-  return <div className={wrapperClasses}>{getRadioButtons()}</div>
+  return (
+    <div className={'RadioButtonGroup' + wrapperClasses}>
+      {getRadioButtons()}
+    </div>
+  )
 }

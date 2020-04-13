@@ -1,0 +1,26 @@
+@import 'src/vars';
+
+.BodyText {
+  display: block;
+  color: $color-neutral-700;
+}
+
+.BodyText--large {
+  font-size: 1.1rem;
+}
+
+.BodyText--medium {
+  font-size: 1rem;
+}
+
+.BodyText--small {
+  font-size: .9rem;
+}
+
+.BodyText--extra-small {
+  font-size: .8rem;
+}
+
+.BodyText--fine {
+  font-size: .7rem;
+}

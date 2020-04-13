@@ -1,0 +1,26 @@
+@import './sass/_tokens.scss';
+@import './sass/utility-classes.scss';
+@import './fonts/font-faces.css';
+@import './_vars.scss';
+
+
+:root {
+  font-family: Inter, sans-serif;
+  color: $color-neutral-700;
+}
+
+::selection {
+  background: $color-primary-100; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: $color-primary-100; /* Gecko Browsers */
+}
+
+::placeholder {
+  color: currentColor;
+  opacity: .3;
+}
+
+* {
+  box-sizing: border-box;
+}
