@@ -1,4 +1,4 @@
-import React, { ReactNode, MouseEvent } from 'react'
+import React, { ReactNode } from 'react'
 import './Button.scss'
 
 export const Button = ({
@@ -6,7 +6,7 @@ export const Button = ({
   onClick,
 }: {
   children?: ReactNode
-  onClick?: (event: MouseEvent) => void
+  onClick?: () => void
 }) => {
   return (
     <button className="Button" onClick={onClick}>
