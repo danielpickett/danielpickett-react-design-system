@@ -20,7 +20,7 @@ export const SelectShowcase = () => {
     ValueType<MyOptionType>
   >()
   const handleChange = (value: ValueType<MyOptionType>) => {
-    console.log('value',value)
+    console.log('You selected: ',value)
     setSelectedOption(value as ValueType<MyOptionType>)
   }
   
