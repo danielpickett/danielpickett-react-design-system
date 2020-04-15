@@ -11,7 +11,7 @@ export const FlexContainer = ({
   children,
 }: {
   align?: 'baseline' | 'center' | 'end' | 'start' | 'stretch'
-  justify?: 'around' | 'between' | 'evenly' | 'center' | 'end' | 'start'
+  justify?: 'space-around' | 'space-between' | 'space-evenly' | 'center' | 'end' | 'start'
   padding?: string
   margin?: string
   style?: CSS.Properties
@@ -26,7 +26,7 @@ export const FlexContainer = ({
   return (
     <div
       className="FlexContainer"
-      style={{ ...styles, padding: padding, margin: margin }}
+      style={{ padding: padding, margin: margin, ...styles }}
     >
       {children}
     </div>

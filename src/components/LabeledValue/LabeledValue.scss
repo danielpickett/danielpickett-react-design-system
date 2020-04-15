@@ -1,15 +1,21 @@
+@import 'src/vars';
+
 .LabeledValue {
   display: block;
 }
 
 .LabeledValue__label {
-  font-size: var(--font-size-50);
-  color: var(--color-neutral-400);
+  font-size: $font-size-50;
+  color: $color-neutral-400;
 }
 
 .LabeledValue__value {
-  font-size: var(--font-size-300);
-  color: var(--color-neutral-700);
+  font-size: $font-size-300;
+  color: $color-neutral-700;
+}
+
+.LabeledValue__value--clickable {
+  cursor: pointer;
 }
 
 .LabeledValue__prefix {

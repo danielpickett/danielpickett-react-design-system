@@ -10,6 +10,7 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
 } from './showcases'
+import { LabeledValueShowcase } from 'showcases/LabeledValueShowcase'
 // import { ReactSelectExample } from 'showcases/ReactSelectExample'
 
 export const App = () => {
@@ -25,6 +26,9 @@ export const App = () => {
       <HorizontalRule />
 
       <NumberInputShowcase />
+      <HorizontalRule />
+
+      <LabeledValueShowcase />
       <HorizontalRule />
 
       <TitleTextShowcase />
