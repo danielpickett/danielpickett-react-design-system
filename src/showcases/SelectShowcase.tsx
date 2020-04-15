@@ -8,7 +8,7 @@ type MyOptionType = {
 
 export const SelectShowcase = () => {
   const options = [
-    { value: 'james', label: 'James'},
+    { value: 'james', label: 'James' },
     { value: 'mary', label: 'Mary' },
     { value: 'michael', label: 'Michael' },
     { value: 'linda', label: 'Linda' },
@@ -20,10 +20,10 @@ export const SelectShowcase = () => {
     ValueType<MyOptionType>
   >()
   const handleChange = (value: ValueType<MyOptionType>) => {
-    console.log('You selected: ',value)
+    console.log('You selected: ', value)
     setSelectedOption(value as ValueType<MyOptionType>)
   }
-  
+
   const getCurrrentLabel = () => {
     if ((selectedOption as MyOptionType)?.label) {
       return (selectedOption as MyOptionType).label
@@ -33,10 +33,10 @@ export const SelectShowcase = () => {
     }
     return null
   }
-  
+
   return (
     <div className="SelectShowcase" style={{ maxWidth: '20rem' }}>
-      <p>My name is {getCurrrentLabel() || '...'}</p>
+      <span>My name is {getCurrrentLabel() || '...'}</span>
       <Select
         value={selectedOption}
         onChange={(value) => handleChange(value)}

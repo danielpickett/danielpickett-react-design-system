@@ -34,11 +34,21 @@ export const Select = ({
     }
   }
 
+  const customStyles = {
+    control: (base: any, state: any) => ({
+      ...base,
+      borderWidth: 'var(--border-width-default)',
+      borderColor:'var(--color-primary)'
+      // You can also use state.isFocused to conditionally style based on the focus state
+    }),
+  }
+
   return (
     <ReactSelect
       className="Select"
       classNamePrefix="Select"
       theme={updateTheme}
+      styles={customStyles}
       {...rest}
     />
   )

@@ -23,7 +23,7 @@ export const ReactSelectExample = () => {
     setSelectedOption(value as ValueType<MyOptionType>)
   }
 
-  const getCurrrentLabel = () => {
+  const getCurrentLabel = () => {
     if ((selectedOption as MyOptionType)?.label) {
       return (selectedOption as MyOptionType).label
     }
@@ -64,7 +64,7 @@ export const ReactSelectExample = () => {
 
   return (
     <div style={{ maxWidth: '30rem', margin: '5rem auto' }}>
-      <p>My favorite is {getCurrrentLabel() || '...'}</p>
+      <p>My favorite is {getCurrentLabel() || '...'}</p>
       <Select
         className="Select"
         value={selectedOption}
