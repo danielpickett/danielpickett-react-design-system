@@ -13,7 +13,7 @@ sed -i '' "s/${search}/${name}/g" "${dirname}/$name.tsx"
 
 sed -i '' "s/${search}/${name}/g" "${dirname}/index.ts"
 
-printf "\n//export * from './${name}'" >> "src/components/index.ts"
+printf "\n//export * from './${name}/${name}'" >> "src/components/index.ts"
 
 code "$dirname/$name.tsx"
 code "src/components/index.ts"

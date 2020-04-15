@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './Button.scss'
 
-export const Button: React.FunctionComponent<{onClick: () => void}> = ({ children, onClick }) => {
+export const Button = ({
+  children,
+  onClick,
+}: {
+  children?: ReactNode
+  onClick?: () => void
+}) => {
   return (
     <button className="Button" onClick={onClick}>
-      { children }
+      {children}
     </button>
   )
 }

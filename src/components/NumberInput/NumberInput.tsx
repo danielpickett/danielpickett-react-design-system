@@ -29,7 +29,7 @@ export const NumberInput: React.FunctionComponent<{
   }
 
   return (
-    <div className="NumberInput">
+    <div className="NumberInput" >
       <div className="NumberInput__container">
         <input
           type="text"
@@ -39,15 +39,19 @@ export const NumberInput: React.FunctionComponent<{
           placeholder={isEmpty ? value.toString() : ''}
           onBlur={() => setIsEmpty(false)}
         />
-        <div className="NumberInput__arrows">
+        <div className="NumberInput__buttons">
           <button
-            className="NumberInput__up-arrow"
+            className="NumberInput__up-button"
             onClick={() => handleIncrement(step)}
-          ></button>
+          >
+            <div className="NumberInput__up-arrow"></div>
+          </button>
           <button
-            className="NumberInput__down-arrow"
+            className="NumberInput__down-button"
             onClick={() => handleIncrement(-step)}
-          ></button>
+          >
+            <div className="NumberInput__down-arrow"></div>
+          </button>
         </div>
       </div>
     </div>
