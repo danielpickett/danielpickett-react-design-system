@@ -5,7 +5,11 @@ export const LabeledValueShowcase = () => {
   return (
     <FlexContainer>
       <LabeledValue label="label" value="value" />
-      <LabeledValue label="label" value="value" onClick={() => console.log('clicked')} />
+      <LabeledValue
+        label="label"
+        value="value"
+        onClick={(e) => console.log('clicked', e)}
+      />
     </FlexContainer>
   )
 }
