@@ -1,8 +1,8 @@
 @import 'src/vars';
 
 .Button {
-  padding: $spacing-300 $spacing-600;
-  border-radius: $spacing-300;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
   transition: $transition-100;
   color: white;
   background-color: $color-primary;

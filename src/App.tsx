@@ -1,5 +1,5 @@
 import React from 'react'
-import { HorizontalRule } from 'components'
+import { HorizontalRule, GridContainer } from 'components'
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
@@ -31,8 +31,10 @@ export const App = () => {
       <LabeledValueShowcase />
       <HorizontalRule />
 
-      <TitleTextShowcase />
-      <BodyTextShowcase />
+      <GridContainer columns={2} gap="2rem">
+        <TitleTextShowcase />
+        <BodyTextShowcase />
+      </GridContainer>
       <HorizontalRule />
 
       <LayoutComponentShowcase />

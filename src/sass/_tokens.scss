@@ -79,7 +79,6 @@
   --color-error-900: #610316;
   --color-error: var(--color-error-500);
 
-  --spacing-100: 0.125rem;
   --spacing-200: 0.25rem;
   --spacing-300: 0.5rem;
   --spacing-400: 0.75rem;
@@ -91,21 +90,13 @@
 
   --border-width-default: 0.125rem;
 
-  --border-radius-100: var(--spacing-100);
-  --border-radius-200: var(--spacing-200);
-  --border-radius-300: var(--spacing-300);
-  --border-radius-400: var(--spacing-400);
-  --border-radius-500: var(--spacing-500);
+  --border-radius-100: 0.125rem;
+  --border-radius-200: 0.25rem;
+  --border-radius-300: 0.5rem;
+  --border-radius-400: 0.75rem;
+  --border-radius-500: 1rem;
   --border-radius: var(--border-radius-300);
   --border-radius-round: 100rem;
-
-  --layout-100:	1rem;
-  --layout-200:	1.5rem;
-  --layout-300:	2rem;
-  --layout-400:	3rem;
-  --layout-500:	4rem;
-  --layout-600:	6rem;
-  --layout-700:	10rem;
 
   --font-size-50:  0.75rem;
   --font-size-100: 0.875rem;
