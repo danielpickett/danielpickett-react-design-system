@@ -6,11 +6,11 @@ import * as CSS from 'csstype'
 export const TitleText = ({
   children,
   size = 'medium',
-  lightness = 'medium',
+  lightness = 'dark',
   className,
   style,
   maxWidth,
-  margin,
+  margin
 }: {
   children: string
   size?:
