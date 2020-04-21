@@ -1,0 +1,20 @@
+@import 'src/vars';
+
+.Modal {
+  background-color: rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .content-Modal:not(.noBackground) {
+    background-color: white;
+    border-radius: $border-radius-300;
+    box-shadow: $box-shadow-300-dark;
+    color: currentColor;
+  }
+}
