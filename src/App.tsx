@@ -9,6 +9,7 @@ import {
   BodyTextShowcase,
   LayoutComponentShowcase,
   SelectShowcase,
+  TextShowcase,
 } from './showcases'
 import { LabeledValueShowcase } from 'showcases/LabeledValueShowcase'
 // import { ReactSelectExample } from 'showcases/ReactSelectExample'
@@ -37,11 +38,19 @@ export const App = () => {
       </GridContainer>
       <HorizontalRule />
 
+      <TextShowcase />
+      <HorizontalRule />
+
       <LayoutComponentShowcase />
       <HorizontalRule />
 
       <SelectShowcase />
       <HorizontalRule />
+
+      <GridContainer columns={2} columnGap="2rem" rowGap="3rem">
+        <div>1</div>
+        <div>2</div>
+      </GridContainer>
 
       {/* <ReactSelectExample /> */}
     </div>

@@ -1,0 +1,74 @@
+@import 'src/vars';
+
+.Text {
+  display: block;
+  color: $color-neutral-900;
+}
+
+.Text--on-dark {
+  color: $color-white;
+}
+
+// size
+.Text--extra-large-size {
+  font-size: 1.25rem;
+}
+.Text--large-size {
+  font-size: 1.1rem;
+}
+
+.Text--medium-size {
+  font-size: 1rem;
+}
+
+.Text--small-size {
+  font-size: 0.9rem;
+}
+
+.Text--extra-small-size {
+  font-size: 0.8rem;
+}
+
+.Text--fine-print-size {
+  font-size: 0.7rem;
+}
+
+// lightness
+.Text--extra-light-lightness {
+  opacity: 0.5;
+}
+
+.Text--light-lightness {
+  opacity: 0.7;
+}
+
+.Text--medium-lightness {
+  opacity: 0.8;
+}
+
+.Text--dark-lightness {
+  opacity: 1;
+}
+
+// weight
+.Text--thin-weight {
+  font-weight: 200;
+}
+
+.Text--light-weight {
+  font-weight: 400;
+}
+
+.Text--regular-weight {
+  font-weight: 500;
+}
+
+.Text--bold-weight {
+  font-weight: 700;
+}
+
+.Text--no-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

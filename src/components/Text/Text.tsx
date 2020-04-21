@@ -1,35 +1,50 @@
 import React from 'react'
-import './BodyText.scss'
+import './Text.scss'
 import classNames from 'classnames'
 import * as CSS from 'csstype'
 
-export const BodyText = ({
+export const Text = ({
   children,
   size = 'medium',
   lightness = 'medium',
+  weight = 'regular',
   span = false,
   className,
+  overDarkBackground = false,
   style,
   maxWidth,
   margin,
+  noWrap,
 }: {
-  children: string
-  size?: 'fine-print' | 'extra-small' | 'small' | 'medium' | 'large'
+  children: string | string[]
+  size?:
+    | 'fine-print'
+    | 'extra-small'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'extra-large'
   lightness?: 'extra-light' | 'light' | 'medium' | 'dark'
+  weight?: 'thin' | 'light' | 'regular' | 'bold'
   span?: boolean
   className?: string
+  overDarkBackground?: boolean
   style?: CSS.Properties
   maxWidth?: string
   margin?: string
+  noWrap?: boolean
 }) => {
-  const sizeClass = ` BodyText--${size}-size`
-  const lightnessClass = `BodyText--${lightness}-lightness`
+  const sizeClass = ` Text--${size}-size`
+  const lightnessClass = `Text--${lightness}-lightness`
+  const weightClass = `Text--${weight}-weight`
 
   const wrapperClasses = classNames(
-    'BodyText',
+    'Text',
     sizeClass,
     lightnessClass,
+    weightClass,
     className,
+    { 'Text--no-wrap': noWrap, 'Text--on-dark': overDarkBackground },
   )
 
   const styles = {

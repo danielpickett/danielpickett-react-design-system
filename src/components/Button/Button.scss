@@ -2,14 +2,19 @@
 
 .Button {
   padding: 0.5rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: $border-radius;
+  border: $border-width-default solid $color-neutral-700;
   transition: $transition-100;
-  color: white;
-  background-color: $color-primary;
+  color: $color-neutral-700;
+  font-family: inherit;
+  font-size: .9rem;
+  font-weight: 500;
+  background-color: $color-white;
   cursor: pointer;
 }
 
 .Button:hover {
   background-color: $color-primary-400;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.2);
+  // color: 
+  box-shadow: $box-shadow-200;
 }
