@@ -1,6 +1,6 @@
 import React from 'react'
 import './Button.scss'
-import { Text} from 'components'
+import { Text } from '../../components'
 import classNames from 'classnames'
 
 export const Button = ({

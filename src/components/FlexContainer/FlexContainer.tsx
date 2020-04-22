@@ -4,6 +4,7 @@ import * as CSS from 'csstype'
 import classNames from 'classnames'
 
 export const FlexContainer = ({
+  column = false,
   centered,
   align,
   justify,
@@ -14,6 +15,7 @@ export const FlexContainer = ({
   children,
   className,
 }: {
+  column?: boolean
   centered?: boolean
   align?: 'baseline' | 'center' | 'end' | 'start' | 'stretch'
   justify?:
@@ -32,15 +34,19 @@ export const FlexContainer = ({
 }) => {
   const styles: CSS.Properties = {
     ...style,
+    flexDirection: column ? 'column' : 'row',
     alignItems: align,
     justifyContent: justify,
     flexWrap: wrap ? 'wrap' : 'nowrap',
+    
   }
 
   if (centered) {
     styles.alignItems = 'center'
     styles.justifyContent = 'center'
   }
+
+  console.log('styles',styles)
 
   const wrapperClasses = classNames('FlexContainer', className)
 

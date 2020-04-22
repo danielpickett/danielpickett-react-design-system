@@ -1,5 +1,5 @@
 import React from 'react'
-import { HorizontalRule, GridContainer } from 'components'
+import { HorizontalRule, GridContainer, FlexContainer } from 'components'
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
@@ -51,6 +51,11 @@ export const App = () => {
         <div>1</div>
         <div>2</div>
       </GridContainer>
+
+      <FlexContainer column centered>
+        <div>hello</div>
+        <div>world</div>
+      </FlexContainer>
 
       {/* <ReactSelectExample /> */}
     </div>
