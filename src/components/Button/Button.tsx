@@ -38,7 +38,7 @@ export const Button = ({
       onClick={handleClick}
       disabled={disabled}
     >
-      <Text span>{children}</Text>
+      <Text overDarkBackground span>{children}</Text>
     </button>
   )
 }

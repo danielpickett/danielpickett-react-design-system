@@ -3,13 +3,16 @@
 .Button {
   padding: 0.5rem 1.5rem;
   border-radius: $border-radius;
-  border: $border-width-default solid $color-neutral-700;
+  // border: $border-width-default solid $color-neutral-700;
+  border: $border-width-default solid $color-primary;
   transition: $transition-100;
-  color: $color-neutral-700;
+  // color: $color-neutral-700;
+  color: $color-white;
   font-family: inherit;
   font-size: .9rem;
   font-weight: 500;
-  background-color: $color-white;
+  // background-color: $color-white;
+  background-color: $color-primary;
   cursor: pointer;
 }
 
