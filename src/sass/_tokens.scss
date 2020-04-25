@@ -32,16 +32,40 @@
   --color-secondary-900: #014D40;
   --color-secondary: var(--color-secondary-500);
 
-  --color-neutral-050: #F0F4F8;
-  --color-neutral-100: #D9E2EC;
-  --color-neutral-200: #BCCCDC;
-  --color-neutral-300: #9FB3C8;
-  --color-neutral-400: #829AB1;
-  --color-neutral-500: #627D98;
-  --color-neutral-600: #486581;
-  --color-neutral-700: #334E68;
-  --color-neutral-800: #243B53;
-  --color-neutral-900: #102A43;
+  // --color-neutral-050: #F0F4F8;
+  // --color-neutral-100: #D9E2EC;
+  // --color-neutral-200: #BCCCDC;
+  // --color-neutral-300: #9FB3C8;
+  // --color-neutral-400: #829AB1;
+  // --color-neutral-500: #627D98;
+  // --color-neutral-600: #486581;
+  // --color-neutral-700: #334E68;
+  // --color-neutral-800: #243B53;
+  // --color-neutral-900: #102A43;
+
+
+  --color-neutral-050: #f0f3f6;
+  --color-neutral-100: #d9e0e7;
+  --color-neutral-200: #b8c3cf;
+  --color-neutral-300: #9eacbb;
+  --color-neutral-400: #7d90a4;
+  --color-neutral-500: #5c748d;
+  --color-neutral-600: #3f5975;
+  --color-neutral-700: #2d455d;
+  --color-neutral-800: #22354a;
+  --color-neutral-900: #11253b;
+
+  --color-neutral-alpha-050: rgb(0, 46, 94, 0.06);
+  --color-neutral-alpha-100: rgb(0, 47, 97, 0.15);
+  --color-neutral-alpha-200: rgb(0, 41, 84, 0.28);
+  --color-neutral-alpha-300: rgb(0, 37, 76, 0.38);
+  --color-neutral-alpha-400: rgb(0, 37, 76, 0.51);
+  --color-neutral-alpha-500: rgb(0, 37, 76, 0.64);
+  --color-neutral-alpha-600: rgb(3, 37, 74, 0.76);
+  --color-neutral-alpha-700: rgb(11, 38, 66, 0.86);
+  --color-neutral-alpha-800: rgb(15, 36, 59, 0.92);
+  --color-neutral-alpha-900: rgb(17, 37, 59, 0.1);
+
   
   --color-success-050: #E3F9E5;
   --color-success-100: #C1F2C7;
