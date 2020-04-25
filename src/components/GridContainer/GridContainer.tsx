@@ -25,8 +25,6 @@ export const GridContainer = ({
   const _columns =
     typeof columns === 'number' ? `repeat(${columns}, 1fr)` : columns
 
-  console.log('columns', _columns)
-
   if ((gap && columnGap) || (gap && rowGap)) {
     throw new Error(
       `Do not use 'columnGap' and/or 'rowGap' alongside 'gap' because they will overwrite each other. For column or row gaps of different sizes, use 'columnGap' and 'rowGap' without 'gap' or use 'gap' with two units such as 'gap="1rem 2rem"'`,

@@ -10,6 +10,7 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
+  ColorShowcase,
 } from './showcases'
 import { LabeledValueShowcase } from 'showcases/LabeledValueShowcase'
 // import { ReactSelectExample } from 'showcases/ReactSelectExample'
@@ -17,6 +18,9 @@ import { LabeledValueShowcase } from 'showcases/LabeledValueShowcase'
 export const App = () => {
   return (
     <div className="App">
+      <ColorShowcase />
+      <HorizontalRule />
+      
       <ButtonsShowcase />
       <HorizontalRule />
 

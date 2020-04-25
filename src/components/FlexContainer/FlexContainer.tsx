@@ -45,9 +45,7 @@ export const FlexContainer = ({
     styles.alignItems = 'center'
     styles.justifyContent = 'center'
   }
-
-  console.log('styles',styles)
-
+  
   const wrapperClasses = classNames('FlexContainer', className)
 
   return (
