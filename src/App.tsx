@@ -1,12 +1,10 @@
 import React from 'react'
-import { HorizontalRule, GridContainer, FlexContainer } from 'components'
+import { HorizontalRule, GridContainer, FlexContainer, Text } from 'components'
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
   CheckboxShowcase,
   NumberInputShowcase,
-  TitleTextShowcase,
-  BodyTextShowcase,
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
@@ -36,14 +34,11 @@ export const App = () => {
       <LabeledValueShowcase />
       <HorizontalRule />
 
-      <GridContainer columns={2} gap="2rem">
-        <TitleTextShowcase />
-        <BodyTextShowcase />
-      </GridContainer>
+
+      <Text size="large" style={{marginBottom: '2rem'}}>Text showcase:</Text>
+      <TextShowcase />    
       <HorizontalRule />
 
-      <TextShowcase />
-      <HorizontalRule />
 
       <LayoutComponentShowcase />
       <HorizontalRule />
@@ -51,7 +46,7 @@ export const App = () => {
       <SelectShowcase />
       <HorizontalRule />
 
-      <GridContainer columns={2} columnGap="2rem" rowGap="3rem">
+      <GridContainer columns={2} gap="1rem">
         <div>1</div>
         <div>2</div>
       </GridContainer>
@@ -61,7 +56,6 @@ export const App = () => {
         <div>world</div>
       </FlexContainer>
 
-      {/* <ReactSelectExample /> */}
     </div>
   )
 }

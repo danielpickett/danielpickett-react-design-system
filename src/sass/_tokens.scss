@@ -32,27 +32,27 @@
   --color-secondary-900: #014d40;
   --color-secondary: var(--color-secondary-500);
 
-  --color-neutral-050: hsl(210, 18%, 96%);
-  --color-neutral-100: hsl(212, 22%, 88%);
-  --color-neutral-200: hsl(210, 17%, 77%);
-  --color-neutral-300: hsl(209, 17%, 68%);
-  --color-neutral-400: hsl(208, 16%, 56%);
-  --color-neutral-500: hsl(211, 18%, 46%);
-  --color-neutral-600: hsl(211, 26%, 35%);
-  --color-neutral-700: hsl(212, 30%, 28%);
-  --color-neutral-800: hsl(210, 37%, 21%);
-  --color-neutral-900: hsl(209, 57%, 15%);
+  --color-grey-050: hsl(210, 18%, 96%);
+  --color-grey-100: hsl(212, 22%, 88%);
+  --color-grey-200: hsl(210, 17%, 77%);
+  --color-grey-300: hsl(209, 17%, 68%);
+  --color-grey-400: hsl(208, 16%, 56%);
+  --color-grey-500: hsl(211, 18%, 46%);
+  --color-grey-600: hsl(211, 26%, 35%);
+  --color-grey-700: hsl(212, 30%, 28%);
+  --color-grey-800: hsl(210, 37%, 21%);
+  --color-grey-900: hsl(209, 57%, 15%);
 
-  --color-neutral-alpha-050: hsla(210, 100%, 18%, 0.06);
-  --color-neutral-alpha-100: hsla(210, 100%, 19%, 0.16);
-  --color-neutral-alpha-200: hsla(210, 100%, 16%, 0.3);
-  --color-neutral-alpha-300: hsla(210, 100%, 15%, 0.41);
-  --color-neutral-alpha-400: hsla(210, 100%, 15%, 0.55);
-  --color-neutral-alpha-500: hsla(210, 95%, 15%, 0.68);
-  --color-neutral-alpha-600: hsla(210, 86%, 15%, 0.8);
-  --color-neutral-alpha-700: hsla(210, 73%, 15%, 0.88);
-  --color-neutral-alpha-800: hsla(210, 60%, 15%, 0.94);
-  --color-neutral-alpha-900: hsla(210, 55%, 15%, 1);
+  --color-grey-alpha-050: hsla(210, 100%, 18%, 0.06);
+  --color-grey-alpha-100: hsla(210, 100%, 19%, 0.16);
+  --color-grey-alpha-200: hsla(210, 100%, 16%, 0.3);
+  --color-grey-alpha-300: hsla(210, 100%, 15%, 0.41);
+  --color-grey-alpha-400: hsla(210, 100%, 15%, 0.55);
+  --color-grey-alpha-500: hsla(210, 95%, 15%, 0.68);
+  --color-grey-alpha-600: hsla(210, 86%, 15%, 0.8);
+  --color-grey-alpha-700: hsla(210, 73%, 15%, 0.88);
+  --color-grey-alpha-800: hsla(210, 60%, 15%, 0.94);
+  --color-grey-alpha-900: hsla(210, 55%, 15%, 1);
 
   --color-success-050: #e3f9e5;
   --color-success-100: #c1f2c7;
@@ -78,17 +78,17 @@
   --color-warning-900: #8d2b0b;
   --color-warning: var(--color-warning-500);
 
-  --color-error-050: #ffe3e3;
-  --color-error-100: #ffbdbd;
-  --color-error-200: #ff9b9b;
-  --color-error-300: #f86a6a;
-  --color-error-400: #ef4e4e;
-  --color-error-500: #e12d39;
-  --color-error-600: #cf1124;
-  --color-error-700: #ab091e;
-  --color-error-800: #8a041a;
-  --color-error-900: #610316;
-  --color-error: var(--color-error-500);
+  --color-danger-050: #ffe3e3;
+  --color-danger-100: #ffbdbd;
+  --color-danger-200: #ff9b9b;
+  --color-danger-300: #f86a6a;
+  --color-danger-400: #ef4e4e;
+  --color-danger-500: #e12d39;
+  --color-danger-600: #cf1124;
+  --color-danger-700: #ab091e;
+  --color-danger-800: #8a041a;
+  --color-danger-900: #610316;
+  --color-danger: var(--color-danger-500);
 
   --border-width-default: 0.125rem;
 

@@ -11,8 +11,8 @@ export const Select = ({
     primary50: 'var(--color-primary-100)',
     primary25: 'var(--color-primary-050)',
 
-    danger: 'var(--color-error-500)',
-    dangerLight: 'var(--color-error-100)',
+    danger: 'var(--color-danger-500)',
+    dangerLight: 'var(--color-danger-100)',
 
     neutral0: 'white',
     neutral5: 'var(--color-primary-050)',

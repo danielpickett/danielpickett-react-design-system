@@ -13,11 +13,11 @@ export const ColorShowcase = () => {
     'label',
     'primary',
     'secondary',
-    'neutral',
-    'neutral-alpha',
+    'grey',
+    'grey-alpha',
     'success',
     'warning',
-    'error',
+    'danger',
   ]
   
   const scale = [

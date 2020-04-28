@@ -24,7 +24,7 @@ export const SelectShowcase = () => {
     setSelectedOption(value as ValueType<MyOptionType>)
   }
 
-  const getCurrrentLabel = () => {
+  const getCurrentLabel = () => {
     if ((selectedOption as MyOptionType)?.label) {
       return (selectedOption as MyOptionType).label
     }
@@ -36,7 +36,7 @@ export const SelectShowcase = () => {
 
   return (
     <div className="SelectShowcase" style={{ maxWidth: '20rem' }}>
-      <span>My name is {getCurrrentLabel() || '...'}</span>
+      <span>My name is {getCurrentLabel() || '...'}</span>
       <Select
         value={selectedOption}
         onChange={(value) => handleChange(value)}

@@ -3,3 +3,7 @@
 .Select {
   display: block;
 }
+
+.Select__control {
+  border-radius: $color-primary-300;
+}

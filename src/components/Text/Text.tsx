@@ -8,11 +8,13 @@ export const Text = ({
   size = 'medium',
   lightness = 'medium',
   weight = 'regular',
+  color = 'grey',
   span = false,
   className,
   overDarkBackground = false,
   style,
   maxWidth,
+
   margin,
   noWrap,
 }: {
@@ -24,8 +26,9 @@ export const Text = ({
     | 'medium'
     | 'large'
     | 'extra-large'
-  lightness?: 'extra-light' | 'light' | 'medium' | 'dark'
+  lightness?: 'light' | 'medium' | 'dark'
   weight?: 'thin' | 'light' | 'regular' | 'bold'
+  color?: 'grey' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'white'
   span?: boolean
   className?: string
   overDarkBackground?: boolean
@@ -35,22 +38,48 @@ export const Text = ({
   noWrap?: boolean
 }) => {
   const sizeClass = ` Text--${size}-size`
-  const lightnessClass = `Text--${lightness}-lightness`
+  // const lightnessClass = `Text--${lightness}-lightness`
   const weightClass = `Text--${weight}-weight`
 
   const wrapperClasses = classNames(
     'Text',
     sizeClass,
-    lightnessClass,
+    // lightnessClass,
     weightClass,
     className,
-    { 'Text--no-wrap': noWrap, 'Text--on-dark': overDarkBackground },
+    {
+      'Text--no-wrap': noWrap,
+      'Text--on-dark': overDarkBackground,
+    },
   )
 
+
+  var calcPaletteColor = (
+    lightness:'light' | 'medium' | 'dark',
+  ) => {
+    return {
+      light: `var(--color-${color}-400)`,
+      medium: `var(--color-${color}-600)`,
+      dark: `var(--color-${color}-900)`,
+    }[lightness]
+  }
+
+  var calcOpacity = (
+    lightness: 'light' | 'medium' | 'dark',
+  ) => {
+    return {
+      light: `0.6`,
+      medium: `1`,
+      dark: `1`,
+    }[lightness]
+  }
+
   const styles = {
-    ...style,
+    color: overDarkBackground ? 'var(--color-white)' : calcPaletteColor(lightness),
+    opacity: overDarkBackground ? calcOpacity(lightness) : 1,
     maxWidth: maxWidth,
     margin: margin,
+    ...style,
   }
 
   if (span) {
