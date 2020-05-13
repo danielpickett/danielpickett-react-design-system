@@ -1,43 +1,124 @@
 @import 'src/vars';
 
 .Button {
-  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
   border-radius: $border-radius;
-  border: $border-width-default solid $color-grey-600;
-  transition: $transition-100;
-  // color: $color-grey-700;
-  font-family: inherit;
-  font-size: .9rem;
-  font-weight: 500;
-  background-color: $color-white;
-  cursor: pointer;
-}
-
-.Button--hover {
-  // background-color: $color-primary-050;
-  // color: $color-primary;
   border: $border-width-default solid $color-primary;
-  box-shadow: $box-shadow-200;
+  transition: $transition-100;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 0;
+  height: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: $color-white;
+  color: $color-primary;
+  cursor: pointer;
+  &__text {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  &:hover {
+    border-color: $color-primary-600;
+    color: $color-primary;
+    box-shadow: $box-shadow-200;
+    background-color: $color-primary-050;
+  }
+  &:active {
+    outline: none;
+    box-shadow: $box-shadow-400-focus;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: $box-shadow-300-focus;
+    &:active {
+      box-shadow: $box-shadow-400-focus;
+    }
+  }
 }
 
 .Button--primary {
   background-color: $color-primary-500;
-  border: $border-width-default solid $color-primary-500;
+  border-color: $color-primary-500;
+  color: $color-white;
+  &:hover {
+    background-color: $color-primary-600;
+    border-color: $color-primary-600;
+    color: $color-white;
+  }
 }
 
-.Button--primary.Button--hover {
-  background-color: $color-primary-600;
-  border: $border-width-default solid $color-primary-600;
+.Button--rounded {
+  border-radius: 1000rem;
 }
 
 .Button--danger {
   background-color: $color-danger-500;
-  border: $border-width-default solid $color-danger-500;
+  border-color: $color-danger-500;
+  color: $color-white;
+  &:hover {
+    background-color: $color-danger-600;
+    border-color: $color-danger-600;
+    color: $color-white;
+  }
 }
-.Button--danger.Button--hover {
-  background-color: $color-danger-600;
-  border: $border-width-default solid $color-danger-600;
+
+.Button--text {
+  border-color: transparent;
+  &:hover {
+    background-color: inherit;
+  }
 }
-.Button--danger:active {
-  box-shadow: $box-shadow-200;
+
+.Button--small-size {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.015rem;
+  height: 1.5rem;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  &__text {
+    margin-right: 0.35rem;
+    margin-left: 0.35rem;
+  }
+}
+.Button--medium-size {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1;
+  height: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  &__text {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+}
+.Button--large-size {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  height: 2.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  &__text {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+  }
+}
+.Button--extra-large-size {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1;
+  height: 3.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &__text {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
 }
