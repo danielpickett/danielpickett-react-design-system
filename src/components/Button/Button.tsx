@@ -49,7 +49,7 @@ export const Button = ({
   )
 
   const handleClick = (event: React.MouseEvent) => {
-    if (onClick) {
+    if (onClick && !disabled) {
       onClick(event)
     }
   }
