@@ -52,10 +52,6 @@
   }
 }
 
-.Button--rounded {
-  border-radius: 1000rem;
-}
-
 .Button--danger {
   background-color: $color-danger-500;
   border-color: $color-danger-500;
@@ -65,6 +61,15 @@
     border-color: $color-danger-600;
     color: $color-white;
   }
+}
+
+.Button--disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+.Button--rounded {
+  border-radius: 1000rem;
 }
 
 .Button--text {
