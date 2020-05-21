@@ -1,0 +1,22 @@
+@import 'src/vars';
+
+.Tooltip {
+  position: fixed;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
+
+  &__content {
+    background-color: $color-white;
+    padding: 1rem;
+    border-radius: $border-radius;
+  }
+  &__arrow {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-left: .75rem solid transparent;
+    border-right: .75rem solid transparent;
+
+    border-top: .75rem solid $color-white;
+    
+  }
+}
