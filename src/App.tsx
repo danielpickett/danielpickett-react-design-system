@@ -13,8 +13,6 @@ import {
   ColorShowcase,
 } from './showcases'
 
-
-
 export const App = () => {
   return (
     <div className="App">

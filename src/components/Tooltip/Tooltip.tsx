@@ -3,13 +3,12 @@ import React, {
   cloneElement,
   useEffect,
   ReactNode,
-  useRef,
   useCallback,
-  // useState,
-  // useCallback,
+  useState,
 } from 'react'
 import './Tooltip.scss'
 import { createPortal } from 'react-dom'
+import classNames from 'classnames'
 
 export const Tooltip = ({
   trigger,
@@ -17,29 +16,46 @@ export const Tooltip = ({
   isActive,
   deactivate,
   width,
+  className,
 }: {
   trigger: ReactElement
   content: ReactNode
   isActive: boolean
   deactivate: () => void
   width?: string
+  className?: string
 }) => {
-  const triggerRef = useRef(null)
-  const tooltipRef = useRef(null)
+  const [tooltipElement, setTooltipElement] = useState<Element>()
+  const tooltipRef = useCallback((node) => {
+    if (node !== null) {
+      setTooltipElement(node)
+    }
+  }, [])
 
-  // const measuredTooltipRef = useCallback()
+  const [triggerElement, setTriggerElement] = useState<Element>()
+  const triggerRef = useCallback((node) => {
+    if (node !== null) {
+      setTriggerElement(node)
+    }
+  }, [])
 
   useEffect(() => {
-    if (triggerRef != null) {
-      console.dir(triggerRef.current)
-      console.dir(tooltipRef.current)
+    if (isActive) {
+      window.addEventListener('wheel', deactivate)
+      window.addEventListener('touchmove', deactivate)
+    } else {
+      window.removeEventListener('wheel', deactivate)
+      window.removeEventListener('touchmove', deactivate)
+    }
+
+    return () => {
+      window.removeEventListener('wheel', deactivate)
+      window.removeEventListener('touchmove', deactivate)
     }
   })
 
   // useEffect for attaching scroll listeners to all parents
   useEffect(() => {
-    const triggerNode = triggerRef.current
-
     const getScrollParent = (
       node: (Node & ParentNode) | null | undefined,
       callback: (node: Node) => void,
@@ -52,33 +68,95 @@ export const Tooltip = ({
     }
 
     if (isActive) {
-      getScrollParent(triggerNode, (node: Node) => {
+      getScrollParent(triggerElement, (node: Node) => {
         node.addEventListener('scroll', deactivate)
       })
     } else {
-      getScrollParent(triggerNode, (node: Node) => {
+      getScrollParent(triggerElement, (node: Node) => {
         node.removeEventListener('scroll', deactivate)
       })
     }
 
     return () => {
-      getScrollParent(triggerNode, (node: Node) => {
+      getScrollParent(triggerElement, (node: Node) => {
         node.removeEventListener('scroll', deactivate)
       })
     }
   })
+
+  const getTooltipPos = (() => {
+    const triggerRect = triggerElement?.getBoundingClientRect()
+    const tooltipRect = tooltipElement?.getBoundingClientRect()
+    const docRect = document.documentElement.getBoundingClientRect()
+    const padding = 25
+
+    if (tooltipRect === undefined || triggerRect === undefined) {
+      return undefined
+    }
+
+    let left = Math.round(
+      triggerRect.x + triggerRect.width / 2 - tooltipRect.width / 2,
+    )
+
+    let top =
+      triggerRect.y - tooltipRect.height < padding
+        ? Math.round(triggerRect.y + triggerRect.height)
+        : Math.round(triggerRect.y - tooltipRect.height)
+
+    let openBelow = triggerRect.y - tooltipRect.height < padding
+
+    let offset = (() => {
+      if (left < docRect.left) return Math.abs(left) + docRect.left + padding
+      if (left < docRect.left + padding) return docRect.left + padding - left
+      if (left + tooltipRect.width > docRect.width) {
+        return (left + tooltipRect.width - docRect.width + padding) * -1
+      }
+      return undefined
+    })()
+
+    return {
+      left: left,
+      top: top,
+      offset: offset,
+      openBelow: openBelow,
+    }
+  })()
+
+  const wrapperClasses = classNames('Tooltip', className)
 
   return (
     <>
       {cloneElement(trigger, { ref: triggerRef })}
       {isActive &&
         createPortal(
-          <div ref={tooltipRef} className="Tooltip">
-            <div className="Tooltip__content">
-              <p></p>
+          <div
+            ref={tooltipRef}
+            className={wrapperClasses}
+            style={{
+              left: getTooltipPos?.left,
+              top: getTooltipPos?.top,
+              width: width,
+              flexDirection: getTooltipPos?.openBelow
+                ? 'column-reverse'
+                : 'column',
+            }}
+            onWheel={deactivate}
+            onTouchMove={deactivate}
+          >
+            <div
+              className="Tooltip__content"
+              style={{
+                left: getTooltipPos?.offset,
+              }}
+            >
               <p>{content}</p>
             </div>
-            <div className="Tooltip__arrow" />
+            <div
+              className="Tooltip__arrow"
+              style={{
+                transform: getTooltipPos?.openBelow ? 'scaleY(-1)' : undefined,
+              }}
+            />
           </div>,
           document.body,
         )}
