@@ -29,12 +29,13 @@ export const TooltipShowcase = () => {
           isActive={tooltip1Active}
           deactivate={() => setTooltip1Active(false)}
           width="556px"
+          closeOnClickOutside
           trigger={
             <Button onClick={() => setTooltip1Active(!tooltip1Active)}>
               Clicky Clicky!
             </Button>
           }
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          tooltipContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           quis error cumque nihil corporis impedit distinctio deleniti, nesciunt
           ipsam iste quam pariatur veniam amet laborum temporibus alias"
         />
@@ -71,7 +72,7 @@ export const TooltipShowcase = () => {
               Clicky Clicky!
             </Button>
           }
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          tooltipContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           quis error cumque nihil corporis impedit distinctio deleniti, nesciunt
           ipsam iste quam pariatur veniam amet laborum temporibus alias"
         />

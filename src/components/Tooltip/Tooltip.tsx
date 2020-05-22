@@ -12,16 +12,18 @@ import classNames from 'classnames'
 
 export const Tooltip = ({
   trigger,
-  content,
+  tooltipContent,
   isActive,
   deactivate,
+  closeOnClickOutside,
   width,
   className,
 }: {
   trigger: ReactElement
-  content: ReactNode
+  tooltipContent: ReactNode
   isActive: boolean
   deactivate: () => void
+  closeOnClickOutside?: boolean
   width?: string
   className?: string
 }) => {
@@ -39,21 +41,6 @@ export const Tooltip = ({
     }
   }, [])
 
-  useEffect(() => {
-    if (isActive) {
-      window.addEventListener('wheel', deactivate)
-      window.addEventListener('touchmove', deactivate)
-    } else {
-      window.removeEventListener('wheel', deactivate)
-      window.removeEventListener('touchmove', deactivate)
-    }
-
-    return () => {
-      window.removeEventListener('wheel', deactivate)
-      window.removeEventListener('touchmove', deactivate)
-    }
-  })
-
   // useEffect for attaching scroll listeners to all parents
   useEffect(() => {
     const getScrollParent = (
@@ -67,20 +54,50 @@ export const Tooltip = ({
       return getScrollParent(node.parentNode, callback)
     }
 
+    const handleScroll = (e: Event) => {
+      e.stopPropagation()
+      deactivate()
+    }
+
     if (isActive) {
       getScrollParent(triggerElement, (node: Node) => {
-        node.addEventListener('scroll', deactivate)
+        node.addEventListener('scroll', handleScroll)
       })
     } else {
       getScrollParent(triggerElement, (node: Node) => {
-        node.removeEventListener('scroll', deactivate)
+        node.removeEventListener('scroll', handleScroll)
       })
     }
 
     return () => {
       getScrollParent(triggerElement, (node: Node) => {
-        node.removeEventListener('scroll', deactivate)
+        node.removeEventListener('scroll', handleScroll)
       })
+    }
+  })
+
+  // useEffect for click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        !tooltipElement ||
+        !triggerElement ||
+        tooltipElement.contains(event.target as Node) ||
+        triggerElement.contains(event.target as Node)
+      ) {
+        return
+      } else {
+        deactivate()
+      }
+    }
+    if (closeOnClickOutside) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      if (closeOnClickOutside) {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
     }
   })
 
@@ -149,7 +166,7 @@ export const Tooltip = ({
                 left: getTooltipPos?.offset,
               }}
             >
-              <p>{content}</p>
+              <p>{tooltipContent}</p>
             </div>
             <div
               className="Tooltip__arrow"
