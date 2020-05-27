@@ -9,6 +9,7 @@ import React, {
 import './Tooltip.scss'
 import { createPortal } from 'react-dom'
 import classNames from 'classnames'
+import * as CSS from 'csstype'
 
 export const Tooltip = ({
   trigger,
@@ -16,17 +17,25 @@ export const Tooltip = ({
   isActive,
   deactivate,
   closeOnClickOutside,
+  closeOnScroll = true,
   width,
   className,
+  style,
+  pointerEvents = 'auto',
 }: {
   trigger: ReactElement
   tooltipContent: ReactNode
   isActive: boolean
   deactivate: () => void
   closeOnClickOutside?: boolean
+  closeOnScroll?: boolean
   width?: string
   className?: string
+  style?: CSS.Properties
+  pointerEvents?: 'none' | 'auto'
 }) => {
+  const [isScrolling, setIsScrolling] = useState(false)
+
   const [tooltipElement, setTooltipElement] = useState<Element>()
   const tooltipRef = useCallback((node) => {
     if (node !== null) {
@@ -43,36 +52,47 @@ export const Tooltip = ({
 
   // useEffect for attaching scroll listeners to all parents
   useEffect(() => {
-    const getScrollParent = (
-      node: (Node & ParentNode) | null | undefined,
-      callback: (node: Node) => void,
-    ): (Node & ParentNode) | null => {
-      if (!node) {
-        return null
+    let scrollerTimeoutID: number
+
+    if (closeOnScroll) {
+      const getScrollParent = (
+        node: (Node & ParentNode) | null | undefined,
+        callback: (node: Node) => void,
+      ): (Node & ParentNode) | null => {
+        if (!node) {
+          return null
+        }
+        callback(node)
+        return getScrollParent(node.parentNode, callback)
       }
-      callback(node)
-      return getScrollParent(node.parentNode, callback)
-    }
 
-    const handleScroll = (e: Event) => {
-      e.stopPropagation()
-      deactivate()
-    }
+      const handleScroll = (e: Event) => {
+        e.stopPropagation()
+        deactivate()
 
-    if (isActive) {
-      getScrollParent(triggerElement, (node: Node) => {
-        node.addEventListener('scroll', handleScroll)
-      })
-    } else {
-      getScrollParent(triggerElement, (node: Node) => {
-        node.removeEventListener('scroll', handleScroll)
-      })
-    }
+        setIsScrolling(true)
+        scrollerTimeoutID = window.setTimeout(() => {
+          setIsScrolling(false)
+        }, 500)
+      }
 
-    return () => {
-      getScrollParent(triggerElement, (node: Node) => {
-        node.removeEventListener('scroll', handleScroll)
-      })
+      if (isActive) {
+        getScrollParent(triggerElement, (node: Node) => {
+          node.addEventListener('scroll', handleScroll)
+        })
+      } else {
+        getScrollParent(triggerElement, (node: Node) => {
+          window.clearTimeout(scrollerTimeoutID)
+          node.removeEventListener('scroll', handleScroll)
+        })
+      }
+
+      return () => {
+        getScrollParent(triggerElement, (node: Node) => {
+          window.clearTimeout(scrollerTimeoutID)
+          node.removeEventListener('scroll', handleScroll)
+        })
+      }
     }
   })
 
@@ -145,6 +165,7 @@ export const Tooltip = ({
     <>
       {cloneElement(trigger, { ref: triggerRef })}
       {isActive &&
+        !isScrolling &&
         createPortal(
           <div
             ref={tooltipRef}
@@ -156,17 +177,19 @@ export const Tooltip = ({
               flexDirection: getTooltipPos?.openBelow
                 ? 'column-reverse'
                 : 'column',
+              pointerEvents: pointerEvents,
             }}
-            onWheel={deactivate}
-            onTouchMove={deactivate}
+            onWheel={closeOnScroll ? deactivate : undefined}
+            onTouchMove={closeOnScroll ? deactivate : undefined}
           >
             <div
               className="Tooltip__content"
               style={{
+                ...style,
                 left: getTooltipPos?.offset,
               }}
             >
-              <p>{tooltipContent}</p>
+              {tooltipContent}
             </div>
             <div
               className="Tooltip__arrow"

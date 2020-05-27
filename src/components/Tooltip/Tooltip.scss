@@ -2,6 +2,7 @@
 
 .Tooltip {
   position: fixed;
+  z-index: 1;
   display: flex;
   filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.25));
 

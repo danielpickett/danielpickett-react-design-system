@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Text, Checkbox } from '../components'
+import { Button, Text, Checkbox, ButtonGroup } from '../components'
 import { Calendar, Camera, Edit } from 'react-feather'
 
 export const ButtonsShowcase = () => {
@@ -24,7 +24,9 @@ export const ButtonsShowcase = () => {
         }}
       >
         <Text>Small</Text>
-        <Button disabled={disabled} size="small">Default</Button>
+        <Button disabled={disabled} size="small">
+          Default
+        </Button>
         <Button disabled={disabled} size="small" kind="primary">
           Primary
         </Button>
@@ -43,26 +45,52 @@ export const ButtonsShowcase = () => {
         <Button disabled={disabled} size="small" kind="text">
           text
         </Button>
-        <Button disabled={disabled} size="small" kind="text" rounded IconLeft={Edit}>
+        <Button
+          disabled={disabled}
+          size="small"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        >
           text
         </Button>
-        <Button disabled={disabled} size="small" kind="text" rounded IconLeft={Edit} />
+        <Button
+          disabled={disabled}
+          size="small"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        />
 
         <Text>Medium</Text>
         <Button disabled={disabled}>Default</Button>
-        <Button disabled={disabled} kind="primary">Primary</Button>
-        <Button disabled={disabled} kind="danger">Danger</Button>
-        <Button disabled={disabled} IconLeft={Camera}>Icon Left</Button>
-        <Button disabled={disabled} IconRight={Calendar}>Icon Right</Button>
-        <Button disabled={disabled} rounded>Rounded</Button>
-        <Button disabled={disabled} kind="text">text</Button>
+        <Button disabled={disabled} kind="primary">
+          Primary
+        </Button>
+        <Button disabled={disabled} kind="danger">
+          Danger
+        </Button>
+        <Button disabled={disabled} IconLeft={Camera}>
+          Icon Left
+        </Button>
+        <Button disabled={disabled} IconRight={Calendar}>
+          Icon Right
+        </Button>
+        <Button disabled={disabled} rounded>
+          Rounded
+        </Button>
+        <Button disabled={disabled} kind="text">
+          text
+        </Button>
         <Button disabled={disabled} kind="text" rounded IconLeft={Edit}>
           text
         </Button>
         <Button disabled={disabled} kind="text" rounded IconLeft={Edit} />
 
         <Text>Large</Text>
-        <Button disabled={disabled} size="large">Default</Button>
+        <Button disabled={disabled} size="large">
+          Default
+        </Button>
         <Button disabled={disabled} size="large" kind="primary">
           Primary
         </Button>
@@ -81,13 +109,27 @@ export const ButtonsShowcase = () => {
         <Button disabled={disabled} size="large" kind="text">
           text
         </Button>
-        <Button disabled={disabled} size="large" kind="text" rounded IconLeft={Edit}>
+        <Button
+          disabled={disabled}
+          size="large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        >
           text
         </Button>
-        <Button disabled={disabled} size="large" kind="text" rounded IconLeft={Edit} />
+        <Button
+          disabled={disabled}
+          size="large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        />
 
         <Text>Extra Large</Text>
-        <Button disabled={disabled} size="extra-large">Default</Button>
+        <Button disabled={disabled} size="extra-large">
+          Default
+        </Button>
         <Button disabled={disabled} size="extra-large" kind="primary">
           Primary
         </Button>
@@ -106,13 +148,27 @@ export const ButtonsShowcase = () => {
         <Button disabled={disabled} size="extra-large" kind="text">
           text
         </Button>
-        <Button disabled={disabled} size="extra-large" kind="text" rounded IconLeft={Edit}>
+        <Button
+          disabled={disabled}
+          size="extra-large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        >
           text
         </Button>
-        <Button disabled={disabled} size="extra-large" kind="text" rounded IconLeft={Edit} />
+        <Button
+          disabled={disabled}
+          size="extra-large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        />
 
         <Text>Extra Large</Text>
-        <Button disabled={disabled} size="extra-large">Default</Button>
+        <Button disabled={disabled} size="extra-large">
+          Default
+        </Button>
         <Button disabled={disabled} size="extra-large" kind="primary">
           Primary
         </Button>
@@ -131,10 +187,39 @@ export const ButtonsShowcase = () => {
         <Button disabled={disabled} size="extra-large" kind="text">
           text
         </Button>
-        <Button disabled={disabled} size="extra-large" kind="text" rounded IconLeft={Edit}>
+        <Button
+          disabled={disabled}
+          size="extra-large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        >
           text
         </Button>
-        <Button disabled={disabled} size="extra-large" kind="text" rounded IconLeft={Edit} />
+        <Button
+          disabled={disabled}
+          size="extra-large"
+          kind="text"
+          rounded
+          IconLeft={Edit}
+        />
+      </div>
+      <div className="buttonGroupExamples">
+        <ButtonGroup size="small">
+          <Button>Click me!</Button>
+          <Button>No, click me!</Button>
+          <Button>Don't click me!</Button>
+        </ButtonGroup>
+        <ButtonGroup>
+          <Button>Click me!</Button>
+          <Button>No, click me!</Button>
+          <Button>Don't click me!</Button>
+        </ButtonGroup>
+        <ButtonGroup  size="large">
+          <Button>Click me!</Button>
+          <Button>No, click me!</Button>
+          <Button>Don't click me!</Button>
+        </ButtonGroup>
       </div>
     </div>
   )

@@ -1,5 +1,11 @@
-import React from 'react'
-import { HorizontalRule, GridContainer, FlexContainer, Text } from 'components'
+import React, { useState } from 'react'
+import {
+  HorizontalRule,
+  GridContainer,
+  FlexContainer,
+  Text,
+  TextArea,
+} from 'components'
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
@@ -14,8 +20,18 @@ import {
 } from './showcases'
 
 export const App = () => {
+  const [textAreaValue, setTextAreaValue] = useState<string | undefined>(
+    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, tempora! '.repeat(
+      10,
+    ),
+  )
+  const handleChange = (value: string) => {
+    console.log(value)
+    setTextAreaValue(value)
+  }
   return (
     <div className="App">
+      <TextArea value={textAreaValue} onChange={handleChange} />
       <TooltipShowcase />
 
       <ColorShowcase />

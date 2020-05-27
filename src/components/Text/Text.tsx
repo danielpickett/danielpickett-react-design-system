@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import './Text.scss'
 import classNames from 'classnames'
 import * as CSS from 'csstype'
@@ -18,7 +18,7 @@ export const Text = ({
   margin,
   noWrap,
 }: {
-  children: string | string[]
+  children: ReactNode
   size?:
     | 'fine-print'
     | 'extra-small'
@@ -81,6 +81,8 @@ export const Text = ({
     margin: margin,
     ...style,
   }
+
+  if (!children) return null
 
   if (span) {
     return (

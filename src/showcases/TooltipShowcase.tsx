@@ -6,7 +6,7 @@ export const TooltipShowcase = () => {
   const [tooltip2Active, setTooltip2Active] = useState(false)
   const scrollerStyles = {
     width: '20rem',
-    height: '20rem',
+    height: '50rem',
     overflow: 'auto',
     border: 'var(--border-width-default) solid var(--color-primary)',
     padding: '1rem',
@@ -31,9 +31,17 @@ export const TooltipShowcase = () => {
           width="556px"
           closeOnClickOutside
           trigger={
-            <Button onClick={() => setTooltip1Active(!tooltip1Active)}>
+            <button
+              onMouseMove={() => setTooltip1Active(true)}
+              style={{
+                display: 'block',
+                backgroundColor: 'blue',
+                color: 'white',
+                padding: '4rem 2rem',
+              }}
+            >
               Clicky Clicky!
-            </Button>
+            </button>
           }
           tooltipContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           quis error cumque nihil corporis impedit distinctio deleniti, nesciunt

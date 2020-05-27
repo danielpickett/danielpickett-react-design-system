@@ -1,0 +1,8 @@
+@import 'src/vars';
+
+.TextArea {
+  display: block;
+  border: $border-width-default solid $color-grey-200;
+  border-radius: $border-radius-300;
+  padding: .5rem;  
+}

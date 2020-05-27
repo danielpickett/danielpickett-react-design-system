@@ -21,6 +21,7 @@
   &__text {
     margin-right: 0.5rem;
     margin-left: 0.5rem;
+    white-space: nowrap;
   }
   &:hover {
     border-color: $color-primary-600;

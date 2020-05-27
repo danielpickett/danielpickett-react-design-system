@@ -23,8 +23,8 @@ export const FlexContainer = ({
     | 'space-between'
     | 'space-evenly'
     | 'center'
-    | 'end'
-    | 'start'
+    | 'flex-end'
+    | 'flex-start'
   wrap?: boolean
   padding?: string
   margin?: string
