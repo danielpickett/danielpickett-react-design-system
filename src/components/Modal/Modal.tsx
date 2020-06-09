@@ -1,4 +1,5 @@
 import React, { MouseEvent, useEffect, CSSProperties, FC } from 'react'
+import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 import './Modal.scss'
 
@@ -14,7 +15,7 @@ export const Modal: FC<ModalProps> = ({
   children,
   noBackground = false,
   className,
-  style = {}
+  style = {},
 }) => {
   const handleClick = (e: MouseEvent) => {
     e.stopPropagation()
@@ -27,17 +28,21 @@ export const Modal: FC<ModalProps> = ({
     }
   }, [])
 
-  return (
-    <div className="Modal" onClick={offClick}>
+  return createPortal(
+    <div
+      className={classNames('Modal', {
+        'Modal--has-no-background': noBackground,
+      })}
+      onClick={offClick}
+    >
       <div
-        className={classNames('content-Modal', className, {
-          noBackground: noBackground,
-        })}
+        className={classNames('Modal__content', className)}
         onClick={handleClick}
         style={style}
       >
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
