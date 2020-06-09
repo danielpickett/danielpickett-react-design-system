@@ -13,8 +13,10 @@ export const ModalShowcase = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              height: '10rem',
-              width: '10rem',
+              flexDirection: 'row',
+              flexWrap: 'wrap',
+              height: '30rem',
+              width: '50rem',
             }}
           >
             Hello from the modal!
