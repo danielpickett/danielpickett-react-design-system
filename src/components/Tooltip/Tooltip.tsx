@@ -21,6 +21,7 @@ export const Tooltip = ({
   width,
   className,
   style,
+  backgroundColor,
   pointerEvents = 'auto',
 }: {
   trigger: ReactElement
@@ -32,6 +33,7 @@ export const Tooltip = ({
   width?: string
   className?: string
   style?: CSS.Properties
+  backgroundColor?: CSS.BackgroundColorProperty
   pointerEvents?: 'none' | 'auto'
 }) => {
   const [isScrolling, setIsScrolling] = useState(false)
@@ -122,8 +124,8 @@ export const Tooltip = ({
   })
 
   const getTooltipPos = (() => {
-    const triggerRect = triggerElement?.getBoundingClientRect()
-    const tooltipRect = tooltipElement?.getBoundingClientRect()
+    const triggerRect = triggerElement && triggerElement.getBoundingClientRect()
+    const tooltipRect = tooltipElement && tooltipElement.getBoundingClientRect()
     const docRect = document.documentElement.getBoundingClientRect()
     const padding = 25
 
@@ -171,10 +173,10 @@ export const Tooltip = ({
             ref={tooltipRef}
             className={wrapperClasses}
             style={{
-              left: getTooltipPos?.left,
-              top: getTooltipPos?.top,
+              left: getTooltipPos && getTooltipPos.left,
+              top: getTooltipPos && getTooltipPos.top,
               width: width,
-              flexDirection: getTooltipPos?.openBelow
+              flexDirection: getTooltipPos && getTooltipPos.openBelow
                 ? 'column-reverse'
                 : 'column',
               pointerEvents: pointerEvents,
@@ -186,7 +188,8 @@ export const Tooltip = ({
               className="Tooltip__content"
               style={{
                 ...style,
-                left: getTooltipPos?.offset,
+                left: getTooltipPos && getTooltipPos.offset,
+                backgroundColor: backgroundColor ? backgroundColor : undefined
               }}
             >
               {tooltipContent}
@@ -194,7 +197,8 @@ export const Tooltip = ({
             <div
               className="Tooltip__arrow"
               style={{
-                transform: getTooltipPos?.openBelow ? 'scaleY(-1)' : undefined,
+                transform: getTooltipPos && getTooltipPos.openBelow ? 'scaleY(-1)' : undefined,
+                borderTopColor: backgroundColor ? backgroundColor : undefined
               }}
             />
           </div>,

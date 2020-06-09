@@ -18,7 +18,7 @@ export const Text = ({
   margin,
   noWrap,
 }: {
-  children: ReactNode
+  children?: ReactNode
   size?:
     | 'fine-print'
     | 'extra-small'
@@ -28,7 +28,14 @@ export const Text = ({
     | 'extra-large'
   lightness?: 'light' | 'medium' | 'dark'
   weight?: 'thin' | 'light' | 'regular' | 'bold'
-  color?: 'grey' | 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'white'
+  color?:
+    | 'grey'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning'
+    | 'danger'
+    | 'white'
   span?: boolean
   className?: string
   overDarkBackground?: boolean
@@ -53,10 +60,7 @@ export const Text = ({
     },
   )
 
-
-  var calcPaletteColor = (
-    lightness:'light' | 'medium' | 'dark',
-  ) => {
+  var calcPaletteColor = (lightness: 'light' | 'medium' | 'dark') => {
     return {
       light: `var(--color-${color}-400)`,
       medium: `var(--color-${color}-600)`,
@@ -64,9 +68,7 @@ export const Text = ({
     }[lightness]
   }
 
-  var calcOpacity = (
-    lightness: 'light' | 'medium' | 'dark',
-  ) => {
+  var calcOpacity = (lightness: 'light' | 'medium' | 'dark') => {
     return {
       light: `0.6`,
       medium: `1`,
@@ -75,14 +77,14 @@ export const Text = ({
   }
 
   const styles = {
-    color: overDarkBackground ? 'var(--color-white)' : calcPaletteColor(lightness),
+    color: overDarkBackground
+      ? 'var(--color-white)'
+      : calcPaletteColor(lightness),
     opacity: overDarkBackground ? calcOpacity(lightness) : 1,
     maxWidth: maxWidth,
     margin: margin,
     ...style,
   }
-
-  if (!children) return null
 
   if (span) {
     return (
@@ -90,11 +92,10 @@ export const Text = ({
         {children}
       </span>
     )
-  } else {
-    return (
-      <div style={styles} className={wrapperClasses}>
-        {children}
-      </div>
-    )
   }
+  return (
+    <div style={styles} className={wrapperClasses}>
+      {children}
+    </div>
+  )
 }

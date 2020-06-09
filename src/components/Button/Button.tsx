@@ -1,6 +1,7 @@
 import React, { FC, SVGAttributes } from 'react'
 import './Button.scss'
 import classNames from 'classnames'
+import * as CSS from 'csstype'
 
 interface Props extends SVGAttributes<SVGElement> {
   color?: string
@@ -19,6 +20,8 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset'
   kind?: 'default' | 'primary' | 'danger' | 'text'
   size?: 'small' | 'medium' | 'large' | 'extra-large'
+  width?: CSS.WidthProperty<0>
+  style?: CSS.Properties
   disabled?: boolean
 }
 
@@ -34,6 +37,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       kind = 'default',
       size = 'medium',
+      width,
+      style,
       disabled = false,
     }: ButtonProps,
     ref,
@@ -50,6 +55,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         'Button--text': kind === 'text',
         'Button--disabled': disabled,
         'Button--rounded': rounded,
+        'Button--has-right-icon': !!IconRight,
+        'Button--has-left-icon': !!IconLeft,
       },
       className,
     )
@@ -60,7 +67,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       }
     }
 
-    var getStrokeWidth = (
+    const getStrokeWidth = (
       size: 'small' | 'medium' | 'large' | 'extra-large',
     ) => {
       return {
@@ -71,6 +78,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       }[size]
     }
 
+    const customStyle: CSS.Properties = { width: width, ...style }
+
     return (
       <button
         ref={ref}
@@ -78,21 +87,26 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         type={type}
         onClick={handleClick}
         disabled={disabled}
+        style={customStyle}
       >
         {IconLeft ? (
-          <IconLeft
-            className="Button__icon"
-            size="1.25em"
-            strokeWidth={getStrokeWidth(size)}
-          />
+          <div className="Button__icon-wrapper">
+            <IconLeft
+              className="Button__icon"
+              size="1.25em"
+              strokeWidth={getStrokeWidth(size)}
+            />
+          </div>
         ) : null}
         {children ? <span className="Button__text">{children}</span> : null}
         {IconRight ? (
-          <IconRight
-            className="Button__icon"
-            size="1.25em"
-            strokeWidth={getStrokeWidth(size)}
-          />
+          <div className="Button__icon-wrapper">
+            <IconRight
+              className="Button__icon"
+              size="1.25em"
+              strokeWidth={getStrokeWidth(size)}
+            />
+          </div>
         ) : null}
       </button>
     )

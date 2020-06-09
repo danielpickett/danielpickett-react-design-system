@@ -1,225 +1,112 @@
-import React, { useState } from 'react'
-import { Button, Text, Checkbox, ButtonGroup } from '../components'
-import { Calendar, Camera, Edit } from 'react-feather'
+import React, { useState, SVGAttributes, FC, Fragment } from 'react'
+import { Button, Text, Checkbox, GridContainer } from '../components'
+import { Calendar, Camera, CheckCircle } from 'react-feather'
+
+type ButtonSizeType = 'small' | 'medium' | 'large' | 'extra-large'
+type ButtonPropsType = {
+  children?: string
+  kind?: 'default' | 'primary' | 'danger' | 'text'
+  rounded?: boolean
+  IconLeft?: Icon
+  IconRight?: Icon
+}[]
+
+interface Props extends SVGAttributes<SVGElement> {
+  color?: string
+  size?: string | number
+}
+
+type Icon = FC<Props>
 
 export const ButtonsShowcase = () => {
   const [disabled, setDisabled] = useState(false)
 
+  const buttonSizes: ButtonSizeType[] = [
+    'small',
+    'medium',
+    'large',
+    'extra-large',
+  ]
+
+  const buttonsProps: ButtonPropsType = [
+    {
+      children: 'Click me',
+    },
+    {
+      children: 'Click me',
+      kind: 'primary',
+    },
+    {
+      children: 'Click me',
+      kind: 'danger',
+    },
+    {
+      children: 'Click me',
+      kind: 'text',
+    },
+    {
+      children: 'Click me',
+      IconLeft: Camera,
+    },
+    {
+      children: 'Click me',
+      IconRight: Calendar,
+    },
+    {
+      children: 'Click me',
+      IconLeft: CheckCircle,
+      IconRight: CheckCircle,
+    },
+    {
+      children: undefined,
+      // kind: 'text',
+      IconRight: CheckCircle,
+    },
+    {
+      children: undefined,
+      kind: 'text',
+      IconRight: CheckCircle,
+    },
+  ]
+
   return (
-    <div>
-      <Checkbox
-        checked={disabled}
-        onChange={(checked) => {
-          setDisabled(checked)
-        }}
-        label="Disable all buttons"
-      />
-      <div
-        className="ButtonsShowcase"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(10, max-content)',
-          gap: '1rem',
-          justifyItems: 'start',
-        }}
-      >
-        <Text>Small</Text>
-        <Button disabled={disabled} size="small">
-          Default
-        </Button>
-        <Button disabled={disabled} size="small" kind="primary">
-          Primary
-        </Button>
-        <Button disabled={disabled} size="small" kind="danger">
-          Danger
-        </Button>
-        <Button disabled={disabled} size="small" IconLeft={Camera}>
-          Icon Left
-        </Button>
-        <Button disabled={disabled} size="small" IconRight={Calendar}>
-          Icon Right
-        </Button>
-        <Button disabled={disabled} size="small" rounded>
-          Rounded
-        </Button>
-        <Button disabled={disabled} size="small" kind="text">
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="small"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        >
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="small"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        />
-
-        <Text>Medium</Text>
-        <Button disabled={disabled}>Default</Button>
-        <Button disabled={disabled} kind="primary">
-          Primary
-        </Button>
-        <Button disabled={disabled} kind="danger">
-          Danger
-        </Button>
-        <Button disabled={disabled} IconLeft={Camera}>
-          Icon Left
-        </Button>
-        <Button disabled={disabled} IconRight={Calendar}>
-          Icon Right
-        </Button>
-        <Button disabled={disabled} rounded>
-          Rounded
-        </Button>
-        <Button disabled={disabled} kind="text">
-          text
-        </Button>
-        <Button disabled={disabled} kind="text" rounded IconLeft={Edit}>
-          text
-        </Button>
-        <Button disabled={disabled} kind="text" rounded IconLeft={Edit} />
-
-        <Text>Large</Text>
-        <Button disabled={disabled} size="large">
-          Default
-        </Button>
-        <Button disabled={disabled} size="large" kind="primary">
-          Primary
-        </Button>
-        <Button disabled={disabled} size="large" kind="danger">
-          Danger
-        </Button>
-        <Button disabled={disabled} size="large" IconLeft={Camera}>
-          Icon Left
-        </Button>
-        <Button disabled={disabled} size="large" IconRight={Calendar}>
-          Icon Right
-        </Button>
-        <Button disabled={disabled} size="large" rounded>
-          Rounded
-        </Button>
-        <Button disabled={disabled} size="large" kind="text">
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        >
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        />
-
-        <Text>Extra Large</Text>
-        <Button disabled={disabled} size="extra-large">
-          Default
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="primary">
-          Primary
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="danger">
-          Danger
-        </Button>
-        <Button disabled={disabled} size="extra-large" IconLeft={Camera}>
-          Icon Left
-        </Button>
-        <Button disabled={disabled} size="extra-large" IconRight={Calendar}>
-          Icon Right
-        </Button>
-        <Button disabled={disabled} size="extra-large" rounded>
-          Rounded
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="text">
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="extra-large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        >
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="extra-large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        />
-
-        <Text>Extra Large</Text>
-        <Button disabled={disabled} size="extra-large">
-          Default
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="primary">
-          Primary
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="danger">
-          Danger
-        </Button>
-        <Button disabled={disabled} size="extra-large" IconLeft={Camera}>
-          Icon Left
-        </Button>
-        <Button disabled={disabled} size="extra-large" IconRight={Calendar}>
-          Icon Right
-        </Button>
-        <Button disabled={disabled} size="extra-large" rounded>
-          Rounded
-        </Button>
-        <Button disabled={disabled} size="extra-large" kind="text">
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="extra-large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
-        >
-          text
-        </Button>
-        <Button
-          disabled={disabled}
-          size="extra-large"
-          kind="text"
-          rounded
-          IconLeft={Edit}
+    <div className="ButtonsShowcase">
+      <div style={{ marginBottom: '1rem' }}>
+        <Checkbox
+          checked={disabled}
+          onChange={(checked) => {
+            setDisabled(checked)
+          }}
+          label="Disable all buttons"
         />
       </div>
-      <div className="buttonGroupExamples">
-        <ButtonGroup size="small">
-          <Button>Click me!</Button>
-          <Button>No, click me!</Button>
-          <Button>Don't click me!</Button>
-        </ButtonGroup>
-        <ButtonGroup>
-          <Button>Click me!</Button>
-          <Button>No, click me!</Button>
-          <Button>Don't click me!</Button>
-        </ButtonGroup>
-        <ButtonGroup  size="large">
-          <Button>Click me!</Button>
-          <Button>No, click me!</Button>
-          <Button>Don't click me!</Button>
-        </ButtonGroup>
+      <div>
+        <GridContainer
+          columns={`repeat(${buttonsProps.length + 1}, max-content)`}
+          justify="start"
+          gap="1rem"
+        >
+          <div />
+          {buttonsProps.map((buttonProps, index) => (
+            <Text size="extra-small" key={index}>
+              kind: {buttonProps.kind || 'default'}
+            </Text>
+          ))}
+          {buttonSizes.map((buttonSize, index) => {
+            return (
+              <Fragment key={index}>
+                <Text size="extra-small">size: {buttonSize}</Text>
+                {buttonsProps.map((buttonProps, index) => {
+                  return (
+                    <Fragment key={index}>
+                      <Button {...buttonProps} size={buttonSize} />
+                    </Fragment>
+                  )
+                })}
+              </Fragment>
+            )
+          })}
+        </GridContainer>
       </div>
     </div>
   )

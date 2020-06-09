@@ -40,7 +40,7 @@ export const RadioButtonGroup = ({
 
   const getRadioButtons = () => {
     const radioButtons = React.Children.map(children, (radioButton) => {
-      const { value, label } = radioButton?.props
+      const { value, label } = radioButton.props
 
       if (radioButton.props.hasOwnProperty('checked')) {
         console.error(

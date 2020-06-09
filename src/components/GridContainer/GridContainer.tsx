@@ -8,12 +8,16 @@ export const GridContainer = ({
   columns,
   gap,
   className,
+  align,
+  justify,
   style,
 }: {
-  children: ReactNode
-  columns: number | string
-  gap?: string
+  children?: ReactNode
+  columns?: number | string
+  gap?: CSS.GapProperty<0>
   className?: string
+  align?: 'start' | 'center' | 'end'
+  justify?: 'start' | 'center' | 'end'
   style?: CSS.Properties
 }) => {
   const wrapperClasses = classNames('GridContainer', className)
@@ -21,12 +25,14 @@ export const GridContainer = ({
   const _columns =
     typeof columns === 'number' ? `repeat(${columns}, 1fr)` : columns
 
-
-  const styles = {
+  const styles: CSS.Properties = {
     ...style,
-    gap: gap,
     gridTemplateColumns: _columns,
   }
+  if (gap) styles.gap = gap
+  if (_columns) styles.gridTemplateColumns = _columns
+  if (align) styles.alignItems = align
+  if (justify) styles.justifyItems = justify
 
   return (
     <div className={wrapperClasses} style={styles}>

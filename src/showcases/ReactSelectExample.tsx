@@ -24,7 +24,7 @@ export const ReactSelectExample = () => {
   }
 
   const getCurrentLabel = () => {
-    if ((selectedOption as MyOptionType)?.label) {
+    if ((selectedOption as MyOptionType).label) {
       return (selectedOption as MyOptionType).label
     }
     if (Array.isArray(selectedOption)) {
