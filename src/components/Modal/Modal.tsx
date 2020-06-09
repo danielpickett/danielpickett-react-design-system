@@ -29,11 +29,14 @@ export const Modal: FC<ModalProps> = ({
   }, [])
 
   return createPortal(
-    <div className="Modal" onClick={offClick}>
+    <div
+      className={classNames('Modal', {
+        'Modal--has-no-background': noBackground,
+      })}
+      onClick={offClick}
+    >
       <div
-        className={classNames('content-Modal', className, {
-          noBackground: noBackground,
-        })}
+        className={classNames('Modal__content', className)}
         onClick={handleClick}
         style={style}
       >

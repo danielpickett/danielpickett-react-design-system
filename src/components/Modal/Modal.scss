@@ -11,10 +11,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  .content-Modal:not(.noBackground) {
+  &__content {
     background-color: white;
     border-radius: $border-radius-300;
     box-shadow: $box-shadow-300-dark;
-    color: currentColor;
   }
+}
+
+.Modal--has-no-background .Modal__content {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
 }
