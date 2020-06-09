@@ -1,10 +1,5 @@
-import React, {
-  MouseEvent,
-  useEffect,
-  CSSProperties,
-  FC,
-} from 'react'
-import {createPortal} from 'react-dom'
+import React, { MouseEvent, useEffect, CSSProperties, FC } from 'react'
+import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 import './Modal.scss'
 
@@ -33,7 +28,7 @@ export const Modal: FC<ModalProps> = ({
     }
   }, [])
 
-  return (
+  return createPortal(
     <div className="Modal" onClick={offClick}>
       <div
         className={classNames('content-Modal', className, {
@@ -44,6 +39,7 @@ export const Modal: FC<ModalProps> = ({
       >
         {children}
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

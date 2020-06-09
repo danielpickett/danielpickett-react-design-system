@@ -17,6 +17,7 @@ import {
   LabeledValueShowcase,
   TooltipShowcase,
   ColorShowcase,
+  ModalShowcase,
 } from './showcases'
 
 export const App = () => {
@@ -63,6 +64,9 @@ export const App = () => {
       <HorizontalRule />
 
       <SelectShowcase />
+      <HorizontalRule />
+
+      <ModalShowcase />
       <HorizontalRule />
 
       <GridContainer columns={2} gap="1rem">
