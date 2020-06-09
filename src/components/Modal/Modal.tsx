@@ -1,4 +1,10 @@
-import React, { MouseEvent, useEffect, CSSProperties, FC } from 'react'
+import React, {
+  MouseEvent,
+  useEffect,
+  CSSProperties,
+  FC,
+} from 'react'
+import {createPortal} from 'react-dom'
 import classNames from 'classnames'
 import './Modal.scss'
 
@@ -14,7 +20,7 @@ export const Modal: FC<ModalProps> = ({
   children,
   noBackground = false,
   className,
-  style = {}
+  style = {},
 }) => {
   const handleClick = (e: MouseEvent) => {
     e.stopPropagation()
