@@ -2,7 +2,7 @@
 
 .Tooltip {
   position: fixed;
-  z-index: 1;
+  z-index: 10000;
   display: flex;
   filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.25))
     drop-shadow(0 0px 1px rgba(0, 0, 0, 0.05));
@@ -10,15 +10,25 @@
   &__content {
     position: relative;
     background-color: $color-white;
-    padding: 1rem;
+    padding: .5rem;
     border-radius: $border-radius;
   }
   &__arrow {
     width: 0;
     height: 0;
     margin: 0 auto;
-    border-left: 0.75rem solid transparent;
-    border-right: 0.75rem solid transparent;
-    border-top: 0.75rem solid $color-white;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-top: 0.5rem solid $color-white;
+  }
+}
+
+.Tooltip--is-dark .Tooltip {
+  &__content {
+    background-color: $color-grey-900;
+    color: $color-white;
+  }
+  &__arrow {
+    border-top-color: $color-grey-900;
   }
 }
