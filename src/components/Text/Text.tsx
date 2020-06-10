@@ -14,6 +14,7 @@ export const Text = ({
   overDarkBackground = false,
   style,
   maxWidth,
+  textAlign,
 
   margin,
   noWrap,
@@ -41,6 +42,7 @@ export const Text = ({
   overDarkBackground?: boolean
   style?: CSS.Properties
   maxWidth?: string
+  textAlign?: CSS.TextAlignProperty
   margin?: string
   noWrap?: boolean
 }) => {
@@ -83,6 +85,7 @@ export const Text = ({
     opacity: overDarkBackground ? calcOpacity(lightness) : 1,
     maxWidth: maxWidth,
     margin: margin,
+    textAlign: textAlign,
     ...style,
   }
 

@@ -20,6 +20,7 @@ export const Tooltip = ({
   closeOnScroll = true,
   width,
   className,
+  dark = false,
   style,
   backgroundColor,
   pointerEvents = 'auto',
@@ -32,6 +33,7 @@ export const Tooltip = ({
   closeOnScroll?: boolean
   width?: string
   className?: string
+  dark?: boolean
   style?: CSS.Properties
   backgroundColor?: CSS.BackgroundColorProperty
   pointerEvents?: 'none' | 'auto'
@@ -161,7 +163,7 @@ export const Tooltip = ({
     }
   })()
 
-  const wrapperClasses = classNames('Tooltip', className)
+  const wrapperClasses = classNames('Tooltip', className, {'Tooltip--is-dark': dark})
 
   return (
     <>

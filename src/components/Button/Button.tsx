@@ -23,6 +23,8 @@ type ButtonProps = {
   width?: CSS.WidthProperty<0>
   style?: CSS.Properties
   disabled?: boolean
+  onMouseOver?: (event?: React.MouseEvent) => void
+  onMouseOut?: (event?: React.MouseEvent) => void
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -40,6 +42,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       width,
       style,
       disabled = false,
+      onMouseOver,
+      onMouseOut
     }: ButtonProps,
     ref,
   ) => {
@@ -60,6 +64,17 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       },
       className,
     )
+
+    const handleMouseOver = (event: React.MouseEvent) => {
+      if (onMouseOver) {
+        onMouseOver(event)
+      }
+    }
+    const handleMouseOut = (event: React.MouseEvent) => {
+      if (onMouseOut) {
+        onMouseOut(event)
+      }
+    }
 
     const handleClick = (event: React.MouseEvent) => {
       if (onClick && !disabled) {
@@ -86,6 +101,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         className={wrapperClasses}
         type={type}
         onClick={handleClick}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
         disabled={disabled}
         style={customStyle}
       >
