@@ -36,7 +36,6 @@ export const Text = ({
     | 'success'
     | 'warning'
     | 'danger'
-    | 'white'
   span?: boolean
   className?: string
   overDarkBackground?: boolean
@@ -46,7 +45,7 @@ export const Text = ({
   margin?: string
   noWrap?: boolean
 }) => {
-  const sizeClass = ` Text--${size}-size`
+  const sizeClass = `Text--${size}-size`
   // const lightnessClass = `Text--${lightness}-lightness`
   const weightClass = `Text--${weight}-weight`
 
