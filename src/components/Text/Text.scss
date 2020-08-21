@@ -1,57 +1,171 @@
 @import 'src/vars';
 
-.Text {
-  color: $color-grey-900;
-}
-
-
-.Text--on-dark {
-  color: $color-white;
-}
-
-// size
-.Text--extra-large-size {
-  font-size: 1.25rem;
-}
-.Text--large-size {
-  font-size: 1.1rem;
-}
-
-.Text--medium-size {
-  font-size: 1rem;
-}
-
-.Text--small-size {
-  font-size: 0.9rem;
-}
-
-.Text--extra-small-size {
-  font-size: 0.8rem;
-}
-
-.Text--fine-print-size {
-  font-size: 0.7rem;
-}
-
-// weight
-.Text--thin-weight {
-  font-weight: 200;
-}
-
-.Text--light-weight {
-  font-weight: 300;
-}
-
-.Text--regular-weight {
-  font-weight: 400;
-}
-
-.Text--bold-weight {
-  font-weight: 600;
-}
-
+// -------------------------------
+// wrap
+// -------------------------------
 .Text--no-wrap {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+// -------------------------------
+// size
+// -------------------------------
+.Text--size-extra-large {
+  font-size: 1.25rem;
+}
+.Text--size-large {
+  font-size: 1.1rem;
+}
+
+.Text--size-medium {
+  font-size: 1rem;
+}
+
+.Text--size-small {
+  font-size: 0.9rem;
+}
+
+.Text--size-extra-small {
+  font-size: 0.8rem;
+}
+
+.Text--size-fine-print {
+  font-size: 0.7rem;
+}
+
+  
+// -------------------------------
+// weight
+// -------------------------------
+.Text--weight-thin {
+  font-weight: 200;
+}
+
+.Text--weight-light {
+  font-weight: 300;
+}
+
+.Text--weight-regular {
+  font-weight: 400;
+}
+
+.Text--weight-bold {
+  font-weight: 600;
+}
+
+// -------------------------------
+// color
+// -------------------------------
+.Text--color-grey-heavy {
+  color: $text-color-grey-heavy;
+}
+
+.Text--color-grey {
+  color: $text-color-grey;
+}
+
+.Text--color-grey-light {
+  color: $text-color-grey-light;
+}
+
+.Text--color-grey-extra-light {
+  color: $text-color-grey-extra-light;
+}
+
+.Text--color-white-heavy {
+  color: $text-color-white-heavy;
+}
+
+.Text--color-white {
+  color: $text-color-white;
+}
+
+.Text--color-white-light {
+  color: $text-color-white-light;
+}
+
+.Text--color-white-extra-light {
+  color: $text-color-white-extra-light;
+}
+
+.Text--color-primary-heavy {
+  color: $text-color-primary-heavy;
+}
+
+.Text--color-primary {
+  color: $text-color-primary;
+}
+
+.Text--color-primary-light {
+  color: $text-color-primary-light;
+}
+
+.Text--color-primary-extra-light {
+  color: $text-color-primary-extra-light;
+}
+
+.Text--color-secondary-heavy {
+  color: $text-color-secondary-heavy;
+}
+
+.Text--color-secondary {
+  color: $text-color-secondary;
+}
+
+.Text--color-secondary-light {
+  color: $text-color-secondary-light;
+}
+
+.Text--color-secondary-extra-light {
+  color: $text-color-secondary-extra-light;
+}
+
+.Text--color-success-heavy {
+  color: $text-color-success-heavy;
+}
+
+.Text--color-success {
+  color: $text-color-success;
+}
+
+.Text--color-success-light {
+  color: $text-color-success-light;
+}
+
+.Text--color-success-extra-light {
+  color: $text-color-success-extra-light;
+}
+
+.Text--color-warning-heavy {
+  color: $text-color-warning-heavy;
+}
+
+.Text--color-warning {
+  color: $text-color-warning;
+}
+
+.Text--color-warning-light {
+  color: $text-color-warning-light;
+}
+
+.Text--color-warning-extra-light {
+  color: $text-color-warning-extra-light;
+}
+
+.Text--color-danger-heavy {
+  color: $text-color-danger-heavy;
+}
+
+.Text--color-danger {
+  color: $text-color-danger;
+}
+
+.Text--color-danger-light {
+  color: $text-color-danger-light;
+}
+
+.Text--color-danger-extra-light {
+  color: $text-color-danger-extra-light;
 }

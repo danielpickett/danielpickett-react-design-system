@@ -2,11 +2,11 @@
   --pixels-1: 0.0625rem;
   --pixels-2: 0.125rem;
   --pixels-3: 0.1875rem;
+  --pixels-4: 0.25rem;
   --pixels-5: 0.3125rem;
+  --pixels-6: 0.375rem;
+  --pixels-7: 0.4375rem;
   --pixels-8: 0.5rem;
-
-  --color-white: #ffffff;
-  --color-black: #000000;
 
   --color-primary-050: #e6e6ff;
   --color-primary-100: #c4c6ff;
@@ -32,7 +32,7 @@
   --color-secondary-900: #014d40;
   --color-secondary: var(--color-secondary-500);
 
-  --color-grey-050: hsl(210, 18%, 96%);
+  --color-grey-050: rgb(243, 245, 247);
   --color-grey-100: hsl(212, 22%, 88%);
   --color-grey-200: hsl(210, 17%, 77%);
   --color-grey-300: hsl(209, 17%, 68%);
@@ -42,6 +42,7 @@
   --color-grey-700: hsl(212, 30%, 28%);
   --color-grey-800: hsl(210, 37%, 21%);
   --color-grey-900: hsl(209, 57%, 15%);
+  --color-grey: var(--color-grey-900);
 
   --color-grey-alpha-050: hsla(210, 100%, 18%, 0.06);
   --color-grey-alpha-100: hsla(210, 100%, 19%, 0.16);
@@ -53,6 +54,31 @@
   --color-grey-alpha-700: hsla(210, 73%, 15%, 0.88);
   --color-grey-alpha-800: hsla(210, 60%, 15%, 0.94);
   --color-grey-alpha-900: hsla(210, 55%, 15%, 1);
+  --color-grey-alpha: var(--color-grey-alpha-900);
+
+  --color-white-opaque-050: #333333;
+  --color-white-opaque-100: #464646;
+  --color-white-opaque-200: #626262;
+  --color-white-opaque-300: #797979;
+  --color-white-opaque-400: #959595;
+  --color-white-opaque-500: #b1b1b1;
+  --color-white-opaque-600: #cbcbcb;
+  --color-white-opaque-700: #e0e0e0;
+  --color-white-opaque-800: #eeeeee;
+  --color-white-opaque-900: #ffffff;
+  --color-white-opaque: var(--color-white-opaque-900);
+
+  --color-white-050: rgba(255, 255, 255, 0.06);
+  --color-white-100: rgba(255, 255, 255, 0.16);
+  --color-white-200: rgba(255, 255, 255, 0.3);
+  --color-white-300: rgba(255, 255, 255, 0.41);
+  --color-white-400: rgba(255, 255, 255, 0.55);
+  --color-white-500: rgba(255, 255, 255, 0.68);
+  --color-white-600: rgba(255, 255, 255, 0.8);
+  --color-white-700: rgba(255, 255, 255, 0.88);
+  --color-white-800: rgba(255, 255, 255, 0.94);
+  --color-white-900: rgba(255, 255, 255, 1);
+  --color-white: var(--color-white-900);
 
   --color-success-050: #e3f9e5;
   --color-success-100: #c1f2c7;
@@ -99,25 +125,76 @@
   --border-radius-400: 0.75rem;
   --border-radius-500: 1rem;
   --border-radius: var(--border-radius-300);
-  --border-radius-round: 100rem;
 
-  --font-size-50: 0.75rem;
-  --font-size-100: 0.875rem;
-  --font-size-150: 1rem;
-  --font-size-200: 1.125rem;
-  --font-size-250: 1.25rem;
-  --font-size-300: 1.5rem;
-  --font-size-350: 1.75rem;
-  --font-size-400: 2rem;
-  --font-size-450: 2.25rem;
-  --font-size-500: 2.625rem;
-  --font-size-550: 3rem;
-  --font-size-600: 3.375rem;
-  --font-size-650: 3.75rem;
-  --font-size-700: 4.25rem;
-  --font-size-750: 4.75rem;
-  --font-size-800: 5.25rem;
-  --font-size-850: 5.75rem;
+  --text-size-fine-print: 0.7rem;
+  --text-size-extra-small: 0.8rem;
+  --text-size-small: 0.9rem;
+  --text-size-medium: 1rem;
+  --text-size-large: 1.1rem;
+  --text-size-extra-large: 1.25rem;
+
+  
+  
+
+
+
+
+
+ --text-color-grey-heavy: var(--color-grey-900);
+ --text-color-grey: var(--color-grey-700);
+ --text-color-grey-light: var(--color-grey-500);
+ --text-color-grey-extra-light: var(--color-grey-300);
+
+ --text-color-white-heavy: var(--color-white-900);
+ --text-color-white: var(--color-white-700);
+ --text-color-white-light: var(--color-white-500);
+ --text-color-white-extra-light: var(--color-white-300);
+
+ --text-color-primary-heavy: var(--color-primary-700);
+ --text-color-primary: var(--color-primary-600);
+ --text-color-primary-light: var(--color-primary-500);
+ --text-color-primary-extra-light: var(--color-primary-300);
+
+ --text-color-secondary-heavy: var(--color-secondary-700);
+ --text-color-secondary: var(--color-secondary-600);
+ --text-color-secondary-light: var(--color-secondary-500);
+ --text-color-secondary-extra-light: var(--color-secondary-300);
+
+ --text-color-success-heavy: var(--color-success-700);
+ --text-color-success: var(--color-success-600);
+ --text-color-success-light: var(--color-success-500);
+ --text-color-success-extra-light: var(--color-success-300);
+
+ --text-color-warning-heavy: var(--color-warning-800);
+ --text-color-warning: var(--color-warning-700);
+ --text-color-warning-light: var(--color-warning-600);
+ --text-color-warning-extra-light: var(--color-warning-500);
+
+ --text-color-danger-heavy: var(--color-danger-700);
+ --text-color-danger: var(--color-danger-600);
+ --text-color-danger-light: var(--color-danger-500);
+ --text-color-danger-extra-light: var(--color-danger-300);
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   --box-shadow-100-dark: 0 1px 3px rgba(0, 0, 0, 0.12),
     0 1px 2px rgba(0, 0, 0, 0.24);

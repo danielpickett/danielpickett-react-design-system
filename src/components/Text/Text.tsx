@@ -3,15 +3,45 @@ import './Text.scss'
 import classNames from 'classnames'
 import * as CSS from 'csstype'
 
+export type TextColorType =
+  | 'grey-heavy'
+  | 'grey'
+  | 'grey-light'
+  | 'grey-extra-light'
+  | 'white-heavy'
+  | 'white'
+  | 'white-light'
+  | 'white-extra-light'
+  | 'primary-heavy'
+  | 'primary'
+  | 'primary-light'
+  | 'primary-extra-light'
+  | 'secondary-heavy'
+  | 'secondary'
+  | 'secondary-light'
+  | 'secondary-extra-light'
+  | 'success-heavy'
+  | 'success'
+  | 'success-light'
+  | 'success-extra-light'
+  | 'warning-heavy'
+  | 'warning'
+  | 'warning-light'
+  | 'warning-extra-light'
+  | 'danger-heavy'
+  | 'danger'
+  | 'danger-light'
+  | 'danger-extra-light'
+
 export const Text = ({
   children,
   size = 'medium',
-  lightness = 'medium',
+  // lightness = 'medium',
   weight = 'regular',
   color = 'grey',
   span = false,
   className,
-  overDarkBackground = false,
+  // overDarkBackground = false,
   style,
   maxWidth,
   textAlign,
@@ -27,61 +57,36 @@ export const Text = ({
     | 'medium'
     | 'large'
     | 'extra-large'
-  lightness?: 'light' | 'medium' | 'dark'
+  // lightness?: 'light' | 'medium' | 'dark'
   weight?: 'thin' | 'light' | 'regular' | 'bold'
-  color?:
-    | 'grey'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'danger'
+  color?: TextColorType
+
   span?: boolean
   className?: string
-  overDarkBackground?: boolean
+  // overDarkBackground?: boolean
   style?: CSS.Properties
   maxWidth?: string
   textAlign?: CSS.TextAlignProperty
   margin?: string
   noWrap?: boolean
 }) => {
-  const sizeClass = `Text--${size}-size`
-  // const lightnessClass = `Text--${lightness}-lightness`
-  const weightClass = `Text--${weight}-weight`
+  const sizeClass = `Text--size-${size}`
+  const weightClass = `Text--weight-${weight}`
+  const colorClass = `Text--color-${color}`
 
   const wrapperClasses = classNames(
     'Text',
     sizeClass,
+    colorClass,
     // lightnessClass,
     weightClass,
     className,
     {
       'Text--no-wrap': noWrap,
-      'Text--on-dark': overDarkBackground,
     },
   )
 
-  var calcPaletteColor = (lightness: 'light' | 'medium' | 'dark') => {
-    return {
-      light: `var(--color-${color}-400)`,
-      medium: `var(--color-${color}-600)`,
-      dark: `var(--color-${color}-900)`,
-    }[lightness]
-  }
-
-  var calcOpacity = (lightness: 'light' | 'medium' | 'dark') => {
-    return {
-      light: `0.6`,
-      medium: `1`,
-      dark: `1`,
-    }[lightness]
-  }
-
   const styles = {
-    color: overDarkBackground
-      ? 'var(--color-white)'
-      : calcPaletteColor(lightness),
-    opacity: overDarkBackground ? calcOpacity(lightness) : 1,
     maxWidth: maxWidth,
     margin: margin,
     textAlign: textAlign,

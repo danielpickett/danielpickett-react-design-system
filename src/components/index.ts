@@ -1,5 +1,4 @@
 export * from './BodyText/BodyText'
-export * from './Box/Box'
 export * from './Button/Button'
 export * from './ButtonGroup/ButtonGroup'
 export * from './Checkbox/Checkbox'

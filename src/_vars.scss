@@ -1,144 +1,219 @@
 
-  $pixels-1: var(--pixels-1);
-  $pixels-2: var(--pixels-2);
-  $pixels-3: var(--pixels-3);
-  $pixels-5: var(--pixels-5);
-  $pixels-8: var(--pixels-8);
+$pixels-1: 0.0625rem;
+$pixels-2: 0.125rem;
+$pixels-3: 0.1875rem;
+$pixels-4: 0.25rem;
+$pixels-5: 0.3125rem;
+$pixels-6: 0.375rem;
+$pixels-7: 0.4375rem;
+$pixels-8: 0.5rem;
 
-  $color-white: var(--color-white);
-  $color-black: var(--color-black);
+$color-primary-050: var(--color-primary-050);
+$color-primary-100: var(--color-primary-100);
+$color-primary-200: var(--color-primary-200);
+$color-primary-300: var(--color-primary-300);
+$color-primary-400: var(--color-primary-400);
+$color-primary-500: var(--color-primary-500);
+$color-primary-600: var(--color-primary-600);
+$color-primary-700: var(--color-primary-700);
+$color-primary-800: var(--color-primary-800);
+$color-primary-900: var(--color-primary-900);
+$color-primary: var(--color-primary);
 
-  $color-primary-050: var(--color-primary-050);
-  $color-primary-100: var(--color-primary-100);
-  $color-primary-200: var(--color-primary-200);
-  $color-primary-300: var(--color-primary-300);
-  $color-primary-400: var(--color-primary-400);
-  $color-primary-500: var(--color-primary-500);
-  $color-primary-600: var(--color-primary-600);
-  $color-primary-700: var(--color-primary-700);
-  $color-primary-800: var(--color-primary-800);
-  $color-primary-900: var(--color-primary-900);
-  $color-primary: var(--color-primary);
+$color-secondary-050: var(--color-secondary-050);
+$color-secondary-100: var(--color-secondary-100);
+$color-secondary-200: var(--color-secondary-200);
+$color-secondary-300: var(--color-secondary-300);
+$color-secondary-400: var(--color-secondary-400);
+$color-secondary-500: var(--color-secondary-500);
+$color-secondary-600: var(--color-secondary-600);
+$color-secondary-700: var(--color-secondary-700);
+$color-secondary-800: var(--color-secondary-800);
+$color-secondary-900: var(--color-secondary-900);
+$color-secondary: var(--color-secondary);
 
-  $color-secondary-050: var(--color-secondary-050);
-  $color-secondary-100: var(--color-secondary-100);
-  $color-secondary-200: var(--color-secondary-200);
-  $color-secondary-300: var(--color-secondary-300);
-  $color-secondary-400: var(--color-secondary-400);
-  $color-secondary-500: var(--color-secondary-500);
-  $color-secondary-600: var(--color-secondary-600);
-  $color-secondary-700: var(--color-secondary-700);
-  $color-secondary-800: var(--color-secondary-800);
-  $color-secondary-900: var(--color-secondary-900);
-  $color-secondary: var(--color-secondary);
+$color-grey-050: var(--color-grey-050);
+$color-grey-100: var(--color-grey-100);
+$color-grey-200: var(--color-grey-200);
+$color-grey-300: var(--color-grey-300);
+$color-grey-400: var(--color-grey-400);
+$color-grey-500: var(--color-grey-500);
+$color-grey-600: var(--color-grey-600);
+$color-grey-700: var(--color-grey-700);
+$color-grey-800: var(--color-grey-800);
+$color-grey-900: var(--color-grey-900);
 
-  $color-grey-050: var(--color-grey-050);
-  $color-grey-100: var(--color-grey-100);
-  $color-grey-200: var(--color-grey-200);
-  $color-grey-300: var(--color-grey-300);
-  $color-grey-400: var(--color-grey-400);
-  $color-grey-500: var(--color-grey-500);
-  $color-grey-600: var(--color-grey-600);
-  $color-grey-700: var(--color-grey-700);
-  $color-grey-800: var(--color-grey-800);
-  $color-grey-900: var(--color-grey-900);
+$color-grey-alpha-050: var(--color-grey-alpha-050);
+$color-grey-alpha-100: var(--color-grey-alpha-100);
+$color-grey-alpha-200: var(--color-grey-alpha-200);
+$color-grey-alpha-300: var(--color-grey-alpha-300);
+$color-grey-alpha-400: var(--color-grey-alpha-400);
+$color-grey-alpha-500: var(--color-grey-alpha-500);
+$color-grey-alpha-600: var(--color-grey-alpha-600);
+$color-grey-alpha-700: var(--color-grey-alpha-700);
+$color-grey-alpha-800: var(--color-grey-alpha-800);
+$color-grey-alpha-900: var(--color-grey-alpha-900);
 
-  $color-grey-alpha-050: var(--color-grey-alpha-050);
-  $color-grey-alpha-100: var(--color-grey-alpha-100);
-  $color-grey-alpha-200: var(--color-grey-alpha-200);
-  $color-grey-alpha-300: var(--color-grey-alpha-300);
-  $color-grey-alpha-400: var(--color-grey-alpha-400);
-  $color-grey-alpha-500: var(--color-grey-alpha-500);
-  $color-grey-alpha-600: var(--color-grey-alpha-600);
-  $color-grey-alpha-700: var(--color-grey-alpha-700);
-  $color-grey-alpha-800: var(--color-grey-alpha-800);
-  $color-grey-alpha-900: var(--color-grey-alpha-900);
-  
-  $color-success-050: var(--color-success-050);
-  $color-success-100: var(--color-success-100);
-  $color-success-200: var(--color-success-200);
-  $color-success-300: var(--color-success-300);
-  $color-success-400: var(--color-success-400);
-  $color-success-500: var(--color-success-500);
-  $color-success-600: var(--color-success-600);
-  $color-success-700: var(--color-success-700);
-  $color-success-800: var(--color-success-800);
-  $color-success-900: var(--color-success-900);
-  $color-success: var(--color-success);
+$color-white-opaque-050: var(--color-white-opaque-050);
+$color-white-opaque-100: var(--color-white-opaque-100);
+$color-white-opaque-200: var(--color-white-opaque-200);
+$color-white-opaque-300: var(--color-white-opaque-300);
+$color-white-opaque-400: var(--color-white-opaque-400);
+$color-white-opaque-500: var(--color-white-opaque-500);
+$color-white-opaque-600: var(--color-white-opaque-600);
+$color-white-opaque-700: var(--color-white-opaque-700);
+$color-white-opaque-800: var(--color-white-opaque-800);
+$color-white-opaque-900: var(--color-white-opaque-900);
+$color-white-opaque: var(--color-white-opaque);
 
-  $color-warning-050: var(--color-warning-050);
-  $color-warning-100: var(--color-warning-100);
-  $color-warning-200: var(--color-warning-200);
-  $color-warning-300: var(--color-warning-300);
-  $color-warning-400: var(--color-warning-400);
-  $color-warning-500: var(--color-warning-500);
-  $color-warning-600: var(--color-warning-600);
-  $color-warning-700: var(--color-warning-700);
-  $color-warning-800: var(--color-warning-800);
-  $color-warning-900: var(--color-warning-900);
-  $color-warning: var(--color-warning);
+$color-white-050: var(--color-white-050);
+$color-white-100: var(--color-white-100);
+$color-white-200: var(--color-white-200);
+$color-white-300: var(--color-white-300);
+$color-white-400: var(--color-white-400);
+$color-white-500: var(--color-white-500);
+$color-white-600: var(--color-white-600);
+$color-white-700: var(--color-white-700);
+$color-white-800: var(--color-white-800);
+$color-white-900: var(--color-white-900);
+$color-white: var(--color-white);
 
-  $color-danger-050: var(--color-danger-050);
-  $color-danger-100: var(--color-danger-100);
-  $color-danger-200: var(--color-danger-200);
-  $color-danger-300: var(--color-danger-300);
-  $color-danger-400: var(--color-danger-400);
-  $color-danger-500: var(--color-danger-500);
-  $color-danger-600: var(--color-danger-600);
-  $color-danger-700: var(--color-danger-700);
-  $color-danger-800: var(--color-danger-800);
-  $color-danger-900: var(--color-danger-900);
-  $color-danger: var(--color-danger);
-  
-  $border-width-thin: var(--border-width-thin);
-  $border-width-default: var(--border-width-default);
+$color-success-050: var(--color-success-050);
+$color-success-100: var(--color-success-100);
+$color-success-200: var(--color-success-200);
+$color-success-300: var(--color-success-300);
+$color-success-400: var(--color-success-400);
+$color-success-500: var(--color-success-500);
+$color-success-600: var(--color-success-600);
+$color-success-700: var(--color-success-700);
+$color-success-800: var(--color-success-800);
+$color-success-900: var(--color-success-900);
+$color-success: var(--color-success);
 
-  $border-radius-100: var(--border-radius-100);
-  $border-radius-200: var(--border-radius-200);
-  $border-radius-300: var(--border-radius-300);
-  $border-radius-400: var(--border-radius-400);
-  $border-radius-500: var(--border-radius-500);
-  $border-radius: var(--border-radius);
+$color-warning-050: var(--color-warning-050);
+$color-warning-100: var(--color-warning-100);
+$color-warning-200: var(--color-warning-200);
+$color-warning-300: var(--color-warning-300);
+$color-warning-400: var(--color-warning-400);
+$color-warning-500: var(--color-warning-500);
+$color-warning-600: var(--color-warning-600);
+$color-warning-700: var(--color-warning-700);
+$color-warning-800: var(--color-warning-800);
+$color-warning-900: var(--color-warning-900);
+$color-warning: var(--color-warning);
 
-  $font-size-50: var(--font-size-50);
-  $font-size-100: var(--font-size-100);
-  $font-size-150: var(--font-size-150);
-  $font-size-200: var(--font-size-200);
-  $font-size-250: var(--font-size-250);
-  $font-size-300: var(--font-size-300);
-  $font-size-350: var(--font-size-350);
-  $font-size-400: var(--font-size-400);
-  $font-size-450: var(--font-size-450);
-  $font-size-500: var(--font-size-500);
-  $font-size-550: var(--font-size-550);
-  $font-size-600: var(--font-size-600);
-  $font-size-650: var(--font-size-650);
-  $font-size-700: var(--font-size-700);
-  $font-size-750: var(--font-size-750);
-  $font-size-800: var(--font-size-800);
-  $font-size-850: var(--font-size-850);
+$color-danger-050: var(--color-danger-050);
+$color-danger-100: var(--color-danger-100);
+$color-danger-200: var(--color-danger-200);
+$color-danger-300: var(--color-danger-300);
+$color-danger-400: var(--color-danger-400);
+$color-danger-500: var(--color-danger-500);
+$color-danger-600: var(--color-danger-600);
+$color-danger-700: var(--color-danger-700);
+$color-danger-800: var(--color-danger-800);
+$color-danger-900: var(--color-danger-900);
+$color-danger: var(--color-danger);
 
-  $box-shadow-100-dark: var(--box-shadow-100-dark);
-  $box-shadow-100-focus: var(--box-shadow-100-focus);
-  $box-shadow-100: var(--box-shadow-100);
+$border-width-thin: var(--border-width-thin);
+$border-width-default: var(--border-width-default);
 
-  $box-shadow-200-dark: var(--box-shadow-200-dark);
-  $box-shadow-200-focus: var(--box-shadow-200-focus);
-  $box-shadow-200: var(--box-shadow-200);
+$border-radius-100: var(--border-radius-100);
+$border-radius-200: var(--border-radius-200);
+$border-radius-300: var(--border-radius-300);
+$border-radius-400: var(--border-radius-400);
+$border-radius-500: var(--border-radius-500);
+$border-radius: var(--border-radius);
 
-  $box-shadow-300-dark: var(--box-shadow-300-dark);
-  $box-shadow-300-focus: var(--box-shadow-300-focus);
-  $box-shadow-300: var(--box-shadow-300);
+$text-size-fine-print: var(--text-size-fine-print);
+$text-size-extra-small: var(--text-size-extra-small);
+$text-size-small: var(--text-size-small);
+$text-size-medium: var(--text-size-medium);
+$text-size-large: var(--text-size-large);
+$text-size-extra-large: var(--text-size-extra-large);
 
-  $box-shadow-400-dark: var(--box-shadow-400-dark);
-  $box-shadow-400-focus: var(--box-shadow-400-focus);
-  $box-shadow-400: var(--box-shadow-400);
 
-  $box-shadow-500-dark: var(--box-shadow-500-dark);
-  $box-shadow-500-focus: var(--box-shadow-500-focus);
-  $box-shadow-500: var(--box-shadow-500);
 
-  $transition-100: var(--transition-100);
-  $transition-100-all: var(--transition-100-all);
-  $transition-200: var(--transition-200);
-  $transition-200-all: var(--transition-200-all);
+// $text-color-
+
+
+
+
+$text-color-grey-heavy: var(--text-color-grey-heavy);
+$text-color-grey: var(--text-color-grey);
+$text-color-grey-light: var(--text-color-grey-light);
+$text-color-grey-extra-light: var(--text-color-grey-extra-light);
+
+$text-color-white-heavy: var(--text-color-white-heavy);
+$text-color-white: var(--text-color-white);
+$text-color-white-light: var(--text-color-white-light);
+$text-color-white-extra-light: var(--text-color-white-extra-light);
+
+$text-color-primary-heavy: var(--text-color-primary-heavy);
+$text-color-primary: var(--text-color-primary);
+$text-color-primary-light: var(--text-color-primary-light);
+$text-color-primary-extra-light: var(--text-color-primary-extra-light);
+
+$text-color-secondary-heavy: var(--text-color-secondary-heavy);
+$text-color-secondary: var(--text-color-secondary);
+$text-color-secondary-light: var(--text-color-secondary-light);
+$text-color-secondary-extra-light: var(--text-color-secondary-extra-light);
+
+$text-color-success-heavy: var(--text-color-success-heavy);
+$text-color-success: var(--text-color-success);
+$text-color-success-light: var(--text-color-success-light);
+$text-color-success-extra-light: var(--text-color-success-extra-light);
+
+$text-color-warning-heavy: var(--text-color-warning-heavy);
+$text-color-warning: var(--text-color-warning);
+$text-color-warning-light: var(--text-color-warning-light);
+$text-color-warning-extra-light: var(--text-color-warning-extra-light);
+
+$text-color-danger-heavy: var(--text-color-danger-heavy);
+$text-color-danger: var(--text-color-danger);
+$text-color-danger-light: var(--text-color-danger-light);
+$text-color-danger-extra-light: var(--text-color-danger-extra-light);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$box-shadow-100-dark: var(--box-shadow-100-dark);
+$box-shadow-100-focus: var(--box-shadow-100-focus);
+$box-shadow-100: var(--box-shadow-100);
+
+$box-shadow-200-dark: var(--box-shadow-200-dark);
+$box-shadow-200-focus: var(--box-shadow-200-focus);
+$box-shadow-200: var(--box-shadow-200);
+
+$box-shadow-300-dark: var(--box-shadow-300-dark);
+$box-shadow-300-focus: var(--box-shadow-300-focus);
+$box-shadow-300: var(--box-shadow-300);
+
+$box-shadow-400-dark: var(--box-shadow-400-dark);
+$box-shadow-400-focus: var(--box-shadow-400-focus);
+$box-shadow-400: var(--box-shadow-400);
+
+$box-shadow-500-dark: var(--box-shadow-500-dark);
+$box-shadow-500-focus: var(--box-shadow-500-focus);
+$box-shadow-500: var(--box-shadow-500);
+
+$transition-100: var(--transition-100);
+$transition-100-all: var(--transition-100-all);
+$transition-200: var(--transition-200);
+$transition-200-all: var(--transition-200-all);
