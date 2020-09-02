@@ -1,13 +1,7 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, NavLink, Route } from 'react-router-dom'
 import './App.scss'
-import {
-  HorizontalRule,
-  GridContainer,
-  FlexContainer,
-  Text,
-  TextArea,
-} from 'components'
+
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
@@ -23,16 +17,6 @@ import {
 } from './showcases'
 
 export const App = () => {
-  const [textAreaValue, setTextAreaValue] = useState<string | undefined>(
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, tempora! '.repeat(
-      10,
-    ),
-  )
-  const handleChange = (value: string) => {
-    console.log(value)
-    setTextAreaValue(value)
-  }
-
   const showcases = [
     { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
     { label: 'Color', route: '/Color', component: ColorShowcase },
@@ -67,17 +51,51 @@ export const App = () => {
     <BrowserRouter>
       <div className="App">
         <div className="App__nav">
-          {showcases.map((showcase) => (
-            <Link className="App__nav-link" to={showcase.route}>
-              {showcase.label}
-            </Link>
-          ))}
+          <div className="App__nav-group">
+            <NavLink
+              className="App__nav-link"
+              activeClassName="App__nav-link--active"
+              exact
+              to="/"
+            >
+              Home
+            </NavLink>
+          </div>
+          <div className="App__nav-group">
+            {showcases.map((showcase) => (
+              <NavLink
+                className="App__nav-link"
+                activeClassName="App__nav-link--active"
+                to={showcase.route}
+              >
+                {showcase.label}
+              </NavLink>
+            ))}
+          </div>
+          <div className="App__nav-group">
+            <NavLink className="App__nav-link" to="/all-components">
+              All components
+            </NavLink>
+          </div>
         </div>
         <div className="App__showcases">
           <Route exact path="/" render={() => <p>Welcome!</p>} />
           {showcases.map((showcase) => (
             <Route exact path={showcase.route} component={showcase.component} />
           ))}
+          <Route
+            exact
+            path="/all-components"
+            render={() => (
+              <>
+                {showcases.map(({ component: Component }) => (
+                  <div className="App__section">
+                    <Component />
+                  </div>
+                ))}
+              </>
+            )}
+          />
         </div>
       </div>
     </BrowserRouter>
