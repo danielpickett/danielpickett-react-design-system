@@ -40,7 +40,8 @@
     "eject": "react-scripts eject",
     "make:component": "./make-new-component.sh",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "release": "np"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -67,6 +68,7 @@
     "@storybook/addons": "^5.3.14",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.14",
+    "np": "^6.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }
