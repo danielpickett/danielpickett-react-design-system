@@ -1,11 +1,7 @@
-import React, { useState } from 'react'
-import {
-  HorizontalRule,
-  GridContainer,
-  FlexContainer,
-  Text,
-  TextArea,
-} from 'components'
+import React from 'react'
+import { BrowserRouter, NavLink, Route } from 'react-router-dom'
+import './App.scss'
+
 import {
   ButtonsShowcase,
   RadioButtonsShowcase,
@@ -21,63 +17,87 @@ import {
 } from './showcases'
 
 export const App = () => {
-  const [textAreaValue, setTextAreaValue] = useState<string | undefined>(
-    'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum, tempora! '.repeat(
-      10,
-    ),
-  )
-  const handleChange = (value: string) => {
-    console.log(value)
-    setTextAreaValue(value)
-  }
+  const showcases = [
+    { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
+    { label: 'Color', route: '/Color', component: ColorShowcase },
+    { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
+    {
+      label: 'RadioButtons',
+      route: '/RadioButtons',
+      component: RadioButtonsShowcase,
+    },
+    { label: 'Checkbox', route: '/Checkbox', component: CheckboxShowcase },
+    {
+      label: 'NumberInput',
+      route: '/NumberInput',
+      component: NumberInputShowcase,
+    },
+    {
+      label: 'LabeledValue',
+      route: '/LabeledValue',
+      component: LabeledValueShowcase,
+    },
+    { label: 'Text', route: '/Text', component: TextShowcase },
+    {
+      label: 'LayoutComponent',
+      route: '/LayoutComponent',
+      component: LayoutComponentShowcase,
+    },
+    { label: 'Select', route: '/Select', component: SelectShowcase },
+    { label: 'Modal', route: '/Modal', component: ModalShowcase },
+  ]
+
   return (
-    <div className="App">
-      <TextArea value={textAreaValue} onChange={handleChange} />
-      <TooltipShowcase />
-
-      <ColorShowcase />
-
-      <HorizontalRule />
-
-      <ButtonsShowcase />
-      <HorizontalRule />
-
-      <RadioButtonsShowcase />
-      <HorizontalRule />
-
-      <CheckboxShowcase />
-      <HorizontalRule />
-
-      <NumberInputShowcase />
-      <HorizontalRule />
-
-      <LabeledValueShowcase />
-      <HorizontalRule />
-
-      <Text size="large" style={{ marginBottom: '2rem' }}>
-        Text showcase:
-      </Text>
-      <TextShowcase />
-      <HorizontalRule />
-
-      <LayoutComponentShowcase />
-      <HorizontalRule />
-
-      <SelectShowcase />
-      <HorizontalRule />
-
-      <ModalShowcase />
-      <HorizontalRule />
-
-      <GridContainer columns={2} gap="1rem">
-        <div>1</div>
-        <div>2</div>
-      </GridContainer>
-
-      <FlexContainer column centered>
-        <div>hello</div>
-        <div>world</div>
-      </FlexContainer>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <div className="App__nav">
+          <div className="App__nav-group">
+            <NavLink
+              className="App__nav-link"
+              activeClassName="App__nav-link--active"
+              exact
+              to="/"
+            >
+              Home
+            </NavLink>
+          </div>
+          <div className="App__nav-group">
+            {showcases.map((showcase) => (
+              <NavLink
+                className="App__nav-link"
+                activeClassName="App__nav-link--active"
+                to={showcase.route}
+              >
+                {showcase.label}
+              </NavLink>
+            ))}
+          </div>
+          <div className="App__nav-group">
+            <NavLink className="App__nav-link" to="/all-components">
+              All components
+            </NavLink>
+          </div>
+        </div>
+        <div className="App__showcases">
+          <Route exact path="/" render={() => <p>Welcome!</p>} />
+          {showcases.map((showcase) => (
+            <Route exact path={showcase.route} component={showcase.component} />
+          ))}
+          <Route
+            exact
+            path="/all-components"
+            render={() => (
+              <>
+                {showcases.map(({ component: Component }) => (
+                  <div className="App__section">
+                    <Component />
+                  </div>
+                ))}
+              </>
+            )}
+          />
+        </div>
+      </div>
+    </BrowserRouter>
   )
 }
