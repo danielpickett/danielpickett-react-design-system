@@ -16,6 +16,8 @@ import {
   ModalShowcase,
 } from './showcases'
 
+import { Theming } from 'experiments'
+
 export const App = () => {
   const showcases = [
     { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
@@ -62,8 +64,9 @@ export const App = () => {
             </NavLink>
           </div>
           <div className="App__nav-group">
-            {showcases.map((showcase) => (
+            {showcases.map((showcase, index) => (
               <NavLink
+                key={index}
                 className="App__nav-link"
                 activeClassName="App__nav-link--active"
                 to={showcase.route}
@@ -80,8 +83,13 @@ export const App = () => {
         </div>
         <div className="App__showcases">
           <Route exact path="/" render={() => <p>Welcome!</p>} />
-          {showcases.map((showcase) => (
-            <Route exact path={showcase.route} component={showcase.component} />
+          {showcases.map((showcase, index) => (
+            <Route
+              key={index}
+              exact
+              path={showcase.route}
+              component={showcase.component}
+            />
           ))}
           <Route
             exact
@@ -96,6 +104,7 @@ export const App = () => {
               </>
             )}
           />
+          <Route exact path="/theming" component={Theming} />
         </div>
       </div>
     </BrowserRouter>

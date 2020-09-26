@@ -1,0 +1,15 @@
+.ThemeSamples {
+  padding: 2rem;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+
+  &__swatch-contrast {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+
+    &:not(:first-child) {
+      opacity: 0;
+    }
+  }
+}
