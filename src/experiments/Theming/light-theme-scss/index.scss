@@ -1,0 +1,10 @@
+@import './colors';
+@import './text-colors/grey-on-grey';
+@import './text-colors/primary-on-primary';
+@import './text-colors/success-on-success';
+@import './text-colors/warning-on-warning';
+@import './text-colors/danger-on-danger';
+
+.light-theme {
+  color: transparent;
+}

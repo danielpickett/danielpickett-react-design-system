@@ -1,5 +1,5 @@
 import React from 'react'
-import './light-theme.scss'
+import './light-theme-scss/index.scss'
 import './Theming.scss'
 import { ThemeSamples } from 'experiments/components'
 

@@ -1,15 +1,27 @@
 .ThemeSamples {
   padding: 2rem;
+  padding-top: 0;
   color: var(--foreground-color);
   background-color: var(--background-color);
 
+  &__swatch {
+    padding-bottom: 1.5rem;
+  }
+
   &__swatch-contrast {
-    position: absolute;
-    top: 0.25rem;
-    right: 0.25rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 0.65rem;
 
     &:not(:first-child) {
-      opacity: 0;
+      display: none;
+    }
+    span {
+      width: 2rem;
+      margin-left: 0.5rem;
+      text-align: right;
     }
   }
 }

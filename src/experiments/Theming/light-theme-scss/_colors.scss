@@ -1,0 +1,149 @@
+// white
+$color-white-050: hsl(224, 33%, 6%);
+$color-white-100: hsl(224, 33%, 16%);
+$color-white-200: hsl(224, 22%, 24%);
+$color-white-300: hsl(224, 17%, 31%);
+$color-white-400: hsl(224, 13%, 40%);
+$color-white-500: hsl(224, 13%, 51%);
+$color-white-600: hsl(224, 12%, 62%);
+$color-white-700: hsl(224, 11%, 70%);
+$color-white-800: hsl(224, 10%, 79%);
+$color-white-900: hsl(224, 9%, 87%);
+
+// grey
+$color-grey-050: hsl(224, 9%, 96%);
+$color-grey-100: hsl(224, 11%, 88%);
+$color-grey-200: hsl(224, 10%, 77%);
+$color-grey-300: hsl(224, 11%, 69%);
+$color-grey-400: hsl(224, 12%, 58%);
+$color-grey-500: hsl(224, 10%, 47%);
+$color-grey-600: hsl(224, 14%, 36%);
+$color-grey-700: hsl(224, 18%, 30%);
+$color-grey-800: hsl(224, 23%, 23%);
+$color-grey-900: hsl(224, 32%, 17%);
+
+// primary
+$color-primary-050: hsl(245, 100%, 97%);
+$color-primary-100: hsl(245, 100%, 93%);
+$color-primary-200: hsl(245, 94%, 86%);
+$color-primary-300: hsl(245, 92%, 81%);
+$color-primary-400: hsl(245, 87%, 73%);
+$color-primary-500: hsl(245, 92%, 66%);
+$color-primary-600: hsl(245, 57%, 52%);
+$color-primary-700: hsl(245, 58%, 44%);
+$color-primary-800: hsl(245, 69%, 35%);
+$color-primary-900: hsl(245, 64%, 24%);
+
+// success
+$color-success-050: hsl(122, 95%, 95%);
+$color-success-100: hsl(122, 32%, 85%);
+$color-success-200: hsl(122, 36%, 71%);
+$color-success-300: hsl(122, 33%, 60%);
+$color-success-400: hsl(122, 41%, 44%);
+$color-success-500: hsl(122, 89%, 28%);
+$color-success-600: hsl(122, 60%, 25%);
+$color-success-700: hsl(122, 50%, 20%);
+$color-success-800: hsl(122, 42%, 16%);
+$color-success-900: hsl(122, 37%, 12%);
+
+// warning
+$color-warning-050: hsl(38, 100%, 93%);
+$color-warning-100: hsl(38, 100%, 85%);
+$color-warning-200: hsl(38, 95%, 70%);
+$color-warning-300: hsl(38, 90%, 57%);
+$color-warning-400: hsl(38, 95%, 46%);
+$color-warning-500: hsl(38, 100%, 39%);
+$color-warning-600: hsl(38, 100%, 30%);
+$color-warning-700: hsl(38, 100%, 22%);
+$color-warning-800: hsl(38, 100%, 17%);
+$color-warning-900: hsl(38, 100%, 12%);
+
+// danger
+$color-danger-050: hsl(355, 100%, 96.5%);
+$color-danger-100: hsl(355, 100%, 91%);
+$color-danger-200: hsl(355, 100%, 84%);
+$color-danger-300: hsl(355, 100%, 75%);
+$color-danger-400: hsl(355, 85%, 63%);
+$color-danger-500: hsl(355, 85%, 47%);
+$color-danger-600: hsl(355, 85%, 38%);
+$color-danger-700: hsl(355, 90%, 30%);
+$color-danger-800: hsl(355, 90%, 23%);
+$color-danger-900: hsl(355, 90%, 16%);
+
+.light-theme {
+  // white
+  --color-white-050: #{$color-white-050};
+  --color-white-100: #{$color-white-100};
+  --color-white-200: #{$color-white-200};
+  --color-white-300: #{$color-white-300};
+  --color-white-400: #{$color-white-400};
+  --color-white-500: #{$color-white-500};
+  --color-white-600: #{$color-white-600};
+  --color-white-700: #{$color-white-700};
+  --color-white-800: #{$color-white-800};
+  --color-white-900: #{$color-white-900};
+
+  // grey
+  --color-grey-050: #{$color-grey-050};
+  --color-grey-100: #{$color-grey-100};
+  --color-grey-200: #{$color-grey-200};
+  --color-grey-300: #{$color-grey-300};
+  --color-grey-400: #{$color-grey-400};
+  --color-grey-500: #{$color-grey-500};
+  --color-grey-600: #{$color-grey-600};
+  --color-grey-700: #{$color-grey-700};
+  --color-grey-800: #{$color-grey-800};
+  --color-grey-900: #{$color-grey-900};
+
+  // primary
+  --color-primary-050: #{$color-primary-050};
+  --color-primary-100: #{$color-primary-100};
+  --color-primary-200: #{$color-primary-200};
+  --color-primary-300: #{$color-primary-300};
+  --color-primary-400: #{$color-primary-400};
+  --color-primary-500: #{$color-primary-500};
+  --color-primary-600: #{$color-primary-600};
+  --color-primary-700: #{$color-primary-700};
+  --color-primary-800: #{$color-primary-800};
+  --color-primary-900: #{$color-primary-900};
+  --color-primary: var(--color-primary-500);
+
+  // success
+  --color-success-050: #{$color-success-050};
+  --color-success-100: #{$color-success-100};
+  --color-success-200: #{$color-success-200};
+  --color-success-300: #{$color-success-300};
+  --color-success-400: #{$color-success-400};
+  --color-success-500: #{$color-success-500};
+  --color-success-600: #{$color-success-600};
+  --color-success-700: #{$color-success-700};
+  --color-success-800: #{$color-success-800};
+  --color-success-900: #{$color-success-900};
+  --color-success: var(--color-success-500);
+
+  // warning
+  --color-warning-050: #{$color-warning-050};
+  --color-warning-100: #{$color-warning-100};
+  --color-warning-200: #{$color-warning-200};
+  --color-warning-300: #{$color-warning-300};
+  --color-warning-400: #{$color-warning-400};
+  --color-warning-500: #{$color-warning-500};
+  --color-warning-600: #{$color-warning-600};
+  --color-warning-700: #{$color-warning-700};
+  --color-warning-800: #{$color-warning-800};
+  --color-warning-900: #{$color-warning-900};
+  --color-warning: var(--color-warning-500);
+
+  // danger
+  --color-danger-050: #{$color-danger-050};
+  --color-danger-100: #{$color-danger-100};
+  --color-danger-200: #{$color-danger-200};
+  --color-danger-300: #{$color-danger-300};
+  --color-danger-400: #{$color-danger-400};
+  --color-danger-500: #{$color-danger-500};
+  --color-danger-600: #{$color-danger-600};
+  --color-danger-700: #{$color-danger-700};
+  --color-danger-800: #{$color-danger-800};
+  --color-danger-900: #{$color-danger-900};
+  --color-danger: var(--color-danger-500);
+}

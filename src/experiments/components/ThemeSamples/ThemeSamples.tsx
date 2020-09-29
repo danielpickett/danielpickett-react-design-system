@@ -29,7 +29,8 @@ const Swatch = ({
   return (
     <div
       ref={swatchRef}
-      style={{ backgroundColor, padding: '2rem 0px', position: 'relative' }}
+      className="ThemeSamples__swatch"
+      style={{ backgroundColor }}
     >
       {render(swatchRef)}
     </div>
@@ -47,6 +48,7 @@ const Text = ({
 
   const [contrast, setContrast] = useState('-')
   const [bgContrast, setBgContrast] = useState(0)
+  const [lch, setLch] = useState([0, 0, 0])
 
   useEffect(() => {
     const interval = window.setInterval(
@@ -58,6 +60,7 @@ const Text = ({
           const c1 = getComputedStyle(textRef.current, null).color || ''
           const c2 = getComputedStyle(swatchRef.current, null).backgroundColor
           setBgContrast(+chroma.contrast('white', c2).toFixed(2))
+          setLch(chroma(c2).lch())
 
           const _contrast = +chroma.contrast(c1, c2).toFixed(2)
           const rating = _contrast < 4.5 ? ' ✕' : ' ✓'
@@ -78,19 +81,26 @@ const Text = ({
       <div
         className="ThemeSamples__swatch-contrast"
         style={{
-          position: 'absolute',
-          top: '0.25rem',
-          fontSize: '0.75rem',
-          color: bgContrast > 6 ? 'white' : 'black',
+          color: bgContrast > 4 ? 'white' : 'black',
         }}
       >
-        {bgContrast}
+        <div>{bgContrast}</div>
+        <div>
+          <span>L:{lch[0].toFixed(1)},</span>
+          <span>C:{lch[1].toFixed(1)},</span>
+          <span>H:{lch[2].toFixed(1)}</span>
+        </div>
       </div>
       <div
-        style={{ color, fontSize: '1rem', marginLeft: '0.5rem' }}
+        style={{
+          color: `var(--${color})`,
+          fontSize: '1rem',
+          marginLeft: '0.5rem',
+        }}
         ref={textRef}
+        title={color}
       >
-        {'█ Sample text ' + contrast}
+        {'Sample • ' + contrast}
       </div>
     </>
   )
@@ -105,9 +115,11 @@ export const ThemeSamples = () => {
           gridTemplateColumns: `repeat(${washes.length + 1}, 1fr)`,
         }}
       >
-        <div>white</div>
+        <div style={{ color: 'black' }}>white</div>
         {washes.map((wash, index) => (
-          <div key={index}>{wash}</div>
+          <div style={{ color: 'black' }} key={index}>
+            {wash}
+          </div>
         ))}
       </div>
       {scales.map((scaleName, index) => (
@@ -124,15 +136,15 @@ export const ThemeSamples = () => {
               <>
                 <Text
                   swatchRef={swNode}
-                  color={`var(--text-color-${scaleName}-regular-on-white)`}
+                  color={`text-color-${scaleName}-regular-on-white`}
                 />
                 <Text
                   swatchRef={swNode}
-                  color={`var(--text-color-${scaleName}-subdued-on-white)`}
+                  color={`text-color-${scaleName}-subdued-on-white`}
                 />
                 <Text
                   swatchRef={swNode}
-                  color={`var(--text-color-${scaleName}-dangerously-subdued-on-white)`}
+                  color={`text-color-${scaleName}-dangerously-subdued-on-white`}
                 />
               </>
             )}
@@ -146,15 +158,15 @@ export const ThemeSamples = () => {
                 <>
                   <Text
                     swatchRef={swNode}
-                    color={`var(--text-color-${scaleName}-regular-on-${scaleName}-${wash})`}
+                    color={`text-color-${scaleName}-regular-on-${scaleName}-${wash}`}
                   />
                   <Text
                     swatchRef={swNode}
-                    color={`var(--text-color-${scaleName}-subdued-on-${scaleName}-${wash})`}
+                    color={`text-color-${scaleName}-subdued-on-${scaleName}-${wash}`}
                   />
                   <Text
                     swatchRef={swNode}
-                    color={`var(--text-color-${scaleName}-dangerously-subdued-on-${scaleName}-${wash})`}
+                    color={`text-color-${scaleName}-dangerously-subdued-on-${scaleName}-${wash}`}
                   />
                 </>
               )}

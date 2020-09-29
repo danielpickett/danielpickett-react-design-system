@@ -1,0 +1,60 @@
+/* prettier-ignore */
+$text-color-danger-on-white-base:      mix(black, $color-danger-500, 15%);
+$text-color-danger-on-danger-050-base: mix(black, $color-danger-500, 20%);
+$text-color-danger-on-danger-100-base: mix(black, $color-danger-500, 30%);
+$text-color-danger-on-danger-200-base: mix(black, $color-danger-500, 50%);
+$text-color-danger-on-danger-300-base: mix(black, $color-danger-500, 60%);
+$text-color-danger-on-danger-400-base: mix(black, $color-danger-500, 70%);
+$text-color-danger-on-danger-500-base: mix(white, $color-danger-500, 100%);
+$text-color-danger-on-danger-600-base: mix(white, $color-danger-500, 100%);
+$text-color-danger-on-danger-700-base: mix(white, $color-danger-500, 100%);
+$text-color-danger-on-danger-800-base: mix(white, $color-danger-500, 100%);
+$text-color-danger-on-danger-900-base: mix(white, $color-danger-500, 90%);
+
+/* prettier-ignore */
+.light-theme {
+// white
+--text-color-danger-regular-on-white:                    #{saturate(mix($text-color-danger-on-white-base,       $color-danger-050,  100%),  100%)};
+// --text-color-danger-subdued-on-white:                    #{saturate(mix($text-color-danger-on-white-base,       $color-danger-050,  100%),  100%)};
+--text-color-danger-dangerously-subdued-on-white:        #{saturate(mix($text-color-danger-on-white-base,       $color-danger-050,   52%),  10%)};
+// 050
+--text-color-danger-regular-on-danger-050:              #{saturate(mix($text-color-danger-on-danger-050-base, $color-danger-050,  100%),  100%)};
+// --text-color-danger-subdued-on-danger-050:              #{saturate(mix($text-color-danger-on-danger-050-base, $color-danger-050,   70%),  0%)}; 
+--text-color-danger-dangerously-subdued-on-danger-050:  #{saturate(mix($text-color-danger-on-danger-050-base, $color-danger-050,   56%),  5%)};
+// 100
+--text-color-danger-regular-on-danger-100:              #{saturate(mix($text-color-danger-on-danger-100-base, $color-danger-100,  100%),  100%)};
+// --text-color-danger-subdued-on-danger-100:              #{saturate(mix($text-color-danger-on-danger-100-base, $color-danger-100,   70%),  100%)};
+--text-color-danger-dangerously-subdued-on-danger-100:  #{saturate(mix($text-color-danger-on-danger-100-base, $color-danger-100,   57%),  12%)};
+// 200
+--text-color-danger-regular-on-danger-200:              #{saturate(mix($text-color-danger-on-danger-200-base, $color-danger-200,  100%),  100%)};
+// --text-color-danger-subdued-on-danger-200:              #{saturate(mix($text-color-danger-on-danger-200-base, $color-danger-200,   70%),  0%)};
+// --text-color-danger-dangerously-subdued-on-danger-200:  #{saturate(mix($text-color-danger-on-danger-200-base, $color-danger-200,   50%),  0%)};
+// 300
+--text-color-danger-regular-on-danger-300:              #{saturate(mix($text-color-danger-on-danger-300-base, $color-danger-300,  100%),  100%)};
+// --text-color-danger-subdued-on-danger-300:              #{saturate(mix($text-color-danger-on-danger-300-base, $color-danger-300,   70%),  0%)};
+// --text-color-danger-dangerously-subdued-on-danger-300:  #{saturate(mix($text-color-danger-on-danger-300-base, $color-danger-300,   50%),  0%)};
+// 400
+--text-color-danger-regular-on-danger-400:              #{saturate(mix($text-color-danger-on-danger-400-base, $color-danger-400,  100%),  100%)};
+// --text-color-danger-subdued-on-danger-400:              #{saturate(mix($text-color-danger-on-danger-400-base, $color-danger-400,   70%),  0%)};
+// --text-color-danger-dangerously-subdued-on-danger-400:  #{saturate(mix($text-color-danger-on-danger-400-base, $color-danger-400,   50%),  0%)};
+// 500
+--text-color-danger-regular-on-danger-500:              #{saturate(mix($text-color-danger-on-danger-500-base, $color-danger-500,  100%),  0%)};
+// --text-color-danger-subdued-on-danger-500:              #{saturate(mix($text-color-danger-on-danger-500-base, $color-danger-500,   70%),  0%)};
+--text-color-danger-dangerously-subdued-on-danger-500:  #{saturate(mix($text-color-danger-on-danger-500-base, $color-danger-500,   70%),  0%)};
+// 600
+--text-color-danger-regular-on-danger-600:              #{saturate(mix($text-color-danger-on-danger-600-base, $color-danger-600,  100%),  0%)};
+// --text-color-danger-subdued-on-danger-600:              #{saturate(mix($text-color-danger-on-danger-600-base, $color-danger-600,   60%),  0%)};
+--text-color-danger-dangerously-subdued-on-danger-600:  #{saturate(mix($text-color-danger-on-danger-600-base, $color-danger-600,   56%),  0%)};
+// 700
+--text-color-danger-regular-on-danger-700:              #{saturate(mix($text-color-danger-on-danger-700-base, $color-danger-700,  100%),  0%)};
+--text-color-danger-subdued-on-danger-700:              #{saturate(mix($text-color-danger-on-danger-700-base, $color-danger-700,   66%),  0%)};
+--text-color-danger-dangerously-subdued-on-danger-700:  #{saturate(mix($text-color-danger-on-danger-700-base, $color-danger-700,   48%),  0%)};
+// 800
+--text-color-danger-regular-on-danger-800:              #{saturate(mix($text-color-danger-on-danger-800-base, $color-danger-800,  93%),  0%)};
+--text-color-danger-subdued-on-danger-800:              #{saturate(mix($text-color-danger-on-danger-800-base, $color-danger-800,   58%),  0%)};
+--text-color-danger-dangerously-subdued-on-danger-800:  #{saturate(mix($text-color-danger-on-danger-800-base, $color-danger-800,   41%),  0%)};
+// 900
+--text-color-danger-regular-on-danger-900:              #{saturate(mix($text-color-danger-on-danger-900-base, $color-danger-900,  90%),  0%)};
+--text-color-danger-subdued-on-danger-900:              #{saturate(mix($text-color-danger-on-danger-900-base, $color-danger-900,   55%),  0%)};
+--text-color-danger-dangerously-subdued-on-danger-900:  #{saturate(mix($text-color-danger-on-danger-900-base, $color-danger-900,   40%),  0%)};
+}
