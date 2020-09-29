@@ -16,7 +16,7 @@ import {
   ModalShowcase,
 } from './showcases'
 
-import { Theming } from 'experiments'
+import { ColorsByTheNumbers } from 'experiments'
 
 export const App = () => {
   const showcases = [
@@ -104,7 +104,7 @@ export const App = () => {
               </>
             )}
           />
-          <Route exact path="/theming" component={Theming} />
+          <Route exact path="/ColorsByTheNumbers" component={ColorsByTheNumbers} />
         </div>
       </div>
     </BrowserRouter>

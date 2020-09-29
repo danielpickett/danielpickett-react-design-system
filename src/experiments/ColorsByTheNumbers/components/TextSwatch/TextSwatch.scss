@@ -1,0 +1,13 @@
+.TextSwatch {
+  color: transparent;
+  width: 10rem;
+  padding-bottom: 0.5rem;
+
+  &__details {
+    padding: 0.5rem;
+    padding-bottom: 1rem;
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}

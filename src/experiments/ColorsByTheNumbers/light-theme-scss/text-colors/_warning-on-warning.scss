@@ -1,6 +1,6 @@
 /* prettier-ignore */
-$text-color-warning-on-white-base:      mix(black, $color-warning-500, 20%);
-$text-color-warning-on-warning-050-base: mix(black, $color-warning-500, 25%);
+$text-color-warning-on-white-base:      mix(black, $color-warning-400, 25%);
+$text-color-warning-on-warning-050-base: mix(black, $color-warning-500, 27%);
 $text-color-warning-on-warning-100-base: mix(black, $color-warning-500, 35%);
 $text-color-warning-on-warning-200-base: mix(black, $color-warning-500, 50%);
 $text-color-warning-on-warning-300-base: mix(black, $color-warning-500, 60%);
@@ -16,11 +16,11 @@ $text-color-warning-on-warning-900-base: mix(white, $color-warning-500, 90%);
 // white
 --text-color-warning-regular-on-white:                    #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,  100%),  100%)};
 // --text-color-warning-subdued-on-white:                    #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,  100%),  100%)};
---text-color-warning-dangerously-subdued-on-white:        #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,   52%),  20%)};
+--text-color-warning-dangerously-subdued-on-white:        #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,   52%),  0%)};
 // 050
 --text-color-warning-regular-on-warning-050:              #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,  100%),  100%)};
 // --text-color-warning-subdued-on-warning-050:              #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,   70%),  0%)}; 
---text-color-warning-dangerously-subdued-on-warning-050:  #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,   55%),  17%)};
+--text-color-warning-dangerously-subdued-on-warning-050:  #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,   55%),  0%)};
 // 100
 --text-color-warning-regular-on-warning-100:              #{saturate(mix($text-color-warning-on-warning-100-base, $color-warning-100,  100%),  100%)};
 // --text-color-warning-subdued-on-warning-100:              #{saturate(mix($text-color-warning-on-warning-100-base, $color-warning-100,   70%),  100%)};

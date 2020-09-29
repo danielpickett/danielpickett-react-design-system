@@ -47,16 +47,16 @@ $color-success-800: hsl(122, 42%, 16%);
 $color-success-900: hsl(122, 37%, 12%);
 
 // warning
-$color-warning-050: hsl(38, 100%, 93%);
-$color-warning-100: hsl(38, 100%, 85%);
-$color-warning-200: hsl(38, 95%, 70%);
-$color-warning-300: hsl(38, 90%, 57%);
-$color-warning-400: hsl(38, 95%, 46%);
-$color-warning-500: hsl(38, 100%, 39%);
-$color-warning-600: hsl(38, 100%, 30%);
-$color-warning-700: hsl(38, 100%, 22%);
-$color-warning-800: hsl(38, 100%, 17%);
-$color-warning-900: hsl(38, 100%, 12%);
+$color-warning-050: hsl(31, 100%, 94%);
+$color-warning-100: hsl(31, 100%, 85%);
+$color-warning-200: hsl(31,  95%, 72%);
+$color-warning-300: hsl(31,  90%, 61%);
+$color-warning-400: hsl(31,  90%, 53%);
+$color-warning-500: hsl(31, 100%, 46%);
+$color-warning-600: hsl(31, 100%, 37%);
+$color-warning-700: hsl(31, 100%, 25%);
+$color-warning-800: hsl(31, 100%, 20%);
+$color-warning-900: hsl(31, 100%, 15%);
 
 // danger
 $color-danger-050: hsl(355, 100%, 96.5%);
@@ -70,7 +70,7 @@ $color-danger-700: hsl(355, 90%, 30%);
 $color-danger-800: hsl(355, 90%, 23%);
 $color-danger-900: hsl(355, 90%, 16%);
 
-.light-theme {
+:root {
   // white
   --color-white-050: #{$color-white-050};
   --color-white-100: #{$color-white-100};
