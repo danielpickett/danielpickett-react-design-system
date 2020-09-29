@@ -16,7 +16,7 @@ export const TextColors = ({
   <div
     className="TextColors"
     style={{
-      borderColor: `var(--text-color-${scale}-regular-on-${on}${
+      borderLeftColor: `var(--text-color-${scale}-regular-on-${on}${
         wash ? `-${wash}` : ''
       })`,
     }}
