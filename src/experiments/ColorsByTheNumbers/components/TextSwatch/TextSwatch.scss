@@ -1,7 +1,7 @@
 .TextSwatch {
   color: transparent;
   width: 10rem;
-  padding-bottom: 0.5rem;
+  flex-shrink: 0;
 
   &__details {
     padding: 0.5rem;

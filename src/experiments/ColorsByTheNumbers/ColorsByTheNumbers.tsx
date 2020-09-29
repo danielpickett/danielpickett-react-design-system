@@ -1,7 +1,6 @@
 import React from 'react'
 import './ColorsByTheNumbers.scss'
 import './light-theme-scss/_index.scss'
-import { TextSample } from './components/TextSample'
 import { TextSwatch } from './components/TextSwatch'
 import { TextColors } from './components'
 
