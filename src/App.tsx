@@ -79,6 +79,9 @@ export const App = () => {
             <NavLink className="App__nav-link" to="/all-components">
               All components
             </NavLink>
+            <NavLink className="App__nav-link" to="/colors-by-the-numbers">
+              Colors by the numbers
+            </NavLink>
           </div>
         </div>
         <div className="App__showcases">
@@ -104,7 +107,7 @@ export const App = () => {
               </>
             )}
           />
-          <Route exact path="/ColorsByTheNumbers" component={ColorsByTheNumbers} />
+          <Route exact path="/colors-by-the-numbers" component={ColorsByTheNumbers} />
         </div>
       </div>
     </BrowserRouter>
