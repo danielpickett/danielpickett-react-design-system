@@ -16,7 +16,7 @@ import {
   ModalShowcase,
 } from './showcases'
 
-import { ColorsByTheNumbers } from 'experiments'
+import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [

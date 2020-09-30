@@ -35,10 +35,10 @@ $color-primary-800: hsl(245, 69%, 35%);
 $color-primary-900: hsl(245, 64%, 24%);
 
 // success
-$color-success-050: hsl(122, 95%, 95%);
-$color-success-100: hsl(122, 32%, 85%);
-$color-success-200: hsl(122, 36%, 71%);
-$color-success-300: hsl(122, 33%, 60%);
+$color-success-050: hsl(122, 85%, 95%);
+$color-success-100: hsl(122, 52%, 85%);
+$color-success-200: hsl(122, 40%, 71%);
+$color-success-300: hsl(122, 38%, 60%);
 $color-success-400: hsl(122, 41%, 44%);
 $color-success-500: hsl(122, 89%, 28%);
 $color-success-600: hsl(122, 60%, 25%);
@@ -70,7 +70,7 @@ $color-danger-700: hsl(355, 90%, 30%);
 $color-danger-800: hsl(355, 90%, 23%);
 $color-danger-900: hsl(355, 90%, 16%);
 
-:root {
+.light-theme {
   // white
   --color-white-050: #{$color-white-050};
   --color-white-100: #{$color-white-100};

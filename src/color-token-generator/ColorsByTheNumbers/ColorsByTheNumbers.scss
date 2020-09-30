@@ -1,0 +1,29 @@
+$titles-width: 8.5rem;
+.ColorsByTheNumbers {
+  &__labels {
+    display: flex;
+    margin-left: $titles-width + 0.5rem;
+  }
+
+  &__label {
+    width: 10rem;
+    flex-shrink: 0;
+  }
+
+  &__titles-container {
+    padding-top: 3.5rem;
+    width: $titles-width;
+  }
+
+  &__titles {
+    margin-bottom: 2.63rem;
+    margin-right: 1rem;
+  }
+
+  &__title {
+    color: var(--text-color-grey-dangerously-subdued-on-white);
+    font-size: 0.7rem;
+    text-align: right;
+    margin-bottom: 0.375rem;
+  }
+}

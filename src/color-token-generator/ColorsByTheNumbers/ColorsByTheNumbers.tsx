@@ -19,6 +19,14 @@ const washes = [
   '900',
 ]
 
+const titles = (
+  <div className="ColorsByTheNumbers__titles">
+    <div className="ColorsByTheNumbers__title">regular</div>
+    <div className="ColorsByTheNumbers__title">subdued</div>
+    <div className="ColorsByTheNumbers__title">dangerously-subdued</div>
+  </div>
+)
+
 export const ColorsByTheNumbers = () => {
   return (
     <div className="ColorsByTheNumbers light-theme">
@@ -36,6 +44,11 @@ export const ColorsByTheNumbers = () => {
 
       {scales.map((scaleName, index) => (
         <div style={{ display: 'flex' }} key={index}>
+          <div className="ColorsByTheNumbers__titles-container">
+            {scaleName === 'grey'
+              ? scales.map(() => <>{titles}</>)
+              : titles}
+          </div>
           <TextSwatch
             backgroundColor={`white`}
             render={(swNode) =>
@@ -60,7 +73,6 @@ export const ColorsByTheNumbers = () => {
               )
             }
           />
-
           {washes.map((wash, index) => (
             <TextSwatch
               key={index}

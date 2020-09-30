@@ -1,0 +1,55 @@
+/* prettier-ignore */
+$text-color-primary-on-grey-050-base: mix(black, $color-primary-500, 20%);
+$text-color-primary-on-grey-100-base: mix(black, $color-primary-500, 25%);
+$text-color-primary-on-grey-200-base: mix(black, $color-primary-500, 35%);
+$text-color-primary-on-grey-300-base: mix(black, $color-primary-500, 0%);
+$text-color-primary-on-grey-400-base: mix(black, $color-primary-500, 0%);
+$text-color-primary-on-grey-500-base: mix(white, $color-primary-500, 0%);
+$text-color-primary-on-grey-600-base: mix(white, $color-primary-500, 0%);
+$text-color-primary-on-grey-700-base: mix(white, $color-primary-500, 60%);
+$text-color-primary-on-grey-800-base: mix(white, $color-primary-500, 60%);
+$text-color-primary-on-grey-900-base: mix(white, $color-primary-500, 60%);
+
+/* prettier-ignore */                                                                                                                               
+.light-theme {                                                                                                                                      
+// 050                                                                                                                                              
+--text-color-primary-regular-on-grey-050:              #{saturate(mix($text-color-primary-on-grey-050-base, $color-grey-050,  100%),  100%)};       
+// --text-color-primary-subdued-on-grey-050:              #{saturate(mix($text-color-primary-on-grey-050-base, $color-grey-050,  68%),  100%)};     
+--text-color-primary-dangerously-subdued-on-grey-050:  #{saturate(mix($text-color-primary-on-grey-050-base, $color-grey-050,   49%),  100%)};       
+// 100                                                                                                                                              
+--text-color-primary-regular-on-grey-100:              #{saturate(mix($text-color-primary-on-grey-100-base, $color-grey-100,  100%),  100%)};       
+// --text-color-primary-subdued-on-grey-100:              #{saturate(mix($text-color-primary-on-grey-100-base, $color-grey-100,  100%),  0%)};      
+--text-color-primary-dangerously-subdued-on-grey-100:  #{saturate(mix($text-color-primary-on-grey-100-base, $color-grey-100,   45%),  100%)};       
+// 200                                                                                                                                              
+--text-color-primary-regular-on-grey-200:              #{saturate(mix($text-color-primary-on-grey-200-base, $color-grey-200,  100%),  100%)};       
+// --text-color-primary-subdued-on-grey-200:              #{saturate(mix($text-color-primary-on-grey-200-base, $color-grey-200,  100%),  0%)};      
+--text-color-primary-dangerously-subdued-on-grey-200:  #{saturate(mix($text-color-primary-on-grey-200-base, $color-grey-200,   45%),  50%)};        
+// 300                                                                                                                                              
+// --text-color-primary-regular-on-grey-300:              #{saturate(mix($text-color-primary-on-grey-300-base, $color-grey-300,  100%),  100%)};    
+// --text-color-primary-subdued-on-grey-300:              #{saturate(mix($text-color-primary-on-grey-300-base, $color-grey-300,  100%),  0%)};      
+// --text-color-primary-dangerously-subdued-on-grey-300:  #{saturate(mix($text-color-primary-on-grey-300-base, $color-grey-300,  100%),  100%)};    
+// 400                                                                                                                                              
+// --text-color-primary-regular-on-grey-400:              #{saturate(mix($text-color-primary-on-grey-400-base, $color-grey-400,  100%),  100%)};    
+// --text-color-primary-subdued-on-grey-400:              #{saturate(mix($text-color-primary-on-grey-400-base, $color-grey-400,  100%),  0%)};      
+// --text-color-primary-dangerously-subdued-on-grey-400:  #{saturate(mix($text-color-primary-on-grey-400-base, $color-grey-400,  100%),  100%)};    
+// 500                                                                                                                                              
+// --text-color-primary-regular-on-grey-500:              #{saturate(mix($text-color-primary-on-grey-500-base, $color-grey-500,  100%),  100%)};    
+// --text-color-primary-subdued-on-grey-500:              #{saturate(mix($text-color-primary-on-grey-500-base, $color-grey-500,  100%),  0%)};      
+// --text-color-primary-dangerously-subdued-on-grey-500:  #{saturate(mix($text-color-primary-on-grey-500-base, $color-grey-500,  100%),  100%)};    
+// 600                                                                                                                                              
+// --text-color-primary-regular-on-grey-600:              #{saturate(mix($text-color-primary-on-grey-600-base, $color-grey-600,  100%),  100%)};    
+// --text-color-primary-subdued-on-grey-600:              #{saturate(mix($text-color-primary-on-grey-600-base, $color-grey-600,  100%),  0%)};      
+// --text-color-primary-dangerously-subdued-on-grey-600:  #{saturate(mix($text-color-primary-on-grey-600-base, $color-grey-600,  100%),  100%)};    
+// 700                                                                                                                                              
+--text-color-primary-regular-on-grey-700:              #{saturate(mix($text-color-primary-on-grey-700-base, $color-grey-700,  100%),  100%)};       
+// --text-color-primary-subdued-on-grey-700:              #{saturate(mix($text-color-primary-on-grey-700-base, $color-grey-700,  100%),  0%)};      
+--text-color-primary-dangerously-subdued-on-grey-700:  #{saturate(mix($text-color-primary-on-grey-700-base, $color-grey-700,  65%),    5%)};        
+// 800                                                                                                                                              
+--text-color-primary-regular-on-grey-800:              #{saturate(mix($text-color-primary-on-grey-800-base, $color-grey-800,  100%), 100%)};        
+// --text-color-primary-subdued-on-grey-800:              #{saturate(mix($text-color-primary-on-grey-800-base, $color-grey-800,  100%),  0%)};      
+--text-color-primary-dangerously-subdued-on-grey-800:  #{saturate(mix($text-color-primary-on-grey-800-base, $color-grey-800,   60%),   5%)};        
+// 900                                                                                                                                              
+--text-color-primary-regular-on-grey-900:              #{saturate(mix($text-color-primary-on-grey-900-base, $color-grey-900, 100%),  0%)};          
+--text-color-primary-subdued-on-grey-900:              #{saturate(mix($text-color-primary-on-grey-900-base, $color-grey-900,  66%),  2.5%)};        
+--text-color-primary-dangerously-subdued-on-grey-900:  #{saturate(mix($text-color-primary-on-grey-900-base, $color-grey-900,  50%),  5%)};          
+}                                                                                                                                                   
