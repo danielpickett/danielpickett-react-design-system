@@ -1,4 +1,4 @@
-@import './sass/_tokens.scss';
+@import './design-tokens/_index.scss';
 @import './fonts/font-faces.css';
 @import './_vars.scss';
 
@@ -6,18 +6,6 @@
 :root {
   font-family: Inter, sans-serif;
   color: $color-grey-700;
-}
-
-::selection {
-  background: $color-primary-100; /* WebKit/Blink Browsers */
-}
-::-moz-selection {
-  background: $color-primary-100; /* Gecko Browsers */
-}
-
-::placeholder {
-  color: currentColor;
-  opacity: .3;
 }
 
 * {
