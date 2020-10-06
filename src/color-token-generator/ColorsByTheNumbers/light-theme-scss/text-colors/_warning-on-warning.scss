@@ -1,60 +1,64 @@
 /* prettier-ignore */
-$text-color-warning-on-white-base:       mix(black, $color-warning-400, 25%);
-$text-color-warning-on-warning-050-base: mix(black, $color-warning-500, 27%);
-$text-color-warning-on-warning-100-base: mix(black, $color-warning-500, 35%);
-$text-color-warning-on-warning-200-base: mix(black, $color-warning-500, 50%);
-$text-color-warning-on-warning-300-base: mix(black, $color-warning-500, 60%);
-$text-color-warning-on-warning-400-base: mix(black, $color-warning-500, 70%);
-$text-color-warning-on-warning-500-base: mix(white, $color-warning-500, 100%);
-$text-color-warning-on-warning-600-base: mix(white, $color-warning-500, 100%);
-$text-color-warning-on-warning-700-base: mix(white, $color-warning-500, 100%);
-$text-color-warning-on-warning-800-base: mix(white, $color-warning-500, 100%);
-$text-color-warning-on-warning-900-base: mix(white, $color-warning-500, 90%);
+$text-on-warning-050--color-warning--base: mix(black, $color-warning-500, 27%);
+$text-on-warning-100--color-warning--base: mix(black, $color-warning-500, 35%);
+$text-on-warning-200--color-warning--base: mix(black, $color-warning-500, 50%);
+$text-on-warning-300--color-warning--base: mix(black, $color-warning-500, 60%);
+$text-on-warning-400--color-warning--base: mix(black, $color-warning-500, 70%);
+$text-on-warning-500--color-warning--base: mix(white, $color-warning-500, 100%);
+$text-on-warning-600--color-warning--base: mix(white, $color-warning-500, 100%);
+$text-on-warning-700--color-warning--base: mix(white, $color-warning-500, 100%);
+$text-on-warning-800--color-warning--base: mix(white, $color-warning-500, 100%);
+$text-on-warning-900--color-warning--base: mix(white, $color-warning-500, 90%);
 
-/* prettier-ignore */                                                                                                                                       
-.light-theme {                                                                                                                                              
-// white                                                                                                                                                    
---text-color-warning-regular-on-white:                    #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,  100%),  100%)};      
-// --text-color-warning-subdued-on-white:                    #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,  100%),  100%)};   
---text-color-warning-dangerously-subdued-on-white:        #{saturate(mix($text-color-warning-on-white-base,       $color-warning-050,   52%),  0%)};        
-// 050                                                                                                                                                      
---text-color-warning-regular-on-warning-050:              #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,  100%),  100%)};      
-// --text-color-warning-subdued-on-warning-050:              #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,   70%),  0%)};     
---text-color-warning-dangerously-subdued-on-warning-050:  #{saturate(mix($text-color-warning-on-warning-050-base, $color-warning-050,   55%),  0%)};        
-// 100                                                                                                                                                      
---text-color-warning-regular-on-warning-100:              #{saturate(mix($text-color-warning-on-warning-100-base, $color-warning-100,  100%),  100%)};      
-// --text-color-warning-subdued-on-warning-100:              #{saturate(mix($text-color-warning-on-warning-100-base, $color-warning-100,   70%),  100%)};   
---text-color-warning-dangerously-subdued-on-warning-100:  #{saturate(mix($text-color-warning-on-warning-100-base, $color-warning-100,   56%),  12%)};       
-// 200                                                                                                                                                      
---text-color-warning-regular-on-warning-200:              #{saturate(mix($text-color-warning-on-warning-200-base, $color-warning-200,  100%),  100%)};      
-// --text-color-warning-subdued-on-warning-200:              #{saturate(mix($text-color-warning-on-warning-200-base, $color-warning-200,   70%),  0%)};     
-// --text-color-warning-dangerously-subdued-on-warning-200:  #{saturate(mix($text-color-warning-on-warning-200-base, $color-warning-200,   50%),  0%)};     
-// 300                                                                                                                                                      
---text-color-warning-regular-on-warning-300:              #{saturate(mix($text-color-warning-on-warning-300-base, $color-warning-300,  100%),  100%)};      
-// --text-color-warning-subdued-on-warning-300:              #{saturate(mix($text-color-warning-on-warning-300-base, $color-warning-300,   70%),  0%)};     
-// --text-color-warning-dangerously-subdued-on-warning-300:  #{saturate(mix($text-color-warning-on-warning-300-base, $color-warning-300,   50%),  0%)};     
-// 400                                                                                                                                                      
---text-color-warning-regular-on-warning-400:              #{saturate(mix($text-color-warning-on-warning-400-base, $color-warning-400,  100%),  100%)};      
-// --text-color-warning-subdued-on-warning-400:              #{saturate(mix($text-color-warning-on-warning-400-base, $color-warning-400,   70%),  0%)};     
-// --text-color-warning-dangerously-subdued-on-warning-400:  #{saturate(mix($text-color-warning-on-warning-400-base, $color-warning-400,   50%),  0%)};     
-// 500                                                                                                                                                      
---text-color-warning-regular-on-warning-500:              #{saturate(mix($text-color-warning-on-warning-500-base, $color-warning-500,  100%),  0%)};        
-// --text-color-warning-subdued-on-warning-500:              #{saturate(mix($text-color-warning-on-warning-500-base, $color-warning-500,   70%),  0%)};     
---text-color-warning-dangerously-subdued-on-warning-500:  #{saturate(mix($text-color-warning-on-warning-500-base, $color-warning-500,   70%),  0%)};        
-// 600                                                                                                                                                      
---text-color-warning-regular-on-warning-600:              #{saturate(mix($text-color-warning-on-warning-600-base, $color-warning-600,  100%),  0%)};        
-// --text-color-warning-subdued-on-warning-600:              #{saturate(mix($text-color-warning-on-warning-600-base, $color-warning-600,   60%),  0%)};     
---text-color-warning-dangerously-subdued-on-warning-600:  #{saturate(mix($text-color-warning-on-warning-600-base, $color-warning-600,   56%),  0%)};        
-// 700                                                                                                                                                      
---text-color-warning-regular-on-warning-700:              #{saturate(mix($text-color-warning-on-warning-700-base, $color-warning-700,  100%),  0%)};        
---text-color-warning-subdued-on-warning-700:              #{saturate(mix($text-color-warning-on-warning-700-base, $color-warning-700,   66%),  0%)};        
---text-color-warning-dangerously-subdued-on-warning-700:  #{saturate(mix($text-color-warning-on-warning-700-base, $color-warning-700,   48%),  0%)};        
-// 800                                                                                                                                                      
---text-color-warning-regular-on-warning-800:              #{saturate(mix($text-color-warning-on-warning-800-base, $color-warning-800,  93%),  0%)};         
---text-color-warning-subdued-on-warning-800:              #{saturate(mix($text-color-warning-on-warning-800-base, $color-warning-800,   58%),  0%)};        
---text-color-warning-dangerously-subdued-on-warning-800:  #{saturate(mix($text-color-warning-on-warning-800-base, $color-warning-800,   41%),  0%)};        
-// 900                                                                                                                                                      
---text-color-warning-regular-on-warning-900:              #{saturate(mix($text-color-warning-on-warning-900-base, $color-warning-900,  90%),  0%)};         
---text-color-warning-subdued-on-warning-900:              #{saturate(mix($text-color-warning-on-warning-900-base, $color-warning-900,   55%),  0%)};        
---text-color-warning-dangerously-subdued-on-warning-900:  #{saturate(mix($text-color-warning-on-warning-900-base, $color-warning-900,   40%),  0%)};        
+/* prettier-ignore */                                                                                                                                            
+.light-theme, .warning-on-warning {                                                                                                                                                   
+   // 050                                                                                                                                                        
+   --text-on-warning-050--color-warning:                       #{saturate(mix($text-on-warning-050--color-warning--base, $color-warning-050,  100%),  100%)};        
+// --text-on-warning-050--color-warning--subdued:              #{saturate(mix($text-on-warning-050--color-warning--base, $color-warning-050,   70%),  0%)};          
+   --text-on-warning-050--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-050--color-warning--base, $color-warning-050,   55%),  0%)};          
+                                                                                                                                                                    
+   // 100                                                                                                                                                           
+   --text-on-warning-100--color-warning:                       #{saturate(mix($text-on-warning-100--color-warning--base, $color-warning-100,  100%),  100%)};        
+// --text-on-warning-100--color-warning--subdued:              #{saturate(mix($text-on-warning-100--color-warning--base, $color-warning-100,   70%),  100%)};        
+   --text-on-warning-100--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-100--color-warning--base, $color-warning-100,   56%),  12%)};         
+                                                                                                                                                                    
+   // 200                                                                                                                                                           
+   --text-on-warning-200--color-warning:                       #{saturate(mix($text-on-warning-200--color-warning--base, $color-warning-200,  100%),  100%)};        
+// --text-on-warning-200--color-warning--subdued:              #{saturate(mix($text-on-warning-200--color-warning--base, $color-warning-200,   70%),  0%)};          
+// --text-on-warning-200--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-200--color-warning--base, $color-warning-200,   50%),  0%)};          
+                                                                                                                                                                    
+   // 300                                                                                                                                                           
+// --text-on-warning-300--color-warning:                       #{saturate(mix($text-on-warning-300--color-warning--base, $color-warning-300,  100%),  100%)};        
+// --text-on-warning-300--color-warning--subdued:              #{saturate(mix($text-on-warning-300--color-warning--base, $color-warning-300,   70%),  0%)};          
+// --text-on-warning-300--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-300--color-warning--base, $color-warning-300,   50%),  0%)};          
+                                                                                                                                                                    
+   // 400                                                                                                                                                           
+// --text-on-warning-400--color-warning:                       #{saturate(mix($text-on-warning-400--color-warning--base, $color-warning-400,  100%),  100%)};        
+// --text-on-warning-400--color-warning--subdued:              #{saturate(mix($text-on-warning-400--color-warning--base, $color-warning-400,   70%),  0%)};          
+// --text-on-warning-400--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-400--color-warning--base, $color-warning-400,   50%),  0%)};          
+                                                                                                                                                                    
+   // 500                                                                                                                                                           
+   --text-on-warning-500--color-warning:                       #{saturate(mix($text-on-warning-500--color-warning--base, $color-warning-500,  100%),  0%)};          
+// --text-on-warning-500--color-warning--subdued:              #{saturate(mix($text-on-warning-500--color-warning--base, $color-warning-500,   70%),  0%)};          
+   --text-on-warning-500--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-500--color-warning--base, $color-warning-500,   70%),  0%)};          
+                                                                                                                                                                    
+   // 600                                                                                                                                                           
+   --text-on-warning-600--color-warning:                       #{saturate(mix($text-on-warning-600--color-warning--base, $color-warning-600,  100%),  0%)};          
+// --text-on-warning-600--color-warning--subdued:              #{saturate(mix($text-on-warning-600--color-warning--base, $color-warning-600,   60%),  0%)};          
+   --text-on-warning-600--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-600--color-warning--base, $color-warning-600,   56%),  0%)};          
+                                                                                                                                                                    
+   // 700                                                                                                                                                           
+   --text-on-warning-700--color-warning:                       #{saturate(mix($text-on-warning-700--color-warning--base, $color-warning-700,  100%),  0%)};          
+   --text-on-warning-700--color-warning--subdued:              #{saturate(mix($text-on-warning-700--color-warning--base, $color-warning-700,   66%),  0%)};          
+   --text-on-warning-700--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-700--color-warning--base, $color-warning-700,   48%),  0%)};          
+                                                                                                                                                                    
+   // 800                                                                                                                                                           
+   --text-on-warning-800--color-warning:                       #{saturate(mix($text-on-warning-800--color-warning--base, $color-warning-800,  93%),  0%)};           
+   --text-on-warning-800--color-warning--subdued:              #{saturate(mix($text-on-warning-800--color-warning--base, $color-warning-800,   58%),  0%)};          
+   --text-on-warning-800--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-800--color-warning--base, $color-warning-800,   41%),  0%)};          
+                                                                                                                                                                    
+   // 900                                                                                                                                                           
+   --text-on-warning-900--color-warning:                       #{saturate(mix($text-on-warning-900--color-warning--base, $color-warning-900,  90%),  0%)};           
+   --text-on-warning-900--color-warning--subdued:              #{saturate(mix($text-on-warning-900--color-warning--base, $color-warning-900,   55%),  0%)};          
+   --text-on-warning-900--color-warning--dangerously-subdued:  #{saturate(mix($text-on-warning-900--color-warning--base, $color-warning-900,   40%),  0%)};          
 }                                                                                                                                                           

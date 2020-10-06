@@ -22,6 +22,9 @@ export const TextSample = ({
         if (textRef.current && swatchRef.current) {
           const c1 = getComputedStyle(textRef.current, null).color || ''
           const c2 = getComputedStyle(swatchRef.current, null).backgroundColor
+          if (c1 === 'rgba(0, 0, 0, 0)'){
+            // console.log('blank', )
+          }
 
           const _contrast = +chroma.contrast(c1, c2).toFixed(2)
           const rating = _contrast < 4.5 ? ' ✕' : ' ✓'

@@ -10,6 +10,7 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
+  TextOldShowcase,
   LabeledValueShowcase,
   TooltipShowcase,
   ColorShowcase,
@@ -40,6 +41,7 @@ export const App = () => {
       component: LabeledValueShowcase,
     },
     { label: 'Text', route: '/Text', component: TextShowcase },
+    { label: 'TextOld', route: '/TextOld', component: TextOldShowcase },
     {
       label: 'LayoutComponent',
       route: '/LayoutComponent',
@@ -85,7 +87,22 @@ export const App = () => {
           </div>
         </div>
         <div className="App__showcases">
-          <Route exact path="/" render={() => <p>Welcome!</p>} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div
+                style={{
+                  display: 'grid',
+                  placeItems: 'center',
+                  height: '50vh',
+                  color: 'var(--text-color-grey-on-white--dangerously-subdued)',
+                }}
+              >
+                <h1>Welcome!</h1>
+              </div>
+            )}
+          />
           {showcases.map((showcase, index) => (
             <Route
               key={index}
@@ -107,7 +124,16 @@ export const App = () => {
               </>
             )}
           />
-          <Route exact path="/colors-by-the-numbers" component={ColorsByTheNumbers} />
+          <Route
+            exact
+            path="/colors-by-the-numbers"
+            component={ColorsByTheNumbers}
+          />
+          <Route
+            exact
+            path="/text-test"
+            component={()=> <div>hi</div>}
+          />
         </div>
       </div>
     </BrowserRouter>

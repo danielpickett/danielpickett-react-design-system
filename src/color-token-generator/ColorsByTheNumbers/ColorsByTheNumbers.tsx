@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './ColorsByTheNumbers.scss'
 import './light-theme-scss/_index.scss'
 import { TextSwatch } from './components/TextSwatch'
@@ -28,6 +28,7 @@ const titles = (
 )
 
 export const ColorsByTheNumbers = () => {
+  
   return (
     <div className="ColorsByTheNumbers light-theme">
       <div className="ColorsByTheNumbers__labels">
@@ -46,7 +47,7 @@ export const ColorsByTheNumbers = () => {
         <div style={{ display: 'flex' }} key={index}>
           <div className="ColorsByTheNumbers__titles-container">
             {scaleName === 'grey'
-              ? scales.map(() => <>{titles}</>)
+              ? scales.map((_, i) => <Fragment key={i}>{titles}</Fragment>)
               : titles}
           </div>
           <TextSwatch
@@ -102,6 +103,7 @@ export const ColorsByTheNumbers = () => {
           ))}
         </div>
       ))}
+      <div id="output"></div>
     </div>
   )
 }
