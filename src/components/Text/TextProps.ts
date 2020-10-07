@@ -13,8 +13,8 @@ interface CommonTextProps {
 // interface OnWhiteSubdued {
 //   on: 'white'
 //   color: undefined
-
 // }
+
 interface OnWhite {
   on: 'white'
   color?:
