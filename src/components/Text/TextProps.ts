@@ -1,49 +1,34 @@
-import { ReactNode } from 'react'
+import { CSSProperties, ReactNode } from 'react'
 
 interface CommonTextProps {
   children?: ReactNode
   size?: 'xxxl' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs'
   weight?: 'normal' | 'bold' | 'light'
+  UNSAFE_style?: CSSProperties
+  UNSAFE_className?: string
+  subdued?: boolean
+  dangerouslySubdued?: boolean
 }
 
-interface OnDanger050 {
-  on: 'danger-050'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
+// interface OnWhiteSubdued {
+//   on: 'white'
+//   color: undefined
 
-interface OnDanger100 {
-  on: 'danger-100'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger200 {
-  on: 'danger-200'
-  color?: 'danger'
-}
-
-interface OnDanger500 {
-  on: 'danger-500'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger600 {
-  on: 'danger-600'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger700 {
-  on: 'danger-700'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
-}
-
-interface OnDanger800 {
-  on: 'danger-800'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
-}
-
-interface OnDanger900 {
-  on: 'danger-900'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
+// }
+interface OnWhite {
+  on: 'white'
+  color?:
+    | 'danger'
+    | 'danger--dangerously-subdued'
+    | 'grey'
+    | 'grey--dangerously-subdued'
+    | 'grey--subdued'
+    | 'primary'
+    | 'primary--dangerously-subdued'
+    | 'success'
+    | 'success--dangerously-subdued'
+    | 'warning'
+    | 'warning--dangerously-subdued'
 }
 
 interface OnGrey050 {
@@ -164,6 +149,46 @@ interface OnGrey900 {
     | 'warning--subdued'
 }
 
+interface OnDanger050 {
+  on: 'danger-050'
+  color?: 'danger' | 'danger--dangerously-subdued'
+}
+
+interface OnDanger100 {
+  on: 'danger-100'
+  color?: 'danger' | 'danger--dangerously-subdued'
+}
+
+interface OnDanger200 {
+  on: 'danger-200'
+  color?: 'danger'
+}
+
+interface OnDanger500 {
+  on: 'danger-500'
+  color?: 'danger' | 'danger--dangerously-subdued'
+}
+
+interface OnDanger600 {
+  on: 'danger-600'
+  color?: 'danger' | 'danger--dangerously-subdued'
+}
+
+interface OnDanger700 {
+  on: 'danger-700'
+  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
+}
+
+interface OnDanger800 {
+  on: 'danger-800'
+  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
+}
+
+interface OnDanger900 {
+  on: 'danger-900'
+  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
+}
+
 interface OnPrimary050 {
   on: 'primary-050'
   color?: 'primary' | 'primary--dangerously-subdued'
@@ -282,22 +307,6 @@ interface OnWarning800 {
 interface OnWarning900 {
   on: 'warning-900'
   color?: 'warning' | 'warning--dangerously-subdued' | 'warning--subdued'
-}
-
-interface OnWhite {
-  on: 'white'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
 }
 
 export type TextPropsType = CommonTextProps &

@@ -1,9 +1,8 @@
 import React from 'react'
 // import { TextBackgroundColorType } from './TextBackgroundColorType'
 import './Text.scss'
-import {TextPropsType} from './TextProps'
+import { TextPropsType } from './TextProps'
 // import { availableTextColors } from './availableTextColors'
-
 
 type FontWeightType = 'normal' | 'bolder' | 'lighter'
 
@@ -13,21 +12,22 @@ export const Text = ({
   weight,
   on,
   color,
+  UNSAFE_style,
+  UNSAFE_className,
 }: TextPropsType) => {
-
   const _color = (() => {
-    const _on = on.split('-')[0]
-    if (color === undefined){
-      if ( _on === 'primary') return 'primary'
-      if ( _on === 'success') return 'success'
-      if ( _on === 'warning') return 'warning'
-      if ( _on === 'danger') return 'danger'
+    if (color === undefined) {
+      const _on = on?.split('-')[0] || 'grey'
+      if (_on === 'primary') return 'primary'
+      if (_on === 'success') return 'success'
+      if (_on === 'warning') return 'warning'
+      if (_on === 'danger') return 'danger'
       return 'grey'
     }
     return color
   })()
-  
-  const style: {
+
+  const _style: {
     fontSize: string
     color: string
     fontWeight: FontWeightType
@@ -40,7 +40,10 @@ export const Text = ({
   }
 
   return (
-    <div className="Text" style={style}>
+    <div
+      className={'Text' + (UNSAFE_className ? ' ' + UNSAFE_className : '')}
+      style={{ ..._style, ...UNSAFE_style }}
+    >
       {children}
     </div>
   )
