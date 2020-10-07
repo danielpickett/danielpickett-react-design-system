@@ -6,352 +6,434 @@ interface CommonTextProps {
   weight?: 'normal' | 'bold' | 'light'
   UNSAFE_style?: CSSProperties
   UNSAFE_className?: string
-  subdued?: boolean
-  dangerouslySubdued?: boolean
 }
-
-// interface OnWhiteSubdued {
-//   on: 'white'
-//   color: undefined
-// }
-
-interface OnWhite {
+interface OnWhiteColorGrey {
+  color?: 'grey'
   on: 'white'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
+  subdued?: false | true | 'dangerously'
 }
-
-interface OnGrey050 {
-  on: 'grey-050'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-}
-
-interface OnGrey100 {
-  on: 'grey-100'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-}
-
-interface OnGrey200 {
-  on: 'grey-200'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-}
-
-interface OnGrey300 {
-  on: 'grey-300'
-  color?: 'grey' | 'grey--dangerously-subdued'
-}
-
-interface OnGrey400 {
-  on: 'grey-400'
-  color?: 'grey' | 'grey--dangerously-subdued'
-}
-
-interface OnGrey500 {
-  on: 'grey-500'
-  color?: 'grey' | 'grey--dangerously-subdued'
-}
-
-interface OnGrey600 {
-  on: 'grey-600'
-  color?: 'grey' | 'grey--dangerously-subdued' | 'grey--subdued'
-}
-
-interface OnGrey700 {
-  on: 'grey-700'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-}
-
-interface OnGrey800 {
-  on: 'grey-800'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-}
-
-interface OnGrey900 {
-  on: 'grey-900'
-  color?:
-    | 'danger'
-    | 'danger--dangerously-subdued'
-    | 'danger--subdued'
-    | 'grey'
-    | 'grey--dangerously-subdued'
-    | 'grey--subdued'
-    | 'primary'
-    | 'primary--dangerously-subdued'
-    | 'primary--subdued'
-    | 'success'
-    | 'success--dangerously-subdued'
-    | 'success--subdued'
-    | 'warning'
-    | 'warning--dangerously-subdued'
-    | 'warning--subdued'
-}
-
-interface OnDanger050 {
-  on: 'danger-050'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger100 {
-  on: 'danger-100'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger200 {
-  on: 'danger-200'
-  color?: 'danger'
-}
-
-interface OnDanger500 {
-  on: 'danger-500'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger600 {
-  on: 'danger-600'
-  color?: 'danger' | 'danger--dangerously-subdued'
-}
-
-interface OnDanger700 {
-  on: 'danger-700'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
-}
-
-interface OnDanger800 {
-  on: 'danger-800'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
-}
-
-interface OnDanger900 {
-  on: 'danger-900'
-  color?: 'danger' | 'danger--dangerously-subdued' | 'danger--subdued'
-}
-
-interface OnPrimary050 {
-  on: 'primary-050'
-  color?: 'primary' | 'primary--dangerously-subdued'
-}
-
-interface OnPrimary100 {
-  on: 'primary-100'
-  color?: 'primary' | 'primary--dangerously-subdued'
-}
-
-interface OnPrimary200 {
-  on: 'primary-200'
+interface OnWhiteColorPrimary {
   color?: 'primary'
+  on: 'white'
+  subdued?: false | 'dangerously'
 }
-
-interface OnPrimary500 {
-  on: 'primary-500'
-  color?: 'primary' | 'primary--dangerously-subdued'
-}
-
-interface OnPrimary600 {
-  on: 'primary-600'
-  color?: 'primary' | 'primary--dangerously-subdued'
-}
-
-interface OnPrimary700 {
-  on: 'primary-700'
-  color?: 'primary' | 'primary--dangerously-subdued' | 'primary--subdued'
-}
-
-interface OnPrimary800 {
-  on: 'primary-800'
-  color?: 'primary' | 'primary--dangerously-subdued' | 'primary--subdued'
-}
-
-interface OnPrimary900 {
-  on: 'primary-900'
-  color?: 'primary' | 'primary--dangerously-subdued' | 'primary--subdued'
-}
-
-interface OnSuccess050 {
-  on: 'success-050'
-  color?: 'success' | 'success--dangerously-subdued'
-}
-
-interface OnSuccess100 {
-  on: 'success-100'
-  color?: 'success' | 'success--dangerously-subdued'
-}
-
-interface OnSuccess200 {
-  on: 'success-200'
+interface OnWhiteColorSuccess {
   color?: 'success'
+  on: 'white'
+  subdued?: false | 'dangerously'
 }
-
-interface OnSuccess500 {
-  on: 'success-500'
-  color?: 'success' | 'success--dangerously-subdued'
-}
-
-interface OnSuccess600 {
-  on: 'success-600'
-  color?: 'success' | 'success--dangerously-subdued'
-}
-
-interface OnSuccess700 {
-  on: 'success-700'
-  color?: 'success' | 'success--dangerously-subdued' | 'success--subdued'
-}
-
-interface OnSuccess800 {
-  on: 'success-800'
-  color?: 'success' | 'success--dangerously-subdued' | 'success--subdued'
-}
-
-interface OnSuccess900 {
-  on: 'success-900'
-  color?: 'success' | 'success--dangerously-subdued' | 'success--subdued'
-}
-
-interface OnWarning050 {
-  on: 'warning-050'
-  color?: 'warning' | 'warning--dangerously-subdued'
-}
-
-interface OnWarning100 {
-  on: 'warning-100'
-  color?: 'warning' | 'warning--dangerously-subdued'
-}
-
-interface OnWarning200 {
-  on: 'warning-200'
+interface OnWhiteColorWarning {
   color?: 'warning'
+  on: 'white'
+  subdued?: false | 'dangerously'
 }
-
-interface OnWarning500 {
+interface OnWhiteColorDanger {
+  color?: 'danger'
+  on: 'white'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey050ColorGrey {
+  color?: 'grey'
+  on: 'grey-050'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey050ColorPrimary {
+  color?: 'primary'
+  on: 'grey-050'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey050ColorSuccess {
+  color?: 'success'
+  on: 'grey-050'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey050ColorWarning {
+  color?: 'warning'
+  on: 'grey-050'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey050ColorDanger {
+  color?: 'danger'
+  on: 'grey-050'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey100ColorGrey {
+  color?: 'grey'
+  on: 'grey-100'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey100ColorPrimary {
+  color?: 'primary'
+  on: 'grey-100'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey100ColorSuccess {
+  color?: 'success'
+  on: 'grey-100'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey100ColorWarning {
+  color?: 'warning'
+  on: 'grey-100'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey100ColorDanger {
+  color?: 'danger'
+  on: 'grey-100'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey200ColorGrey {
+  color?: 'grey'
+  on: 'grey-200'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey200ColorPrimary {
+  color?: 'primary'
+  on: 'grey-200'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey200ColorSuccess {
+  color?: 'success'
+  on: 'grey-200'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey200ColorWarning {
+  color?: 'warning'
+  on: 'grey-200'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey200ColorDanger {
+  color?: 'danger'
+  on: 'grey-200'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey300ColorGrey {
+  color?: 'grey'
+  on: 'grey-300'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey400ColorGrey {
+  color?: 'grey'
+  on: 'grey-400'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey500ColorGrey {
+  color?: 'grey'
+  on: 'grey-500'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey600ColorGrey {
+  color?: 'grey'
+  on: 'grey-600'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey700ColorGrey {
+  color?: 'grey'
+  on: 'grey-700'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey700ColorPrimary {
+  color?: 'primary'
+  on: 'grey-700'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey700ColorSuccess {
+  color?: 'success'
+  on: 'grey-700'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey700ColorWarning {
+  color?: 'warning'
+  on: 'grey-700'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey700ColorDanger {
+  color?: 'danger'
+  on: 'grey-700'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey800ColorGrey {
+  color?: 'grey'
+  on: 'grey-800'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey800ColorPrimary {
+  color?: 'primary'
+  on: 'grey-800'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey800ColorSuccess {
+  color?: 'success'
+  on: 'grey-800'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey800ColorWarning {
+  color?: 'warning'
+  on: 'grey-800'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey800ColorDanger {
+  color?: 'danger'
+  on: 'grey-800'
+  subdued?: false | 'dangerously'
+}
+interface OnGrey900ColorGrey {
+  color?: 'grey'
+  on: 'grey-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey900ColorPrimary {
+  color?: 'primary'
+  on: 'grey-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey900ColorSuccess {
+  color?: 'success'
+  on: 'grey-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey900ColorWarning {
+  color?: 'warning'
+  on: 'grey-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnGrey900ColorDanger {
+  color?: 'danger'
+  on: 'grey-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnPrimary050ColorPrimary {
+  color?: 'primary'
+  on: 'primary-050'
+  subdued?: false | 'dangerously'
+}
+interface OnPrimary100ColorPrimary {
+  color?: 'primary'
+  on: 'primary-100'
+  subdued?: false | 'dangerously'
+}
+interface OnPrimary200ColorPrimary {
+  color?: 'primary'
+  on: 'primary-200'
+  subdued?: false
+}
+interface OnPrimary500ColorPrimary {
+  color?: 'primary'
+  on: 'primary-500'
+  subdued?: false | 'dangerously'
+}
+interface OnPrimary600ColorPrimary {
+  color?: 'primary'
+  on: 'primary-600'
+  subdued?: false | 'dangerously'
+}
+interface OnPrimary700ColorPrimary {
+  color?: 'primary'
+  on: 'primary-700'
+  subdued?: false | true | 'dangerously'
+}
+interface OnPrimary800ColorPrimary {
+  color?: 'primary'
+  on: 'primary-800'
+  subdued?: false | true | 'dangerously'
+}
+interface OnPrimary900ColorPrimary {
+  color?: 'primary'
+  on: 'primary-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnSuccess050ColorSuccess {
+  color?: 'success'
+  on: 'success-050'
+  subdued?: false | 'dangerously'
+}
+interface OnSuccess100ColorSuccess {
+  color?: 'success'
+  on: 'success-100'
+  subdued?: false | 'dangerously'
+}
+interface OnSuccess200ColorSuccess {
+  color?: 'success'
+  on: 'success-200'
+  subdued?: false
+}
+interface OnSuccess500ColorSuccess {
+  color?: 'success'
+  on: 'success-500'
+  subdued?: false | 'dangerously'
+}
+interface OnSuccess600ColorSuccess {
+  color?: 'success'
+  on: 'success-600'
+  subdued?: false | 'dangerously'
+}
+interface OnSuccess700ColorSuccess {
+  color?: 'success'
+  on: 'success-700'
+  subdued?: false | true | 'dangerously'
+}
+interface OnSuccess800ColorSuccess {
+  color?: 'success'
+  on: 'success-800'
+  subdued?: false | true | 'dangerously'
+}
+interface OnSuccess900ColorSuccess {
+  color?: 'success'
+  on: 'success-900'
+  subdued?: false | true | 'dangerously'
+}
+interface OnWarning050ColorWarning {
+  color?: 'warning'
+  on: 'warning-050'
+  subdued?: false | 'dangerously'
+}
+interface OnWarning100ColorWarning {
+  color?: 'warning'
+  on: 'warning-100'
+  subdued?: false | 'dangerously'
+}
+interface OnWarning200ColorWarning {
+  color?: 'warning'
+  on: 'warning-200'
+  subdued?: false
+}
+interface OnWarning500ColorWarning {
+  color?: 'warning'
   on: 'warning-500'
-  color?: 'warning' | 'warning--dangerously-subdued'
+  subdued?: false | 'dangerously'
 }
-
-interface OnWarning600 {
+interface OnWarning600ColorWarning {
+  color?: 'warning'
   on: 'warning-600'
-  color?: 'warning' | 'warning--dangerously-subdued'
+  subdued?: false | 'dangerously'
 }
-
-interface OnWarning700 {
+interface OnWarning700ColorWarning {
+  color?: 'warning'
   on: 'warning-700'
-  color?: 'warning' | 'warning--dangerously-subdued' | 'warning--subdued'
+  subdued?: false | true | 'dangerously'
 }
-
-interface OnWarning800 {
+interface OnWarning800ColorWarning {
+  color?: 'warning'
   on: 'warning-800'
-  color?: 'warning' | 'warning--dangerously-subdued' | 'warning--subdued'
+  subdued?: false | true | 'dangerously'
 }
-
-interface OnWarning900 {
+interface OnWarning900ColorWarning {
+  color?: 'warning'
   on: 'warning-900'
-  color?: 'warning' | 'warning--dangerously-subdued' | 'warning--subdued'
+  subdued?: false | true | 'dangerously'
+}
+interface OnDanger050ColorDanger {
+  color?: 'danger'
+  on: 'danger-050'
+  subdued?: false | 'dangerously'
+}
+interface OnDanger100ColorDanger {
+  color?: 'danger'
+  on: 'danger-100'
+  subdued?: false | 'dangerously'
+}
+interface OnDanger200ColorDanger {
+  color?: 'danger'
+  on: 'danger-200'
+  subdued?: false
+}
+interface OnDanger500ColorDanger {
+  color?: 'danger'
+  on: 'danger-500'
+  subdued?: false | 'dangerously'
+}
+interface OnDanger600ColorDanger {
+  color?: 'danger'
+  on: 'danger-600'
+  subdued?: false | 'dangerously'
+}
+interface OnDanger700ColorDanger {
+  color?: 'danger'
+  on: 'danger-700'
+  subdued?: false | true | 'dangerously'
+}
+interface OnDanger800ColorDanger {
+  color?: 'danger'
+  on: 'danger-800'
+  subdued?: false | true | 'dangerously'
+}
+interface OnDanger900ColorDanger {
+  color?: 'danger'
+  on: 'danger-900'
+  subdued?: false | true | 'dangerously'
 }
 
 export type TextPropsType = CommonTextProps &
   (
-    | OnDanger050
-    | OnDanger100
-    | OnDanger200
-    | OnDanger500
-    | OnDanger600
-    | OnDanger700
-    | OnDanger800
-    | OnDanger900
-    | OnGrey050
-    | OnGrey100
-    | OnGrey200
-    | OnGrey300
-    | OnGrey400
-    | OnGrey500
-    | OnGrey600
-    | OnGrey700
-    | OnGrey800
-    | OnGrey900
-    | OnPrimary050
-    | OnPrimary100
-    | OnPrimary200
-    | OnPrimary500
-    | OnPrimary600
-    | OnPrimary700
-    | OnPrimary800
-    | OnPrimary900
-    | OnSuccess050
-    | OnSuccess100
-    | OnSuccess200
-    | OnSuccess500
-    | OnSuccess600
-    | OnSuccess700
-    | OnSuccess800
-    | OnSuccess900
-    | OnWarning050
-    | OnWarning100
-    | OnWarning200
-    | OnWarning500
-    | OnWarning600
-    | OnWarning700
-    | OnWarning800
-    | OnWarning900
-    | OnWhite
+    | OnWhiteColorGrey
+    | OnWhiteColorPrimary
+    | OnWhiteColorSuccess
+    | OnWhiteColorWarning
+    | OnWhiteColorDanger
+    | OnGrey050ColorGrey
+    | OnGrey050ColorPrimary
+    | OnGrey050ColorSuccess
+    | OnGrey050ColorWarning
+    | OnGrey050ColorDanger
+    | OnGrey100ColorGrey
+    | OnGrey100ColorPrimary
+    | OnGrey100ColorSuccess
+    | OnGrey100ColorWarning
+    | OnGrey100ColorDanger
+    | OnGrey200ColorGrey
+    | OnGrey200ColorPrimary
+    | OnGrey200ColorSuccess
+    | OnGrey200ColorWarning
+    | OnGrey200ColorDanger
+    | OnGrey300ColorGrey
+    | OnGrey400ColorGrey
+    | OnGrey500ColorGrey
+    | OnGrey600ColorGrey
+    | OnGrey700ColorGrey
+    | OnGrey700ColorPrimary
+    | OnGrey700ColorSuccess
+    | OnGrey700ColorWarning
+    | OnGrey700ColorDanger
+    | OnGrey800ColorGrey
+    | OnGrey800ColorPrimary
+    | OnGrey800ColorSuccess
+    | OnGrey800ColorWarning
+    | OnGrey800ColorDanger
+    | OnGrey900ColorGrey
+    | OnGrey900ColorPrimary
+    | OnGrey900ColorSuccess
+    | OnGrey900ColorWarning
+    | OnGrey900ColorDanger
+    | OnPrimary050ColorPrimary
+    | OnPrimary100ColorPrimary
+    | OnPrimary200ColorPrimary
+    | OnPrimary500ColorPrimary
+    | OnPrimary600ColorPrimary
+    | OnPrimary700ColorPrimary
+    | OnPrimary800ColorPrimary
+    | OnPrimary900ColorPrimary
+    | OnSuccess050ColorSuccess
+    | OnSuccess100ColorSuccess
+    | OnSuccess200ColorSuccess
+    | OnSuccess500ColorSuccess
+    | OnSuccess600ColorSuccess
+    | OnSuccess700ColorSuccess
+    | OnSuccess800ColorSuccess
+    | OnSuccess900ColorSuccess
+    | OnWarning050ColorWarning
+    | OnWarning100ColorWarning
+    | OnWarning200ColorWarning
+    | OnWarning500ColorWarning
+    | OnWarning600ColorWarning
+    | OnWarning700ColorWarning
+    | OnWarning800ColorWarning
+    | OnWarning900ColorWarning
+    | OnDanger050ColorDanger
+    | OnDanger100ColorDanger
+    | OnDanger200ColorDanger
+    | OnDanger500ColorDanger
+    | OnDanger600ColorDanger
+    | OnDanger700ColorDanger
+    | OnDanger800ColorDanger
+    | OnDanger900ColorDanger
   )

@@ -12,9 +12,12 @@ export const Text = ({
   weight,
   on,
   color,
+  subdued,
   UNSAFE_style,
   UNSAFE_className,
 }: TextPropsType) => {
+  console.log('subdued', subdued)
+
   const _color = (() => {
     if (color === undefined) {
       const _on = on?.split('-')[0] || 'grey'
@@ -27,13 +30,19 @@ export const Text = ({
     return color
   })()
 
+  const colorModifier = (() => {
+    if (subdued === true) return '--subdued'
+    if (subdued === 'dangerously') return '--dangerously-subdued'
+    return ''
+  })()
+
   const _style: {
     fontSize: string
     color: string
     fontWeight: FontWeightType
   } = {
     fontSize: 'var(--text-size-' + size + ')',
-    color: `var(--text-on-${on}--color-${_color})`,
+    color: `var(--text-on-${on}--color-${_color + colorModifier})`,
     fontWeight: (weight
       ? `var(--text-weight-${weight})`
       : undefined) as FontWeightType,
