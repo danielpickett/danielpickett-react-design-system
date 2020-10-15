@@ -1,9 +1,13 @@
+import { StandardLonghandProperties } from 'csstype'
 import { CSSProperties, ReactNode } from 'react'
 
 interface CommonTextProps {
   children?: ReactNode
   size?: 'xxxl' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs'
   weight?: 'normal' | 'bold' | 'light'
+  textAlign?: StandardLonghandProperties["textAlign"]
+  textTransform?: StandardLonghandProperties["textTransform"]
+  noWrap?: boolean
   UNSAFE_style?: CSSProperties
   UNSAFE_className?: string
 }

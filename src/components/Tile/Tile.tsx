@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import * as CSS from 'csstype'
 import './Tile.scss'
-import { TitleText } from '../../components'
+import { Text } from '../../components'
 
 export const Tile: FC<{
   title?: string
@@ -17,7 +17,7 @@ export const Tile: FC<{
     <div className="Tile" style={{...style, ...flexLonghand}}>
       {!!title && (
         <div className="Tile__header">
-          <TitleText>{title}</TitleText>
+          <Text on="grey-050" weight="bold" subdued>{title}</Text>
         </div>
       )}
       <div className="Tile__body">{children}</div>
