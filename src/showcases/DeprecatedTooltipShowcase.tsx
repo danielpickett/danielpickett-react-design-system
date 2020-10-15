@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Tooltip, Button } from 'components'
+import { DeprecatedTooltip, Button } from 'components'
 
-export const TooltipShowcase = () => {
+export const DeprecatedTooltipShowcase = () => {
   const [tooltip1Active, setTooltip1Active] = useState(false)
   const [tooltip2Active, setTooltip2Active] = useState(false)
   const scrollerStyles = {
@@ -25,14 +25,15 @@ export const TooltipShowcase = () => {
           consequatur, ipsum, expedita necessitatibus ex tempora molestiae!
           Architecto laudantium vel ipsam.
         </p>
-        <Tooltip
+        <DeprecatedTooltip
           isActive={tooltip1Active}
           deactivate={() => setTooltip1Active(false)}
           width="556px"
           closeOnClickOutside
           trigger={
             <button
-              onMouseMove={() => setTooltip1Active(true)}
+              onMouseOver={() => setTooltip1Active(true)}
+              onMouseOut={() => setTooltip1Active(false)}
               style={{
                 display: 'block',
                 backgroundColor: 'blue',
@@ -71,7 +72,7 @@ export const TooltipShowcase = () => {
           consequatur, ipsum, expedita necessitatibus ex tempora molestiae!
           Architecto laudantium vel ipsam.
         </p>
-        <Tooltip
+        <DeprecatedTooltip
           isActive={tooltip2Active}
           deactivate={() => setTooltip2Active(false)}
           width="700px"

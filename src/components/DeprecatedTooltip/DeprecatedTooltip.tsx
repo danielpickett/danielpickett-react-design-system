@@ -6,12 +6,12 @@ import React, {
   useCallback,
   useState,
 } from 'react'
-import './Tooltip.scss'
+import './DeprecatedTooltip.scss'
 import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 import * as CSS from 'csstype'
 
-export const Tooltip = ({
+export const DeprecatedTooltip = ({
   trigger,
   tooltipContent,
   isActive,
@@ -163,7 +163,7 @@ export const Tooltip = ({
     }
   })()
 
-  const wrapperClasses = classNames('Tooltip', className, {'Tooltip--is-dark': dark})
+  const wrapperClasses = classNames('DeprecatedTooltip', className, {'DeprecatedTooltip--is-dark': dark})
 
   return (
     <>
@@ -187,7 +187,7 @@ export const Tooltip = ({
             onTouchMove={closeOnScroll ? deactivate : undefined}
           >
             <div
-              className="Tooltip__content"
+              className="DeprecatedTooltip__content"
               style={{
                 ...style,
                 left: getTooltipPos && getTooltipPos.offset,
@@ -197,7 +197,7 @@ export const Tooltip = ({
               {tooltipContent}
             </div>
             <div
-              className="Tooltip__arrow"
+              className="DeprecatedTooltip__arrow"
               style={{
                 transform: getTooltipPos && getTooltipPos.openBelow ? 'scaleY(-1)' : undefined,
                 borderTopColor: backgroundColor ? backgroundColor : undefined

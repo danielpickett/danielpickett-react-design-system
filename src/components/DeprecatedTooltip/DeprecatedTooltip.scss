@@ -1,6 +1,6 @@
 @import 'src/vars';
 
-.Tooltip {
+.DeprecatedTooltip {
   position: fixed;
   z-index: 10000;
   display: flex;
@@ -23,7 +23,7 @@
   }
 }
 
-.Tooltip--is-dark .Tooltip {
+.DeprecatedTooltip--is-dark .DeprecatedTooltip {
   &__content {
     background-color: $color-grey-900;
     color: $color-white;

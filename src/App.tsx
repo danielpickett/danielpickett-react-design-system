@@ -12,7 +12,7 @@ import {
   TextShowcase,
   TextOldShowcase,
   LabeledValueShowcase,
-  TooltipShowcase,
+  DeprecatedTooltipShowcase,
   ColorShowcase,
   ModalShowcase,
 } from './showcases'
@@ -21,7 +21,7 @@ import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [
-    { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
+    { label: 'DeprecatedTooltip', route: '/DeprecatedTooltip', component: DeprecatedTooltipShowcase },
     { label: 'Color', route: '/Color', component: ColorShowcase },
     { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
     {
