@@ -10,11 +10,14 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
+  TextOldShowcase,
   LabeledValueShowcase,
   TooltipShowcase,
   ColorShowcase,
   ModalShowcase,
 } from './showcases'
+
+import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [
@@ -38,6 +41,7 @@ export const App = () => {
       component: LabeledValueShowcase,
     },
     { label: 'Text', route: '/Text', component: TextShowcase },
+    { label: 'TextOld', route: '/TextOld', component: TextOldShowcase },
     {
       label: 'LayoutComponent',
       route: '/LayoutComponent',
@@ -62,8 +66,9 @@ export const App = () => {
             </NavLink>
           </div>
           <div className="App__nav-group">
-            {showcases.map((showcase) => (
+            {showcases.map((showcase, index) => (
               <NavLink
+                key={index}
                 className="App__nav-link"
                 activeClassName="App__nav-link--active"
                 to={showcase.route}
@@ -76,12 +81,35 @@ export const App = () => {
             <NavLink className="App__nav-link" to="/all-components">
               All components
             </NavLink>
+            <NavLink className="App__nav-link" to="/colors-by-the-numbers">
+              Colors by the numbers
+            </NavLink>
           </div>
         </div>
         <div className="App__showcases">
-          <Route exact path="/" render={() => <p>Welcome!</p>} />
-          {showcases.map((showcase) => (
-            <Route exact path={showcase.route} component={showcase.component} />
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <div
+                style={{
+                  display: 'grid',
+                  placeItems: 'center',
+                  height: '50vh',
+                  color: 'var(--text-color-grey-on-white--dangerously-subdued)',
+                }}
+              >
+                <h1>Welcome!</h1>
+              </div>
+            )}
+          />
+          {showcases.map((showcase, index) => (
+            <Route
+              key={index}
+              exact
+              path={showcase.route}
+              component={showcase.component}
+            />
           ))}
           <Route
             exact
@@ -95,6 +123,16 @@ export const App = () => {
                 ))}
               </>
             )}
+          />
+          <Route
+            exact
+            path="/colors-by-the-numbers"
+            component={ColorsByTheNumbers}
+          />
+          <Route
+            exact
+            path="/text-test"
+            component={()=> <div>hi</div>}
           />
         </div>
       </div>

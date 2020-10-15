@@ -1,0 +1,28 @@
+:root {
+  --pixels-1: 0.0625rem;
+  --pixels-2: 0.125rem;
+  --pixels-3: 0.1875rem;
+  --pixels-4: 0.25rem;
+  --pixels-5: 0.3125rem;
+  --pixels-6: 0.375rem;
+  --pixels-7: 0.4375rem;
+  --pixels-8: 0.5rem;
+
+  --text-size-xxxl: 1.625rem;
+  --text-size-xxl: 1.375rem;
+  --text-size-xl: 1.25rem;
+  --text-size-l: 1.125rem;
+  --text-size-m: 1rem;
+  --text-size-s: 0.875rem;
+  --text-size-xs: 0.75rem;
+
+  --border-width-thin: 0.0625rem;
+  --border-width-default: 0.125rem;
+
+  --border-radius-100: 0.125rem;
+  --border-radius-200: 0.25rem;
+  --border-radius-300: 0.5rem;
+  --border-radius-400: 0.75rem;
+  --border-radius-500: 1rem;
+  --border-radius: var(--border-radius-300);
+}

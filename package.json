@@ -1,6 +1,6 @@
 {
   "name": "danielpickett-react-design-system",
-  "version": "1.4.0",
+  "version": "2.0.4",
   "module": "dist/index.js",
   "private": false,
   "license": "MIT",
@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/chroma-js": "^2.1.0",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
@@ -16,6 +17,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-select": "^3.0.11",
+    "chroma-js": "^2.1.0",
     "classnames": "^2.2.6",
     "csstype": "^2.6.10",
     "node-sass": "^4.13.1",

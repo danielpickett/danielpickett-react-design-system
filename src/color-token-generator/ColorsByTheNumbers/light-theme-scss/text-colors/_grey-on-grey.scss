@@ -1,0 +1,70 @@
+/* prettier-ignore */
+   $text-on-white--color-grey--base: mix(black, $color-grey-500, 70%);
+$text-on-grey-050--color-grey--base: mix(black, $color-grey-500, 75%);
+$text-on-grey-100--color-grey--base: mix(black, $color-grey-500, 80%);
+$text-on-grey-200--color-grey--base: mix(black, $color-grey-500, 85%);
+$text-on-grey-300--color-grey--base: mix(black, $color-grey-500, 90%);
+$text-on-grey-400--color-grey--base: mix(black, $color-grey-500, 100%);
+$text-on-grey-500--color-grey--base: mix(white, $color-grey-500, 100%);
+$text-on-grey-600--color-grey--base: mix(white, $color-grey-500, 100%);
+$text-on-grey-700--color-grey--base: mix(white, $color-grey-500, 100%);
+$text-on-grey-800--color-grey--base: mix(white, $color-grey-500, 100%);
+$text-on-grey-900--color-grey--base: mix(white, $color-grey-500, 90%);
+
+/* prettier-ignore */
+.light-theme {                                                                                                                       
+     // white                                                                                                                        
+     --text-on-white--color-grey:                         #{mix($text-on-white--color-grey--base,    $color-grey-050,  100%)};          
+     --text-on-white--color-grey--subdued:                #{mix($text-on-white--color-grey--base,    $color-grey-050,  59.85%)};        
+     --text-on-white--color-grey--dangerously-subdued:    #{mix($text-on-white--color-grey--base,    $color-grey-050,  45%)};           
+                                                                                                                                     
+     // 050                                                                                                                          
+     --text-on-grey-050--color-grey:                       #{mix($text-on-grey-050--color-grey--base, $color-grey-050,  100%)};       
+     --text-on-grey-050--color-grey--subdued:              #{mix($text-on-grey-050--color-grey--base, $color-grey-050,  61.3%)};      
+     --text-on-grey-050--color-grey--dangerously-subdued:  #{mix($text-on-grey-050--color-grey--base, $color-grey-050,  47%)};        
+                                                                                                                                      
+     // 100                                                                                                                           
+     --text-on-grey-100--color-grey:                       #{mix($text-on-grey-100--color-grey--base, $color-grey-100,  100%)};       
+  // --text-on-grey-100--color-grey--subdued:              #{mix($text-on-grey-100--color-grey--base, $color-grey-100,  70%)};        
+     --text-on-grey-100--color-grey--dangerously-subdued:  #{mix($text-on-grey-100--color-grey--base, $color-grey-100,  50%)};        
+                                                                                                                                      
+     // 200                                                                                                                           
+     --text-on-grey-200--color-grey:                       #{mix($text-on-grey-200--color-grey--base, $color-grey-200,  100%)};       
+  // --text-on-grey-200--color-grey--subdued:              #{mix($text-on-grey-200--color-grey--base, $color-grey-200,  70%)};        
+     --text-on-grey-200--color-grey--dangerously-subdued:  #{mix($text-on-grey-200--color-grey--base, $color-grey-200,  50%)};        
+                                                                                                                                      
+     // 300                                                                                                                           
+     --text-on-grey-300--color-grey:                       #{mix($text-on-grey-300--color-grey--base, $color-grey-300,  100%)};       
+  // --text-on-grey-300--color-grey--subdued:              #{mix($text-on-grey-300--color-grey--base, $color-grey-300,  70%)};        
+     --text-on-grey-300--color-grey--dangerously-subdued:  #{mix($text-on-grey-300--color-grey--base, $color-grey-300,  50%)};        
+                                                                                                                                      
+     // 400                                                                                                                           
+     --text-on-grey-400--color-grey:                       #{mix($text-on-grey-400--color-grey--base, $color-grey-400,  100%)};       
+  // --text-on-grey-400--color-grey--subdued:              #{mix($text-on-grey-400--color-grey--base, $color-grey-400,  70%)};        
+     --text-on-grey-400--color-grey--dangerously-subdued:  #{mix($text-on-grey-400--color-grey--base, $color-grey-400,  52%)};        
+                                                                                                                                      
+     // 500                                                                                                                           
+     --text-on-grey-500--color-grey:                       #{mix($text-on-grey-500--color-grey--base, $color-grey-500,  100%)};       
+  // --text-on-grey-500--color-grey--subdued:              #{mix($text-on-grey-500--color-grey--base, $color-grey-500,  70%)};        
+     --text-on-grey-500--color-grey--dangerously-subdued:  #{mix($text-on-grey-500--color-grey--base, $color-grey-500,  63%)};        
+                                                                                                                                      
+     // 600                                                                                                                           
+     --text-on-grey-600--color-grey:                       #{mix($text-on-grey-600--color-grey--base, $color-grey-600,  100%)};       
+     --text-on-grey-600--color-grey--subdued:              #{mix($text-on-grey-600--color-grey--base, $color-grey-600,  69%)};        
+     --text-on-grey-600--color-grey--dangerously-subdued:  #{mix($text-on-grey-600--color-grey--base, $color-grey-600,  47%)};        
+                                                                                                                                      
+     // 700                                                                                                                           
+     --text-on-grey-700--color-grey:                       #{mix($text-on-grey-700--color-grey--base, $color-grey-700,  100%)};       
+     --text-on-grey-700--color-grey--subdued:              #{mix($text-on-grey-700--color-grey--base, $color-grey-700,  68%)};        
+     --text-on-grey-700--color-grey--dangerously-subdued:  #{mix($text-on-grey-700--color-grey--base, $color-grey-700,  45%)};        
+                                                                                                                                      
+     // 800                                                                                                                           
+     --text-on-grey-800--color-grey:                       #{mix($text-on-grey-800--color-grey--base, $color-grey-800,  100%)};       
+     --text-on-grey-800--color-grey--subdued:              #{mix($text-on-grey-800--color-grey--base, $color-grey-800,  60%)};        
+     --text-on-grey-800--color-grey--dangerously-subdued:  #{mix($text-on-grey-800--color-grey--base, $color-grey-800,  39%)};        
+                                                                                                                                      
+     // 900                                                                                                                           
+     --text-on-grey-900--color-grey:                       #{mix($text-on-grey-900--color-grey--base, $color-grey-900,  100%)};       
+     --text-on-grey-900--color-grey--subdued:              #{mix($text-on-grey-900--color-grey--base, $color-grey-900,  51%)};        
+     --text-on-grey-900--color-grey--dangerously-subdued:  #{mix($text-on-grey-900--color-grey--base, $color-grey-900,  36%)};        
+}   

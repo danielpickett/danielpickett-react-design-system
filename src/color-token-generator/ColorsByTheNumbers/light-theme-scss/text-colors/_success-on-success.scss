@@ -1,0 +1,64 @@
+/* prettier-ignore */
+$text-on-success-050--color-success--base: mix(black, $color-success-500, 25%);
+$text-on-success-100--color-success--base: mix(black, $color-success-500, 35%);
+$text-on-success-200--color-success--base: mix(black, $color-success-500, 50%);
+$text-on-success-300--color-success--base: mix(black, $color-success-500, 60%);
+$text-on-success-400--color-success--base: mix(black, $color-success-500, 70%);
+$text-on-success-500--color-success--base: mix(white, $color-success-500, 100%);
+$text-on-success-600--color-success--base: mix(white, $color-success-500, 100%);
+$text-on-success-700--color-success--base: mix(white, $color-success-500, 100%);
+$text-on-success-800--color-success--base: mix(white, $color-success-500, 100%);
+$text-on-success-900--color-success--base: mix(white, $color-success-500, 90%);
+
+/* prettier-ignore */                                                                                                                                         
+.light-theme, .success-on-success {                                                                                                                                                                                                                               
+   // 050                                                                                                                                                     
+   --text-on-success-050--color-success:                       #{saturate(mix($text-on-success-050--color-success--base, $color-success-050,  100%),  100%)};     
+// --text-on-success-050--color-success--subdued:              #{saturate(mix($text-on-success-050--color-success--base, $color-success-050,   70%),  0%)};       
+   --text-on-success-050--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-050--color-success--base, $color-success-050,   55%),  0%)};       
+                                                                                                                                                                 
+   // 100                                                                                                                                                        
+   --text-on-success-100--color-success:                       #{saturate(mix($text-on-success-100--color-success--base, $color-success-100,  100%),  100%)};     
+// --text-on-success-100--color-success--subdued:              #{saturate(mix($text-on-success-100--color-success--base, $color-success-100,   70%),  100%)};     
+   --text-on-success-100--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-100--color-success--base, $color-success-100,   56%),  12%)};      
+                                                                                                                                                                 
+   // 200                                                                                                                                                        
+   --text-on-success-200--color-success:                       #{saturate(mix($text-on-success-200--color-success--base, $color-success-200,  100%),  100%)};     
+// --text-on-success-200--color-success--subdued:              #{saturate(mix($text-on-success-200--color-success--base, $color-success-200,   70%),  0%)};       
+// --text-on-success-200--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-200--color-success--base, $color-success-200,   50%),  0%)};       
+                                                                                                                                                                 
+   // 300                                                                                                                                                        
+// --text-on-success-300--color-success:                       #{saturate(mix($text-on-success-300--color-success--base, $color-success-300,  100%),  100%)};     
+// --text-on-success-300--color-success--subdued:              #{saturate(mix($text-on-success-300--color-success--base, $color-success-300,   70%),  0%)};       
+// --text-on-success-300--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-300--color-success--base, $color-success-300,   50%),  0%)};       
+                                                                                                                                                                 
+   // 400                                                                                                                                                        
+// --text-on-success-400--color-success:                       #{saturate(mix($text-on-success-400--color-success--base, $color-success-400,  100%),  100%)};     
+// --text-on-success-400--color-success--subdued:              #{saturate(mix($text-on-success-400--color-success--base, $color-success-400,   70%),  0%)};       
+// --text-on-success-400--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-400--color-success--base, $color-success-400,   50%),  0%)};       
+                                                                                                                                                                 
+   // 500                                                                                                                                                        
+   --text-on-success-500--color-success:                       #{saturate(mix($text-on-success-500--color-success--base, $color-success-500,  100%),  0%)};       
+// --text-on-success-500--color-success--subdued:              #{saturate(mix($text-on-success-500--color-success--base, $color-success-500,   70%),  0%)};       
+   --text-on-success-500--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-500--color-success--base, $color-success-500,   70%),  0%)};       
+                                                                                                                                                                 
+   // 600                                                                                                                                                        
+   --text-on-success-600--color-success:                       #{saturate(mix($text-on-success-600--color-success--base, $color-success-600,  100%),  0%)};       
+// --text-on-success-600--color-success--subdued:              #{saturate(mix($text-on-success-600--color-success--base, $color-success-600,   60%),  0%)};       
+   --text-on-success-600--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-600--color-success--base, $color-success-600,   56%),  0%)};       
+                                                                                                                                                                 
+   // 700                                                                                                                                                        
+   --text-on-success-700--color-success:                       #{saturate(mix($text-on-success-700--color-success--base, $color-success-700,  100%),  0%)};       
+   --text-on-success-700--color-success--subdued:              #{saturate(mix($text-on-success-700--color-success--base, $color-success-700,   66%),  0%)};       
+   --text-on-success-700--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-700--color-success--base, $color-success-700,   48%),  0%)};       
+                                                                                                                                                                 
+   // 800                                                                                                                                                        
+   --text-on-success-800--color-success:                       #{saturate(mix($text-on-success-800--color-success--base, $color-success-800,  93%),  0%)};        
+   --text-on-success-800--color-success--subdued:              #{saturate(mix($text-on-success-800--color-success--base, $color-success-800,   58%),  0%)};       
+   --text-on-success-800--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-800--color-success--base, $color-success-800,   41%),  0%)};       
+                                                                                                                                                                 
+   // 900                                                                                                                                                        
+   --text-on-success-900--color-success:                       #{saturate(mix($text-on-success-900--color-success--base, $color-success-900,  90%),  0%)};        
+   --text-on-success-900--color-success--subdued:              #{saturate(mix($text-on-success-900--color-success--base, $color-success-900,   55%),  0%)};       
+   --text-on-success-900--color-success--dangerously-subdued:  #{saturate(mix($text-on-success-900--color-success--base, $color-success-900,   40%),  0%)};       
+}                                                                                                                                                             

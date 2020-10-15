@@ -129,7 +129,7 @@ export const Tooltip = ({
     const triggerRect = triggerElement && triggerElement.getBoundingClientRect()
     const tooltipRect = tooltipElement && tooltipElement.getBoundingClientRect()
     const docRect = document.documentElement.getBoundingClientRect()
-    const padding = 25
+    const padding = 2
 
     if (tooltipRect === undefined || triggerRect === undefined) {
       return undefined
