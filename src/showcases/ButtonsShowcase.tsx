@@ -1,5 +1,5 @@
 import React, { useState, SVGAttributes, FC, Fragment } from 'react'
-import { Button, Text, Checkbox, GridContainer } from '../components'
+import { Button, TextOld, Checkbox, GridContainer } from '../components'
 import { Calendar, Camera, CheckCircle } from 'react-feather'
 
 type ButtonSizeType = 'small' | 'medium' | 'large' | 'extra-large'
@@ -88,14 +88,14 @@ export const ButtonsShowcase = () => {
         >
           <div />
           {buttonsProps.map((buttonProps, index) => (
-            <Text size="extra-small" key={index}>
+            <TextOld size="extra-small" key={index}>
               kind: {buttonProps.kind || 'default'}
-            </Text>
+            </TextOld>
           ))}
           {buttonSizes.map((buttonSize, index) => {
             return (
               <Fragment key={index}>
-                <Text size="extra-small">size: {buttonSize}</Text>
+                <TextOld size="extra-small">size: {buttonSize}</TextOld>
                 {buttonsProps.map((buttonProps, index) => {
                   return (
                     <Fragment key={index}>

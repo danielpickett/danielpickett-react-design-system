@@ -12,28 +12,21 @@ export const TextColors = ({
   scale: string
   on: string
   wash?: string
-}) => (
-  <div
-    className="TextColors"
-    style={{
-      borderLeftColor: `var(--text-color-${scale}-regular-on-${on}${
-        wash ? `-${wash}` : ''
-      })`,
-    }}
-  >
-    <TextSample
-      swatchRef={swNode}
-      color={`text-color-${scale}-regular-on-${on}${wash ? `-${wash}` : ''}`}
-    />
-    <TextSample
-      swatchRef={swNode}
-      color={`text-color-${scale}-subdued-on-${on}${wash ? `-${wash}` : ''}`}
-    />
-    <TextSample
-      swatchRef={swNode}
-      color={`text-color-${scale}-dangerously-subdued-on-${on}${
-        wash ? `-${wash}` : ''
-      }`}
-    />
-  </div>
-)
+}) => {
+  const colorVar = `text-on-${on}${wash ? `-${wash}` : ''}--color-${scale}`
+  return (
+    <div
+      className="TextColors"
+      style={{
+        borderLeftColor: `var(${colorVar})`,
+      }}
+    >
+      <TextSample swatchRef={swNode} color={colorVar} />
+      <TextSample swatchRef={swNode} color={colorVar + '--subdued'} />
+      <TextSample
+        swatchRef={swNode}
+        color={colorVar + '--dangerously-subdued'}
+      />
+    </div>
+  )
+}

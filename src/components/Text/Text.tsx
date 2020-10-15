@@ -1,102 +1,56 @@
-import React, { ReactNode } from 'react'
+import React, { CSSProperties } from 'react'
 import './Text.scss'
-import classNames from 'classnames'
-import * as CSS from 'csstype'
+import { TextPropsType } from './TextPropsType'
+
+type FontWeightType = 'normal' | 'bolder' | 'lighter'
 
 export const Text = ({
   children,
-  size = 'medium',
-  lightness = 'medium',
-  weight = 'regular',
-  color = 'grey',
-  span = false,
-  className,
-  overDarkBackground = false,
-  style,
-  maxWidth,
+  size = 'm',
+  weight,
   textAlign,
-
-  margin,
+  on,
+  color,
+  textTransform,
   noWrap,
-}: {
-  children?: ReactNode
-  size?:
-    | 'fine-print'
-    | 'extra-small'
-    | 'small'
-    | 'medium'
-    | 'large'
-    | 'extra-large'
-  lightness?: 'light' | 'medium' | 'dark'
-  weight?: 'thin' | 'light' | 'regular' | 'bold'
-  color?:
-    | 'grey'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning'
-    | 'danger'
-  span?: boolean
-  className?: string
-  overDarkBackground?: boolean
-  style?: CSS.Properties
-  maxWidth?: string
-  textAlign?: CSS.TextAlignProperty
-  margin?: string
-  noWrap?: boolean
-}) => {
-  const sizeClass = `Text--${size}-size`
-  // const lightnessClass = `Text--${lightness}-lightness`
-  const weightClass = `Text--${weight}-weight`
+  subdued,
+  UNSAFE_style,
+  UNSAFE_className,
+}: TextPropsType) => {
+  const _color = (() => {
+    if (color === undefined) {
+      const _on = (on && on.split('-')[0]) || 'grey'
+      if (_on === 'primary') return 'primary'
+      if (_on === 'success') return 'success'
+      if (_on === 'warning') return 'warning'
+      if (_on === 'danger') return 'danger'
+      return 'grey'
+    }
+    return color
+  })()
 
-  const wrapperClasses = classNames(
-    'Text',
-    sizeClass,
-    // lightnessClass,
-    weightClass,
-    className,
-    {
-      'Text--no-wrap': noWrap,
-      'Text--on-dark': overDarkBackground,
-    },
-  )
+  const colorModifier = (() => {
+    if (subdued === true) return '--subdued'
+    if (subdued === 'dangerously') return '--dangerously-subdued'
+    return ''
+  })()
 
-  var calcPaletteColor = (lightness: 'light' | 'medium' | 'dark') => {
-    return {
-      light: `var(--color-${color}-400)`,
-      medium: `var(--color-${color}-600)`,
-      dark: `var(--color-${color}-900)`,
-    }[lightness]
+  const _style: CSSProperties = {
+    fontSize: 'var(--text-size-' + size + ')',
+    color: `var(--text-on-${on}--color-${_color + colorModifier})`,
+    fontWeight: (weight
+      ? `var(--text-weight-${weight})`
+      : undefined) as FontWeightType,
+    textAlign,
+    textTransform,
+    whiteSpace: noWrap? 'nowrap' : undefined
   }
 
-  var calcOpacity = (lightness: 'light' | 'medium' | 'dark') => {
-    return {
-      light: `0.6`,
-      medium: `1`,
-      dark: `1`,
-    }[lightness]
-  }
-
-  const styles = {
-    color: overDarkBackground
-      ? 'var(--color-white)'
-      : calcPaletteColor(lightness),
-    opacity: overDarkBackground ? calcOpacity(lightness) : 1,
-    maxWidth: maxWidth,
-    margin: margin,
-    textAlign: textAlign,
-    ...style,
-  }
-
-  if (span) {
-    return (
-      <span style={styles} className={wrapperClasses}>
-        {children}
-      </span>
-    )
-  }
   return (
-    <div style={styles} className={wrapperClasses}>
+    <div
+      className={'Text' + (UNSAFE_className ? ' ' + UNSAFE_className : '')}
+      style={{ ..._style, ...UNSAFE_style }}
+    >
       {children}
     </div>
   )
