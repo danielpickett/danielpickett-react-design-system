@@ -17,6 +17,7 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-select": "^3.0.11",
+    "@types/resize-observer-browser": "^0.1.4",
     "chroma-js": "^2.1.0",
     "classnames": "^2.2.6",
     "csstype": "^2.6.10",

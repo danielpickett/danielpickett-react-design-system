@@ -10,3 +10,5 @@ export * from './ColorsShowcase/ColorShowcase'
 export * from './LabeledValueShowcase'
 export * from './DeprecatedTooltipShowcase'
 export * from './ModalShowcase'
+export * from './TooltipShowcase'
+

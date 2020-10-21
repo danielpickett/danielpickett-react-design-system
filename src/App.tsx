@@ -13,6 +13,7 @@ import {
   TextOldShowcase,
   LabeledValueShowcase,
   DeprecatedTooltipShowcase,
+  TooltipShowcase,
   ColorShowcase,
   ModalShowcase,
 } from './showcases'
@@ -21,7 +22,12 @@ import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [
-    { label: 'DeprecatedTooltip', route: '/DeprecatedTooltip', component: DeprecatedTooltipShowcase },
+    { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
+    {
+      label: 'DeprecatedTooltip',
+      route: '/DeprecatedTooltip',
+      component: DeprecatedTooltipShowcase,
+    },
     { label: 'Color', route: '/Color', component: ColorShowcase },
     { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
     {
@@ -116,8 +122,8 @@ export const App = () => {
             path="/all-components"
             render={() => (
               <>
-                {showcases.map(({ component: Component }) => (
-                  <div className="App__section">
+                {showcases.map(({ component: Component }, index) => (
+                  <div className="App__section" key={index}>
                     <Component />
                   </div>
                 ))}
@@ -129,11 +135,7 @@ export const App = () => {
             path="/colors-by-the-numbers"
             component={ColorsByTheNumbers}
           />
-          <Route
-            exact
-            path="/text-test"
-            component={()=> <div>hi</div>}
-          />
+          <Route exact path="/text-test" component={() => <div>hi</div>} />
         </div>
       </div>
     </BrowserRouter>
