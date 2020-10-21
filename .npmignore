@@ -1,10 +1,11 @@
 node_modules
 src/
 public/
-.bablerc
+.babelrc
 .prettierrc
 .gitignore
 README.md
 tsconfig.json
 make-new-component.sh
 build-cleanup.sh
+.storybook/
