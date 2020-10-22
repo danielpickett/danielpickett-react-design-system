@@ -30,7 +30,7 @@ export const DeprecatedTooltipShowcase = () => {
           width="20rem"
           closeOnClickOutside
           trigger={
-            <button
+            <div
               onMouseOver={() => {
                 if (!tooltip1Active) setTooltip1Active(true)
               }}
@@ -39,13 +39,15 @@ export const DeprecatedTooltipShowcase = () => {
               }}
               style={{
                 display: 'block',
-                backgroundColor: 'blue',
+                backgroundColor: 'var(--color-primary)',
+                width: '8rem',
                 color: 'white',
                 padding: '2rem',
+                textAlign: 'center'
               }}
             >
               Hover!
-            </button>
+            </div>
           }
           tooltipContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           quis error cumque nihil corporis impedit distinctio deleniti, nesciunt
