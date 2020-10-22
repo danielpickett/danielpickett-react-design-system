@@ -1,0 +1,7 @@
+@import 'src/vars';
+
+.TextShowcase {
+ &__text {
+   color: $text-on-primary-100--color-primary;
+ } 
+}

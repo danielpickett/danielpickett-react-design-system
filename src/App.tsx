@@ -10,7 +10,6 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
-  TextOldShowcase,
   LabeledValueShowcase,
   TooltipShowcase,
   ColorShowcase,
@@ -21,9 +20,10 @@ import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [
-    { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
     { label: 'Color', route: '/Color', component: ColorShowcase },
-    { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
+    { label: 'Text', route: '/Text', component: TextShowcase },
+    { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
+    { label: 'Select', route: '/Select', component: SelectShowcase },
     {
       label: 'RadioButtons',
       route: '/RadioButtons',
@@ -35,20 +35,18 @@ export const App = () => {
       route: '/NumberInput',
       component: NumberInputShowcase,
     },
+    { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
+    { label: 'Modal', route: '/Modal', component: ModalShowcase },
     {
       label: 'LabeledValue',
       route: '/LabeledValue',
       component: LabeledValueShowcase,
     },
-    { label: 'Text', route: '/Text', component: TextShowcase },
-    { label: 'TextOld', route: '/TextOld', component: TextOldShowcase },
     {
       label: 'LayoutComponent',
       route: '/LayoutComponent',
       component: LayoutComponentShowcase,
     },
-    { label: 'Select', route: '/Select', component: SelectShowcase },
-    { label: 'Modal', route: '/Modal', component: ModalShowcase },
   ]
 
   return (
@@ -129,11 +127,7 @@ export const App = () => {
             path="/colors-by-the-numbers"
             component={ColorsByTheNumbers}
           />
-          <Route
-            exact
-            path="/text-test"
-            component={()=> <div>hi</div>}
-          />
+          <Route exact path="/text-test" component={() => <div>hi</div>} />
         </div>
       </div>
     </BrowserRouter>

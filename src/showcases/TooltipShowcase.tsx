@@ -6,11 +6,10 @@ export const TooltipShowcase = () => {
   const [tooltip2Active, setTooltip2Active] = useState(false)
   const scrollerStyles = {
     width: '20rem',
-    height: '50rem',
+    height: '20rem',
     overflow: 'auto',
     border: 'var(--border-width-default) solid var(--color-primary)',
     padding: '1rem',
-    margin: '3rem',
   }
   return (
     <div
@@ -28,11 +27,16 @@ export const TooltipShowcase = () => {
         <Tooltip
           isActive={tooltip1Active}
           deactivate={() => setTooltip1Active(false)}
-          width="556px"
+          width="20rem"
           closeOnClickOutside
           trigger={
             <button
-              onMouseMove={() => setTooltip1Active(true)}
+              onMouseOver={() => {
+                if (!tooltip1Active) setTooltip1Active(true)
+              }}
+              onMouseOut={() => {
+                if (tooltip1Active) setTooltip1Active(false)
+              }}
               style={{
                 display: 'block',
                 backgroundColor: 'blue',
@@ -40,7 +44,7 @@ export const TooltipShowcase = () => {
                 padding: '4rem 2rem',
               }}
             >
-              Clicky Clicky!
+              Hover!
             </button>
           }
           tooltipContent="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
@@ -63,7 +67,7 @@ export const TooltipShowcase = () => {
           adipisci tenetur a cupiditate nihil! Voluptatibus, sequi.
         </p>
       </div>
-      <div style={{ ...scrollerStyles, marginLeft: 'auto' }}>
+      <div style={{ ...scrollerStyles, marginLeft: 'auto'}}>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
           quis error cumque nihil corporis impedit distinctio deleniti, nesciunt
@@ -76,7 +80,7 @@ export const TooltipShowcase = () => {
           deactivate={() => setTooltip2Active(false)}
           width="700px"
           trigger={
-            <Button onClick={() => setTooltip2Active(!tooltip2Active)}>
+            <Button style={{marginLeft: 'auto'}} onClick={() => setTooltip2Active(!tooltip2Active)}>
               Clicky Clicky!
             </Button>
           }
