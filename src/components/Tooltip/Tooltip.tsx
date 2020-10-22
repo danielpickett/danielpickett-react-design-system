@@ -13,7 +13,12 @@ export const Tooltip = ({ children, content }: TooltipPropsType) => {
 
   const repositionTooltip = (_triggerNode: Element | null) => {
     if (_triggerNode) {
-      const { x, y, height, width } = _triggerNode.getBoundingClientRect()
+      const {
+        x,
+        y,
+        // height,
+        // width
+      } = _triggerNode.getBoundingClientRect()
       const tooltipNode = tooltipRef.current
       if (tooltipNode) {
         const tooltipRect = tooltipNode.getBoundingClientRect()

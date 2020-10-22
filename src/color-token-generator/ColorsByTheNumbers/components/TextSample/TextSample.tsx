@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import { Tooltip } from 'components'
+import { DeprecatedTooltip } from 'components'
 import React, { useEffect, useRef, useState } from 'react'
 import './TextSample.scss'
 
@@ -19,11 +19,8 @@ export const TextSample = ({
         textRef: React.RefObject<HTMLDivElement>,
         swatchRef: React.RefObject<HTMLDivElement>,
       ) => {
-        // console.log('textRef.current', textRef.current)
-        // console.log('swatchRef.current', swatchRef.current)
         if (textRef.current && swatchRef.current) {
           const c1 = getComputedStyle(textRef.current, null).color || ''
-          // console.log(c1)
           if (c1 === 'rgba(0, 0, 0, 0)') {
             return
           }
@@ -53,17 +50,12 @@ export const TextSample = ({
       }}
       ref={textRef}
     >
-      <Tooltip
+      <DeprecatedTooltip
         isActive={tooltipActive}
         deactivate={() => setTooltipActive(false)}
         closeOnClickOutside
         trigger={
-          <div
-            className="TextSample__sample"
-            style={{ borderColor: contrast ? undefined : 'black' }}
-          >
-            {'Sample • ' + contrast}
-          </div>
+          <div className="TextSample__sample">{'Sample • ' + contrast}</div>
         }
         tooltipContent={contrast ? color : 'not available'}
       />
