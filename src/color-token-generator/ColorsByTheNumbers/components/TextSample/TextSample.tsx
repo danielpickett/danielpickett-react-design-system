@@ -52,7 +52,6 @@ export const TextSample = ({
         color: `var(--${color})`,
       }}
       ref={textRef}
-      // title={color}
     >
       <Tooltip
         isActive={tooltipActive}
