@@ -1,3 +1,16 @@
+@import 'src/vars';
+
 .TextSample {
-  display: block;
+  font-size: 1rem;
+  
+  &__sample {
+    padding-left: 0.5rem;
+    cursor: pointer;
+    border-width: $pixels-1;
+    border-style: solid;
+    border-radius: $border-radius-200;
+    &:not(:hover) {
+      border-color: transparent !important;
+    }
+  }
 }

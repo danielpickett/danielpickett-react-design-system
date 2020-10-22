@@ -1,15 +1,22 @@
 import React from 'react'
-import { LabeledValue, FlexContainer } from 'components'
+import { LabeledValue } from 'components'
 
 export const LabeledValueShowcase = () => {
   return (
-    <FlexContainer>
+    <div style={{ display: 'grid', gap: '2rem' }}>
       <LabeledValue label="label" value="value" />
       <LabeledValue
-        label="label"
-        value="value"
+        label="Budget"
+        value="1000"
+        prefix="$"
         onClick={(e) => console.log('clicked', e)}
       />
-    </FlexContainer>
+      <LabeledValue
+        label="CTR"
+        value="99"
+        suffix="%"
+        onClick={(e) => console.log('clicked', e)}
+      />
+    </div>
   )
 }

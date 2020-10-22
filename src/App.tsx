@@ -10,7 +10,6 @@ import {
   LayoutComponentShowcase,
   SelectShowcase,
   TextShowcase,
-  TextOldShowcase,
   LabeledValueShowcase,
   DeprecatedTooltipShowcase,
   TooltipShowcase,
@@ -22,14 +21,15 @@ import { ColorsByTheNumbers } from 'color-token-generator'
 
 export const App = () => {
   const showcases = [
+    { label: 'Color', route: '/Color', component: ColorShowcase },
+    { label: 'Text', route: '/Text', component: TextShowcase },
     { label: 'Tooltip', route: '/Tooltip', component: TooltipShowcase },
     {
       label: 'DeprecatedTooltip',
       route: '/DeprecatedTooltip',
       component: DeprecatedTooltipShowcase,
     },
-    { label: 'Color', route: '/Color', component: ColorShowcase },
-    { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
+    { label: 'Select', route: '/Select', component: SelectShowcase },
     {
       label: 'RadioButtons',
       route: '/RadioButtons',
@@ -41,20 +41,18 @@ export const App = () => {
       route: '/NumberInput',
       component: NumberInputShowcase,
     },
+    { label: 'Buttons', route: '/Buttons', component: ButtonsShowcase },
+    { label: 'Modal', route: '/Modal', component: ModalShowcase },
     {
       label: 'LabeledValue',
       route: '/LabeledValue',
       component: LabeledValueShowcase,
     },
-    { label: 'Text', route: '/Text', component: TextShowcase },
-    { label: 'TextOld', route: '/TextOld', component: TextOldShowcase },
     {
       label: 'LayoutComponent',
       route: '/LayoutComponent',
       component: LayoutComponentShowcase,
     },
-    { label: 'Select', route: '/Select', component: SelectShowcase },
-    { label: 'Modal', route: '/Modal', component: ModalShowcase },
   ]
 
   return (

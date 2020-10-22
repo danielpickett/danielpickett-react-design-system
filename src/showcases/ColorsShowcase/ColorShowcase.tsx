@@ -12,9 +12,7 @@ export const ColorShowcase = () => {
   const colors = [
     'label',
     'primary',
-    'secondary',
     'grey',
-    'grey-alpha',
     'success',
     'warning',
     'danger',
