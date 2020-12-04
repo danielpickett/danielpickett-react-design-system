@@ -12,8 +12,8 @@ type Icon = FC<Props>
 
 type ButtonProps = {
   children?: string
-  IconLeft?: Icon
-  IconRight?: Icon
+  IconLeft?: Icon | JSX.Element
+  IconRight?: Icon | JSX.Element
   onClick?: (event?: React.MouseEvent) => void
   className?: string
   rounded?: boolean
