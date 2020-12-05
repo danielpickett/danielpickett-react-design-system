@@ -21,7 +21,7 @@ export const TextShowcase = () => {
           </Text>
         ))}
       </div>
-      <div
+      {/* <div
         style={{
           border: '1px solid var(--color-grey-200)',
           display: 'inline-block',
@@ -50,13 +50,16 @@ export const TextShowcase = () => {
         <Text on="white" weight="light">
           Hello, world!
         </Text>
-      </div>
+      </div> */}
       <div
-        style={{ backgroundColor: 'var(--color-primary-100)', padding: '2rem' }}
+        style={{ backgroundColor: 'var(--color-danger-200)', padding: '2rem' }}
       >
-        <Text on="primary-100">Helloooooo</Text>
-        <div className="TextShowcase__text">Byeeeee!</div>
+        <Text on="grey-200" color="success">
+          Hello
+        </Text>
+        {/* <div className="TextShowcase__text">Byeeeee!</div> */}
       </div>
+      <div className="TextShowcase__some-example">Some text</div>
     </div>
   )
 }

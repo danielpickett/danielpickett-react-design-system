@@ -1,7 +1,12 @@
 @import 'src/vars';
 
 .TextShowcase {
- &__text {
-   color: $text-on-primary-100--color-primary;
- } 
+  &__text {
+    color: $text-on-primary-100--color-primary;
+  }
+  &__some-example {
+    background: $color-danger-100;
+    color: $text-on-danger-100--color-danger;
+    padding: 1rem;
+  }
 }
