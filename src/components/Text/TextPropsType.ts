@@ -10,6 +10,7 @@ interface CommonTextProps {
   noWrap?: boolean
   UNSAFE_style?: CSSProperties
   UNSAFE_className?: string
+  truncate?: boolean
 }
 interface OnWhiteColorGrey {
   color?: 'grey'

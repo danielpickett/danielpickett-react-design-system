@@ -16,6 +16,7 @@ export const Text = ({
   subdued,
   UNSAFE_style,
   UNSAFE_className,
+  truncate
 }: TextPropsType) => {
   const _color = (() => {
     if (color === undefined) {
@@ -48,7 +49,7 @@ export const Text = ({
 
   return (
     <div
-      className={'Text' + (UNSAFE_className ? ' ' + UNSAFE_className : '')}
+      className={'Text' + (UNSAFE_className ? ' ' + UNSAFE_className : '') + (truncate ? ' Text--truncated' : '')}
       style={{ ..._style, ...UNSAFE_style }}
     >
       {children}
