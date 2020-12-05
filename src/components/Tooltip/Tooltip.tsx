@@ -1,61 +1,124 @@
-import React, { ReactNode, useEffect, useRef } from 'react'
+import React, {
+  cloneElement,
+  ReactElement,
+  ReactNode,
+  useEffect,
+  useRef,
+} from 'react'
 import { createPortal } from 'react-dom'
 import './Tooltip.scss'
+import { repositionTooltip } from './repositionTooltip'
+
+type PositionType = 'top' | 'bottom' | 'left' | 'right'
 
 type TooltipPropsType = {
-  children: ReactNode
+  children: ReactElement
   content: ReactNode
+  position?: PositionType[]
 }
 
-export const Tooltip = ({ children, content }: TooltipPropsType) => {
-  const triggerRef = useRef<HTMLDivElement>(null)
+export const Tooltip = ({ children, content, position }: TooltipPropsType) => {
+  const triggerRef = useRef<HTMLElement | SVGElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
+  const tooltipBodyRef = useRef<HTMLDivElement>(null)
+  const tooltipArrowRef = useRef<HTMLDivElement>(null)
 
-  const repositionTooltip = (_triggerNode: Element | null) => {
-    if (_triggerNode) {
-      const {
-        x,
-        y,
-        // height,
-        // width
-      } = _triggerNode.getBoundingClientRect()
-      const tooltipNode = tooltipRef.current
-      if (tooltipNode) {
-        const tooltipRect = tooltipNode.getBoundingClientRect()
-        tooltipNode.style.top = y - tooltipRect.height + 'px'
-        tooltipNode.style.left = x + 'px'
+  const paddingInPixels = 2 // pixels
+  const arrowSizeInRems = 0.5 // rems
 
-        // ------> add logic to center the tooltip over the trigger <--------
-      }
-    }
+  const defaultPositions = ['top', 'left', 'right', 'bottom'] as PositionType[]
+
+  const configuredPositions: PositionType[] = []
+
+  if (!position) {
+    configuredPositions.push(...defaultPositions)
+  } else {
   }
 
-  const observer = new ResizeObserver((entries) => {
-    repositionTooltip(entries[0].target)
+  const resizeObserver = new ResizeObserver(() => {
+    repositionTooltip(
+      triggerRef.current,
+      tooltipRef.current,
+      tooltipBodyRef.current,
+      tooltipArrowRef.current,
+      paddingInPixels,
+      arrowSizeInRems,
+    )
   })
+
+  const mutationObserverConfig = {
+    attributes: true,
+    childList: true,
+    subtree: true,
+  }
+  const mutationObserverCallback = (mutationsList: MutationRecord[]) => {
+    mutationsList.forEach((mutation) => {
+      if (
+        !(
+          (mutation.target instanceof HTMLElement ||
+            mutation.target instanceof SVGElement) &&
+          (mutation.target.classList.contains('Tooltip') ||
+            mutation.target.classList.contains('Tooltip__body'))
+        )
+      ) {
+        repositionTooltip(
+          triggerRef.current,
+          tooltipRef.current,
+          tooltipBodyRef.current,
+          tooltipArrowRef.current,
+          paddingInPixels,
+          arrowSizeInRems,
+        )
+      }
+    })
+  }
+  const mutationObserver = new MutationObserver(mutationObserverCallback)
 
   useEffect(() => {
     const triggerNode = triggerRef.current
-    const callback = () => repositionTooltip(triggerNode)
+    const tooltipNode = tooltipRef.current
+    const tooltipBodyNode = tooltipBodyRef.current
 
-    if (triggerNode) observer.observe(triggerNode)
-    window.addEventListener('scroll', callback, true)
-    window.addEventListener('resize', callback, true)
+    const eventListenerCallback = () => {
+      repositionTooltip(
+        triggerNode,
+        tooltipNode,
+        tooltipBodyNode,
+        tooltipArrowRef.current,
+        paddingInPixels,
+        arrowSizeInRems,
+      )
+    }
+
+    window.addEventListener('scroll', eventListenerCallback, true)
+    window.addEventListener('resize', eventListenerCallback, true)
+    mutationObserver.observe(document, mutationObserverConfig)
+    if (triggerNode) resizeObserver.observe(triggerNode)
+    if (tooltipNode) resizeObserver.observe(tooltipNode)
 
     return () => {
-      if (triggerNode) observer.unobserve(triggerNode)
-      window.removeEventListener('scroll', callback, true)
-      window.removeEventListener('resize', callback, true)
+      window.removeEventListener('scroll', eventListenerCallback, true)
+      window.removeEventListener('resize', eventListenerCallback, true)
+      mutationObserver.disconnect()
+      if (triggerNode) resizeObserver.unobserve(triggerNode)
+      if (tooltipNode) resizeObserver.unobserve(tooltipNode)
     }
   })
 
   return (
     <>
-      <div ref={triggerRef}>{children}</div>
+      {cloneElement(children, { ref: triggerRef })}
 
       {createPortal(
         <div className="Tooltip" ref={tooltipRef}>
-          {content}
+          <div className="Tooltip__arrow" ref={tooltipArrowRef} />
+          <div
+            className="Tooltip__body"
+            style={{ maxWidth: `calc(100vw - ${paddingInPixels * 2}px)` }}
+            ref={tooltipBodyRef}
+          >
+            {content}
+          </div>
         </div>,
         document.body,
       )}

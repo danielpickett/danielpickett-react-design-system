@@ -1,7 +1,28 @@
+@import 'src/vars';
+
 .Tooltip {
-  color: white;
-  background-color: tomato;
-  padding: 1rem;
   position: fixed;
-  opacity: .5;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  filter: drop-shadow(0 0.25rem 1rem rgba(0, 0, 0, 0.125))
+    drop-shadow(0 0.25rem 0.25rem rgba(0, 0, 0, 0.125));
+
+  &__body {
+    background-color: $color-white;
+    color: $text-on-white--color-grey;
+    font-size: $text-size-s;
+    padding: 0.25rem 0.5rem;
+    border-radius: $border-radius-200;
+    position: relative;
+  }
+  &__arrow {
+    width: 2rem;
+    height: 2rem;
+    background-color: $color-white;
+    transform: rotate(45deg) scale(-0.6835);
+    position: absolute;
+  }
 }
