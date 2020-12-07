@@ -1,19 +1,12 @@
-import React, { FC, SVGAttributes } from 'react'
+import React from 'react'
 import './Button.scss'
 import classNames from 'classnames'
 import * as CSS from 'csstype'
 
-interface Props extends SVGAttributes<SVGElement> {
-  color?: string
-  size?: string | number
-}
-
-type Icon = FC<Props>
-
 type ButtonProps = {
   children?: string
-  IconLeft?: Icon | JSX.Element
-  IconRight?: Icon | JSX.Element
+  IconLeft?: JSX.Element
+  IconRight?: JSX.Element
   onClick?: (event?: React.MouseEvent) => void
   className?: string
   rounded?: boolean
@@ -43,7 +36,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       style,
       disabled = false,
       onMouseOver,
-      onMouseOut
+      onMouseOut,
     }: ButtonProps,
     ref,
   ) => {
@@ -82,18 +75,9 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       }
     }
 
-    const getStrokeWidth = (
-      size: 'small' | 'medium' | 'large' | 'extra-large',
-    ) => {
-      return {
-        small: `2.75`,
-        medium: `2.3`,
-        large: `2`,
-        'extra-large': `2`,
-      }[size]
-    }
-
     const customStyle: CSS.Properties = { width: width, ...style }
+
+    const RenderIcon = ({ icon }: { icon: JSX.Element }) => icon
 
     return (
       <button
@@ -108,21 +92,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {IconLeft ? (
           <div className="Button__icon-wrapper">
-            <IconLeft
-              className="Button__icon"
-              size="1.25em"
-              strokeWidth={getStrokeWidth(size)}
-            />
+            <RenderIcon icon={IconLeft} />
           </div>
         ) : null}
         {children ? <span className="Button__text">{children}</span> : null}
         {IconRight ? (
           <div className="Button__icon-wrapper">
-            <IconRight
-              className="Button__icon"
-              size="1.25em"
-              strokeWidth={getStrokeWidth(size)}
-            />
+            <RenderIcon icon={IconRight} />
           </div>
         ) : null}
       </button>
