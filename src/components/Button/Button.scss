@@ -28,6 +28,10 @@
     justify-content: center;
     width: 2rem;
     height: 2rem;
+    // svg {
+    //   width: .9rem;
+    //   height: .9rem;
+    // }
   }
   &:hover {
     border-color: $color-primary-600;
@@ -108,10 +112,16 @@
 }
 .Button--small-size .Button {
   &__icon-wrapper {
-    // width: 1.5rem;
-    // height: 1.5rem;
-    width: calc(1.5rem - var(--border-width-default) - var(--border-width-default));
-    height: calc(1.5rem - var(--border-width-default) - var(--border-width-default));
+    width: calc(
+      1.5rem - var(--border-width-default) - var(--border-width-default)
+    );
+    height: calc(
+      1.5rem - var(--border-width-default) - var(--border-width-default)
+    );
+    svg {
+      width: 0.9rem;
+      height: 0.9rem;
+    }
   }
 }
 
@@ -123,10 +133,16 @@
 }
 .Button--medium-size .Button {
   &__icon-wrapper {
-    // width: 2rem;
-    // height: 2rem;
-    width: calc(2rem - var(--border-width-default) - var(--border-width-default));
-    height: calc(2rem - var(--border-width-default) - var(--border-width-default));
+    width: calc(
+      2rem - var(--border-width-default) - var(--border-width-default)
+    );
+    height: calc(
+      2rem - var(--border-width-default) - var(--border-width-default)
+    );
+    svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
   }
 }
 
@@ -138,10 +154,16 @@
 }
 .Button--large-size .Button {
   &__icon-wrapper {
-    // width: 2.75rem;
-    // height: 2.75rem;
-    width: calc(2.75rem - var(--border-width-default) - var(--border-width-default));
-    height: calc(2.75rem - var(--border-width-default) - var(--border-width-default));
+    width: calc(
+      2.75rem - var(--border-width-default) - var(--border-width-default)
+    );
+    height: calc(
+      2.75rem - var(--border-width-default) - var(--border-width-default)
+    );
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -153,9 +175,15 @@
 }
 .Button--extra-large-size .Button {
   &__icon-wrapper {
-    // width: 3.5rem;
-    // height: 3.5rem;
-    width: calc(3.5rem - var(--border-width-default) - var(--border-width-default));
-    height: calc(3.5rem - var(--border-width-default) - var(--border-width-default));
+    width: calc(
+      3.5rem - var(--border-width-default) - var(--border-width-default)
+    );
+    height: calc(
+      3.5rem - var(--border-width-default) - var(--border-width-default)
+    );
+    svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
   }
 }

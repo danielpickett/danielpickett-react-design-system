@@ -1,22 +1,19 @@
-import React, { useState, SVGAttributes, FC, Fragment } from 'react'
+import React, { useState, Fragment } from 'react'
 import { Button, TextOld, Checkbox, GridContainer } from '../components'
-import { Calendar, Camera, CheckCircle } from 'react-feather'
+import { Camera, CheckCircle } from 'react-feather'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 
 type ButtonSizeType = 'small' | 'medium' | 'large' | 'extra-large'
 type ButtonPropsType = {
   children?: string
   kind?: 'default' | 'primary' | 'danger' | 'text'
   rounded?: boolean
-  IconLeft?: Icon
-  IconRight?: Icon
+  IconLeft?: JSX.Element
+  IconRight?: JSX.Element
 }[]
 
-interface Props extends SVGAttributes<SVGElement> {
-  color?: string
-  size?: string | number
-}
-
-type Icon = FC<Props>
+const BellIcon = () => <FontAwesomeIcon icon={faBell} />
 
 export const ButtonsShowcase = () => {
   const [disabled, setDisabled] = useState(false)
@@ -46,26 +43,25 @@ export const ButtonsShowcase = () => {
     },
     {
       children: 'Click me',
-      IconLeft: Camera,
+      IconLeft: <Camera />,
     },
     {
       children: 'Click me',
-      IconRight: Calendar,
+      IconRight: <BellIcon />,
     },
     {
       children: 'Click me',
-      IconLeft: CheckCircle,
-      IconRight: CheckCircle,
+      IconLeft: <CheckCircle />,
+      IconRight: <CheckCircle />,
     },
     {
       children: undefined,
-      // kind: 'text',
-      IconRight: CheckCircle,
+      IconRight: <CheckCircle />,
     },
     {
       children: undefined,
       kind: 'text',
-      IconRight: CheckCircle,
+      IconRight: <CheckCircle />,
     },
   ]
 
