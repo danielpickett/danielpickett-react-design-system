@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 import { Button, TextOld, Checkbox, GridContainer } from '../components'
 import { Camera, CheckCircle } from 'react-feather'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell } from '@fortawesome/free-solid-svg-icons'
+import { faClipboard } from '@fortawesome/free-solid-svg-icons'
 
 type ButtonSizeType = 'small' | 'medium' | 'large' | 'extra-large'
 type ButtonPropsType = {
@@ -13,7 +13,7 @@ type ButtonPropsType = {
   IconRight?: JSX.Element
 }[]
 
-const BellIcon = () => <FontAwesomeIcon icon={faBell} />
+const MyIcon = () => <FontAwesomeIcon icon={faClipboard} />
 
 export const ButtonsShowcase = () => {
   const [disabled, setDisabled] = useState(false)
@@ -47,7 +47,7 @@ export const ButtonsShowcase = () => {
     },
     {
       children: 'Click me',
-      IconRight: <BellIcon />,
+      IconRight: <MyIcon />,
     },
     {
       children: 'Click me',
