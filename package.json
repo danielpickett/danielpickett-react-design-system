@@ -23,7 +23,7 @@
     "chroma-js": "^2.1.0",
     "classnames": "^2.2.6",
     "csstype": "^2.6.10",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react-feather": "^2.0.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
